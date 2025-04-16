@@ -7,6 +7,7 @@ body {
 .navbar {
   background-color: #F4FFF8;
   font-family: 'Quicksand', sans-serif;
+  font-weight: normal;
   border-bottom-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
@@ -33,6 +34,9 @@ body {
   width: auto;
   height: 30px;
 
+
+.btn.btn-outline-success {
+  margin-right: 10px;
 }
 
 ul li.nav-item a{
@@ -108,4 +112,22 @@ ul li.nav-item a{
   background-color: #D9EFDE;
   font-family: 'Quicksand', sans-serif;
   border-color: #232E26;
+}
+} 
+
+.custom-svg-button svg text {
+  fill: #198754; /* verde normal */
+}
+
+.custom-svg-button:hover svg text {
+  fill: white; /* texto blanco al hacer hover */
+}
+
+.buttons-navbar button{
+  border-radius: 20px;
+}
+
+.btn.btn-success{
+  background-color: #232E26;
+  color: #D9EFDE;
 }
