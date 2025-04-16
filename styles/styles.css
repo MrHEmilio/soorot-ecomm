@@ -112,7 +112,9 @@ ul li.nav-item a{
   background-color: #D9EFDE;
   font-family: 'Quicksand', sans-serif;
   border-color: #232E26;
+<<<<<<< HEAD
 }
+=======
 } 
 
 .custom-svg-button svg text {
@@ -131,3 +133,4 @@ ul li.nav-item a{
   background-color: #232E26;
   color: #D9EFDE;
 }
+>>>>>>> c455759bc4929ec38e26059451175f34cbb80456
