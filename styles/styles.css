@@ -124,6 +124,7 @@ ul li.nav-item a{
 
 .buttons-navbar button{
   border-radius: 20px;
+  margin-right: 30px;
 }
 
 .btn.btn-success{
