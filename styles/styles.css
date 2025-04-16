@@ -11,37 +11,51 @@ body {
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
   padding-left: 1rem;
+  height: 45px;
 }
 
 /* Div logo */
 .navbar-brand {
-  margin-left: 3rem;
-  display: flex;
+  margin-left: 0px;
+  display: inline;
   align-items: center;
   gap: 0.5rem;
 }
 
 /* Logo (falta añadir) */
-.navbar-brand img {
-  max-height: 40px;
+#logoSoorot{
+  width: 40px;
   height: auto;
-  width: auto;
-  max-width: 100%;
 }
 
-.btn.btn-outline-success {
-  margin-right: 10px;
+.d-flex{
+  margin-right: 60px;
+  width: auto;
+  height: 30px;
+
 }
+
+ul li.nav-item a{
+  margin: 30px;
+}
+
+/* .btn.btn-outline-success {
+  margin-right: 40px;
+  height: auto;
+} */
 
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
+/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
 @media (max-width: 768px) {
   .navbar {
     border-bottom-left-radius: 4vw;
     border-bottom-right-radius: 4vw;
   }
+  .navbar-brand{
+    display: none;
 }
-
+}
 @media (max-width: 480px) {
   .navbar {
     border-bottom-left-radius: 6vw;
@@ -94,4 +108,4 @@ body {
   background-color: #D9EFDE;
   font-family: 'Quicksand', sans-serif;
   border-color: #232E26;
-} 
+}
