@@ -9,7 +9,6 @@
   --verde-claro: #D9EFDE;
 }
 
-/* Body */
 body {
   background-color: #1A4A36;
 }
@@ -19,10 +18,12 @@ body {
 .navbar {
   background-color:  #D9EFDE !important;  
   font-family: 'Quicksand', sans-serif;
+  font-weight: none;
   border-bottom-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
   padding-left: 1rem;
+  height: 45px;
 }
 
 .nav-link.color-texto {
@@ -35,38 +36,123 @@ body {
 
 /* Div logo */
 .navbar-brand {
-  margin-left: 3rem;
-  display: flex;
+  margin-left: 0px;
+  display: inline;
   align-items: center;
   gap: 0.5rem;
 }
 
 /* Logo (falta añadir) */
-.navbar-brand img {
-  max-height: 40px;
+#logoSoorot{
+  width: 40px;
   height: auto;
+}
+
+.d-flex{
+  margin-right: 60px;
   width: auto;
-  max-width: 100%;
+  height: 30px;
 }
 
 .btn.btn-outline-success {
   margin-right: 10px;
 }
 
+ul li.nav-item a{
+  margin: 30px;
+}
+
+/* .btn.btn-outline-success {
+  margin-right: 40px;
+  height: auto;
+} */
+
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
+/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
 @media (max-width: 768px) {
   .navbar {
     border-bottom-left-radius: 4vw;
     border-bottom-right-radius: 4vw;
   }
+  .navbar-brand{
+    display: none;
 }
-
+}
 @media (max-width: 480px) {
   .navbar {
     border-bottom-left-radius: 6vw;
     border-bottom-right-radius: 6vw;
   }
+}
+
+/* Estilos para Titulos en Body */
+
+.titulos {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #D6BD98;
+}
+
+/* Contenedor de tarjetas */
+.color-texto {
+  color: var(--verde-blanco) !important;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+.cards {
+  display: flex; /* Diseño flexible */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  gap: 2rem; /* Espaciado entre las tarjetas */
+}
+
+.card {
+  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
+  background-color: #677D6A;
+  border: none;
+  text-align: center;
+}
+
+.card-title {
+  color: #D6BD98;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+
+.card-text {
+  color: #232E26;
+  font-family: 'Lato', sans-serif;
+}
+
+.carousel-inner {
+  position: relative;
+  min-height: 300px; /* para que el fade no colapse el contenedor */
+}
+
+.btn.btn-primary {
+  color: #232E26;
+  background-color: #D9EFDE;
+  font-family: 'Quicksand', sans-serif;
+  border-color: #232E26;
+} 
+
+.custom-svg-button svg text {
+  fill: #198754; /* verde normal */
+}
+
+.custom-svg-button:hover svg text {
+  fill: white; /* texto blanco al hacer hover */
+}
+
+.buttons-navbar button{
+  border-radius: 20px;
+  margin-right: 30px;
+}
+
+.btn.btn-success{
+  background-color: #232E26;
+  color: #D9EFDE;
 }
 
 /* Estilos para Titulos en Body */
@@ -129,7 +215,7 @@ body {
   height: 200px; /* Altura fija */
   overflow: hidden; /* Oculta el contenido excedente */
   display: -webkit-box; /* Compatibilidad con textos largos */
-  -webkit-line-clamp: 6; /* Limita a 6 líneas visibles */
+  /*-webkit-line-clamp: 6;  Limita a 6 líneas visibles */
   -webkit-box-orient: vertical; /* Orientación vertical */
 }
 
