@@ -64,6 +64,8 @@ body {
   opacity: 1;
   position: relative;
   transition: opacity 1s ease-in-out;
+  display: flex;
+
 }
 
 .card {
@@ -95,3 +97,9 @@ body {
   font-family: 'Quicksand', sans-serif;
   border-color: #232E26;
 } 
+.card-img-top{
+  width: 288px; /* Ancho fijo */
+  height: 400px; /* Alto fijo */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-radius: 10px;
+}
