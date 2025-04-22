@@ -18,7 +18,7 @@ body {
 .navbar {
   background-color: #F4FFF8;
   font-family: 'Quicksand', sans-serif;
-  font-weight: normal;
+  font-weight: none;
   border-bottom-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
@@ -96,7 +96,7 @@ ul li.nav-item a{
 }
 
 .card {
-  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 50px;
+  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
   background-color: #677D6A;
   border: none;
   text-align: center;
@@ -203,7 +203,7 @@ ul li.nav-item a{
   height: 200px; /* Altura fija */
   overflow: hidden; /* Oculta el contenido excedente */
   display: -webkit-box; /* Compatibilidad con textos largos */
-  -webkit-line-clamp: 6; /* Limita a 6 líneas visibles */
+  /*-webkit-line-clamp: 6;  Limita a 6 líneas visibles */
   -webkit-box-orient: vertical; /* Orientación vertical */
 }
 
