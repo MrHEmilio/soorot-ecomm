@@ -15,14 +15,79 @@
 </head>
 
 <body>
-    <div class="back-ground-image">
-        <h2>CONTÁCTANOS</h2>
-        <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium voluptatibus accusamus itaque
-            repellendus consequuntur quibusdam expedita provident eum nemo mollitia.</h4>
+        <!-- Nav Bar inicio-->
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <span class="navbar-logo-img">
+                    <a class="navbar-logo" href="index.html"><img src="/assets/logo-soorot.svg" alt="Logo Soorot" id="logoSoorot"></a>    
+                </span>
+                <span class="navbar-logo-str">
+                
+                    <a class="navbar-brand" id="logoString" href="index.html"><text id="soorot-text-logo">Soorot</text></a>
+                </span>
+                <!-- <a class="navbar-brand" href="index.html">Soorot</a> -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="acercade.html">Acerca de nosotros</a>
+                        
+                    </ul>
+                    <span class="navbar-text">
+    
+    
+                </div>
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form> -->
+                <div class="buttons-navbar">
+                    <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+                    <button type="button" class="btn btn-success">Ingresa</button>
+                  </div>  
+        </nav>
+        <!-- Nav Bar final -->
+
+    <div class="headerContact">
+        <h2>Contáctanos</h2>
+        <h4>¿Tienes preguntas, comentarios o necesitas ayuda? Puedes contactarnos fácilmente a través del siguiente
+            formulario. Nuestro equipo está siempre listo para apoyarte y responder lo más pronto posible. Queremos que
+            disfrutes de la mejor experiencia en nuestra plataforma: tu satisfacción y tranquilidad son nuestra
+            prioridad.</h4>
     </div>
-    <main class="conatiner">
-        
-    </main>
+
+<!-- Inicio de los campos del formulario -->
+    <main class="container"> 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserta tu nombre">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="nombre@ejemplo.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Teléfono</label>
+            <input type="phone" class="form-control" id="exampleFormControlInput3"
+                placeholder="Inserta tu número telefónico">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </main> 
+<!-- Fin de los campos del formulario -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script> <!--Bootstrap-->
 </body>
 
 </html>

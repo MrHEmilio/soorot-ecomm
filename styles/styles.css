@@ -294,4 +294,14 @@ ul li.nav-item a{
   right: 10px; /* Botón siguiente alineado a la derecha */
 }
 
-/* aquí van a ir los estilos de la página contáctanos */
+
+/* Iniciamos con la página de Contáctanos */
+
+.headerContact {
+  margin-top: 50px;
+  height: 400px;
+  background-image: url('/assets/bosque.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
