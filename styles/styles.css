@@ -94,10 +94,11 @@ ul li.nav-item a{
   display: flex; /* Diseño flexible */
   justify-content: center; /* Centra las tarjetas horizontalmente */
   gap: 2rem; /* Espaciado entre las tarjetas */
+  margin-bottom: 10px;
 }
 
 .card {
-  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
+  width: 18rem; margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
   background-color: #677D6A;
   border: none;
   text-align: center;
@@ -343,6 +344,25 @@ ul li.nav-item a{
 .btn.btn-secondary{
   margin-bottom: 40px;
 }
+
+/* Iconos de la pagina contactanos */
+.phoneicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.msjicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.nameicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.emailicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+/* fin de los iconos de contactanos */
 /* Finalizamos con la página de Contáctanos */
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
@@ -383,21 +403,3 @@ ul li.nav-item a{
     }
 
 }
-/* Iconos de la pagina contactanos */
-.phoneicon{
-  color:#48dd99;
-  font-size: 20px;
-}
-.msjicon{
-  color:#48dd99;
-  font-size: 20px;
-}
-.nameicon{
-  color:#48dd99;
-  font-size: 20px;
-}
-.emailicon{
-  color:#48dd99;
-  font-size: 20px;
-}
-/* fin de los iconos de contactanos */
