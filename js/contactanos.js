@@ -1,75 +1,104 @@
-// ========== Validación de Datos con Botón "Enviar" ==========
+/**
+ *  ========== Validación de Datos con Botón "Enviar" ==========
+ */
+
 document.addEventListener("DOMContentLoaded", function () {  
     // Obtiene los elementos del formulario
-    const nombre = document.getElementById("nombre");
-    const email = document.getElementById("email");
-    const telefono = document.getElementById("telefono");
-    const mensaje = document.getElementById("mensaje");
+    const inputName = document.getElementById("nombre");
+    const inputEmail = document.getElementById("email");
+    const inputPhone = document.getElementById("telefono");
+    const inputMessage = document.getElementById("mensaje");
     const btnEnviar = document.getElementById("btnEnviar");
+    const contactForm = document.getElementById("contactForm");
   
-    // Evento al hacer clic en el botón "Enviar"
-    btnEnviar.addEventListener("click", function (event) {
-      event.preventDefault();
-      limpiarAlertas();
-  
-      let isValid = true;
-  
-      nombre.value = nombre.value.trim().toUpperCase();
-      email.value = email.value.trim();
-      telefono.value = telefono.value.trim();
-      mensaje.value = mensaje.value.trim();
-  
-      if (nombre.value.length < 3) {
-        alerta(nombre, "Inserta tu nombre completo.");
-        isValid = false;
-      }
-  
-      const regexEmail = new RegExp("[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+");
-      if (!regexEmail.test(email.value)) {
-        alerta(email, "Correo electrónico inválido.");
-        isValid = false;
-      }
-  
-      if (!/^\d{10}$/.test(telefono.value)) {
-        alerta(telefono, "Teléfono inválido. Debe tener 10 dígitos.");
-        isValid = false;
-      }
-  
-      if (mensaje.value.length < 15) {
-        alerta(mensaje, "El mensaje debe tener al menos 15 caracteres.");
-        isValid = false;
-      }
-  
-      if (!isValid) return;
-  
-      console.log("Nombre:", nombre.value);
-      console.log("Email:", email.value);
-      console.log("Teléfono:", telefono.value);
-      console.log("Mensaje:", mensaje.value);
-  
-      nombre.value = "";
-      email.value = "";
-      telefono.value = "";
-      mensaje.value = "";
-      nombre.focus();
-    });
-  
-    function alerta(input, mensaje) {
-      const alerta = document.createElement("div");
-      alerta.textContent = mensaje;
-      alerta.style.color = "red";
-      alerta.style.marginBottom = "4px";
-      alerta.classList.add("alerta");
-      input.style.border = "2px solid red";
-      input.parentNode.insertBefore(alerta, input);
+    // Inicializar EMAIL JS para Enviar Datos de Inputs
+    emailjs.init("tCk0Yz0O6OB4wkfGp");
+
+    // Funcion para enviar Email con emailjs
+    function sendEmail(name, email, phone, message) {
+      emailjs.send("service_p80rvz4", "template_8vpq9g9", {
+          nombre_usuario: name,
+          correo_usuario: email,
+          telefono_usuario: phone,
+          mensaje_usuario: message,
+      })
+      .then(function(response) {
+          // Sweet Alert 
+          document.activeElement.blur();
+          Swal.fire({
+              icon: "success",
+              title: "Correo enviado",
+              text: "Tu mensaje fue enviado con éxito.",
+          });
+          // Se reinician los campos
+          inputName.value = ""
+          inputEmail.value = ""
+          inputPhone.value = ""
+          inputMessage.value = ""
+          // inputName.focus();  **No estoy logrando quitar el error aria-hidden = "true" si lo dejo en focus al name
+      }, 
+      function (error) {
+          // Sweet Alert
+          document.activeElement.blur();
+          Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Hubo un error al enviar tu mensaje. Intenta de nuevo más tarde.",
+          });
+      });    
+  } // Función sendEmail
+
+  // Función para Validación 
+  function checkInput() {
+    const name = inputName.value.trim();
+    const email = inputEmail.value.trim();
+    const phone = inputPhone.value.trim();
+    const message = inputMessage.value.trim();
+
+    // Mostrar mensaje de alerta si falta algun campo
+    if (!name || !email || !phone || !message) {
+      Swal.fire("Por favor llena todos los campos correctamente.")
+      return;
     }
-  
-    function limpiarAlertas() {
-      const alertas = document.querySelectorAll(".alerta");
-      alertas.forEach(a => a.remove());
-      [nombre, email, telefono, mensaje].forEach(input => {
-        input.style.border = "";
-      });
+    // Validar nombre (mínimo 3 caracteres)
+    if (name.length < 3) {
+        Swal.fire("Nombre inválido", "Inserta tu nombre completo.");
+        return;
     }
+    // Validar correo electrónico
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(email)) {
+        Swal.fire("Correo inválido", "Ingresa un correo electrónico válido.");
+        return;
+    }
+    // Validar teléfono minimo 10 dígitos
+    if (!/^\d{10}$/.test(phone)) {
+        Swal.fire("Teléfono inválido", "Debe tener exactamente 10 dígitos.");
+        return;
+    }
+    // Validar mensaje mínimo 15 caracteres
+    if (message.length < 15) {
+        Swal.fire("Mensaje muy corto", "El mensaje debe tener al menos 15 caracteres.");
+        return;
+    }
+
+    // Si todo está bien, retornamos los valores en un objeto
+    return { name, email, phone, message };
+  }
+
+  btnEnviar.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const inputData = checkInput();
+
+    // Si hubo errores de validación, no continuar
+    if (!inputData) return;
+
+    // Llamar a sendEmail con los datos validados
+    sendEmail(inputData.name, inputData.email, inputData.phone, inputData.message);
   });
+
+}); // Event Listener DOM Content Loaded
+
+
   

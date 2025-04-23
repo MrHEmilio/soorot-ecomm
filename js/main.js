@@ -1,9 +1,11 @@
+// FALTA DOCUMENTAR DE FORMA MAS PRECISA QUE HACE ESTE CÓDIGO DE ABAJO Y CATEGORIZARLO CON "... INICIO"
 document.addEventListener("DOMContentLoaded", () => {
     // Selecciona todos los botones con la clase "learn-more"
     const learnMoreButtons = document.querySelectorAll(".learn-more");
   
     // Obtiene el elemento del modal y sus elementos internos
     const modal = document.getElementById("modal"); // Modal principal
+    console.log("Modal element:", modal); 
     const modalImage = modal.querySelector(".modal-image"); // Imagen dentro del modal
     const modalTitle = modal.querySelector(".modal-title"); // Título dentro del modal
     const modalDescription = modal.querySelector(".modal-description"); // Descripción dentro del modal
@@ -72,5 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (event.key === "Escape") closeModal(); // Escape para cerrar el modal
         }
     });
-  });
+  }); //DOMContentLoaded EventListener
 
+// FALTA DOCUMENTAR DE FORMA MAS PRECISA QUE HACE ESTE CÓDIGO DE ARRIBA Y CERRARLO CON "... FINAL"
