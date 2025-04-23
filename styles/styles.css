@@ -383,3 +383,21 @@ ul li.nav-item a{
     }
 
 }
+/* Iconos de la pagina contactanos */
+.phoneicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.msjicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.nameicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.emailicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+/* fin de los iconos de contactanos */
