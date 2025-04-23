@@ -285,7 +285,7 @@ ul li.nav-item a{
 .headerContact {
   margin-top: 50px;
   height: 400px;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(255, 255, 255, 0.3)),
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(255, 255, 255, 0.6)),
               url('/assets/bosque.jpg');
   background-position: center;
   background-size: cover;
@@ -295,15 +295,14 @@ ul li.nav-item a{
 .header-contact{
   margin: auto;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
   font-weight: bold;
-  color: var(--verde-claro);
-  
+  color: var(--verde-medio);
 }
 
 .header-contact.header-contact2 {
   font-size: 80px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   letter-spacing: 15px;
 }
 .header-contact.header-contact4 {
@@ -324,6 +323,9 @@ ul li.nav-item a{
 .icons-social-medias{
   width: 64px;
   height: auto;
+}
+.btn.btn-secondary{
+  margin-bottom: 40px;
 }
 /* Finalizamos con la página de Contáctanos */
 
@@ -348,10 +350,7 @@ ul li.nav-item a{
     font-size: 15px;
     margin-top:10px;
   }
-  .icons-social-medias{
-    width: 32px;
-    height: auto;
-  }
+  
 }
 
 @media (max-width: 480px) {
