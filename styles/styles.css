@@ -1,3 +1,7 @@
+/* LOS MEDIA QUERY LOS PUSE HASTA ABAJO PARA QUE PUEDA 
+CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
+
+
 /* Gama de colores utilizada */
 
 :root {
@@ -58,25 +62,6 @@ ul li.nav-item a{
   margin-right: 40px;
   height: auto;
 } */
-
-
-/* Borde redondeado, radio responsivo dependiendo tamaño */
-/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
-@media (max-width: 768px) {
-  .navbar {
-    border-bottom-left-radius: 4vw;
-    border-bottom-right-radius: 4vw;
-  }
-  .navbar-brand{
-    display: none;
-}
-}
-@media (max-width: 480px) {
-  .navbar {
-    border-bottom-left-radius: 6vw;
-    border-bottom-right-radius: 6vw;
-  }
-}
 
 /* **Estilo para tarjeta**  */
 
@@ -300,8 +285,86 @@ ul li.nav-item a{
 .headerContact {
   margin-top: 50px;
   height: 400px;
-  background-image: url('/assets/bosque.jpg');
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(255, 255, 255, 0.3)),
+              url('/assets/bosque.jpg');
   background-position: center;
   background-size: cover;
+
+}
+
+.header-contact{
+  margin: auto;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  font-weight: bold;
+  color: var(--verde-claro);
+  
+}
+
+.header-contact.header-contact2 {
+  font-size: 80px;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 15px;
+}
+.header-contact.header-contact4 {
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  margin: 50px;
+
+}
+
+.form-label{
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: var(--verde-claro);
+  margin-top: 15px;
+}
+
+.icons-social-medias{
+  width: 64px;
+  height: auto;
+}
+/* Finalizamos con la página de Contáctanos */
+
+/* Borde redondeado, radio responsivo dependiendo tamaño */
+/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
+@media (max-width: 768px) {
+  .navbar {
+    border-bottom-left-radius: 4vw;
+    border-bottom-right-radius: 4vw;
+  }
+  .navbar-brand{
+    display: none;
+  }
+  .header-contact.header-contact2{
+  font-size: 48px;
+  letter-spacing: 10px;
+  }
+  .header-contact.header-contact4{
+  font-size: 20px;
+  }
+  .form-label{
+    font-size: 15px;
+    margin-top:10px;
+  }
+  .icons-social-medias{
+    width: 32px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    border-bottom-left-radius: 6vw;
+    border-bottom-right-radius: 6vw;
+    }
+  .header-contact.header-contact2{
+    font-size: 40px;
+    letter-spacing: 8px;
+    }
+    .header-contact.header-contact4{
+    font-size: 14px;
+    }
 
 }
