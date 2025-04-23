@@ -8,8 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>A cerca de</title>
+    <title>Acerca de nosotros</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="assets/favicon-soorot.svg" type="image/svg+xml">
+
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form> -->
             <div class="buttons-navbar">
-                <button type="button" class="btn btn-outline-success">Contáctanos</button>
+                <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
                 <button type="button" class="btn btn-success">Ingresa</button>
               </div>  
     </nav>
@@ -115,7 +117,7 @@
     </main>
 
      <!-- Modal para mostrar información adicional -->
-     <div id="modal" class="modal" aria-hidden="true"> <!-- Modal oculto por defecto -->
+     <div id="modal" class="modal" inert> <!-- Modal oculto por defecto -->
         <div class="modal-content"> <!-- Contenido del modal -->
             <button class="close" aria-label="Cerrar">&times;</button> <!-- Botón para cerrar el modal -->
             <button class="prev" aria-label="Imagen anterior">&larr;</button> <!-- Botón para ir a la imagen anterior -->
@@ -251,7 +253,7 @@
 
 
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

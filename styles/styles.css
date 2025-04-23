@@ -1,3 +1,7 @@
+/* LOS MEDIA QUERY LOS PUSE HASTA ABAJO PARA QUE PUEDA 
+CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
+
+
 /* Gama de colores utilizada */
 
 :root {
@@ -67,25 +71,6 @@ ul li.nav-item a{
   height: auto;
 } */
 
-
-/* Borde redondeado, radio responsivo dependiendo tamaño */
-/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
-@media (max-width: 768px) {
-  .navbar {
-    border-bottom-left-radius: 4vw;
-    border-bottom-right-radius: 4vw;
-  }
-  .navbar-brand{
-    display: none;
-}
-}
-@media (max-width: 480px) {
-  .navbar {
-    border-bottom-left-radius: 6vw;
-    border-bottom-right-radius: 6vw;
-  }
-}
-
 /* Estilos para Titulos en Body */
 
 .titulos {
@@ -94,11 +79,15 @@ ul li.nav-item a{
   color: #D6BD98;
 }
 
-/* Contenedor de tarjetas */
-.color-texto {
-  color: var(--verde-blanco) !important;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+/* **Estilo para tarjeta**  */
+
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .cards {
@@ -108,7 +97,7 @@ ul li.nav-item a{
 }
 
 .card {
-  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 50px;
+  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
   background-color: #677D6A;
   border: none;
   text-align: center;
@@ -305,3 +294,110 @@ ul li.nav-item a{
 .modal-content .next {
   right: 10px; /* Botón siguiente alineado a la derecha */
 }
+
+
+/* Iniciamos con la página de Contáctanos */
+
+.headerContact {
+  margin-top: 50px;
+  height: 400px;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(255, 255, 255, 0.6)),
+              url('/assets/bosque.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+.header-contact{
+  margin: auto;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  color: var(--verde-medio);
+}
+
+.header-contact.header-contact2 {
+  font-size: 80px;
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 15px;
+}
+.header-contact.header-contact4 {
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  margin: 50px;
+
+}
+
+.form-label{
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: var(--verde-claro);
+  margin-top: 15px;
+}
+
+.icons-social-medias{
+  width: 64px;
+  height: auto;
+}
+.btn.btn-secondary{
+  margin-bottom: 40px;
+}
+/* Finalizamos con la página de Contáctanos */
+
+/* Borde redondeado, radio responsivo dependiendo tamaño */
+/* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
+@media (max-width: 768px) {
+  .navbar {
+    border-bottom-left-radius: 4vw;
+    border-bottom-right-radius: 4vw;
+  }
+  .navbar-brand{
+    display: none;
+  }
+  .header-contact.header-contact2{
+  font-size: 48px;
+  letter-spacing: 10px;
+  }
+  .header-contact.header-contact4{
+  font-size: 20px;
+  }
+  .form-label{
+    font-size: 15px;
+    margin-top:10px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    border-bottom-left-radius: 6vw;
+    border-bottom-right-radius: 6vw;
+    }
+  .header-contact.header-contact2{
+    font-size: 40px;
+    letter-spacing: 8px;
+    }
+    .header-contact.header-contact4{
+    font-size: 14px;
+    }
+
+}
+/* Iconos de la pagina contactanos */
+.phoneicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.msjicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.nameicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.emailicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+/* fin de los iconos de contactanos */
