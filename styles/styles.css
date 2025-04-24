@@ -423,7 +423,8 @@ ul li.nav-item a{
 		background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
 		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
 	}
-
+/* LOS MEDIA QUERY LOS PUSE HASTA ABAJO PARA QUE PUEDA 
+CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   @media (max-width: 768px) {
     .navbar {
       border-bottom-left-radius: 4vw;
