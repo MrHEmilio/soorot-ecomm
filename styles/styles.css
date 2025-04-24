@@ -366,39 +366,97 @@ ul li.nav-item a{
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
 /* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
-@media (max-width: 768px) {
-  .navbar {
-    border-bottom-left-radius: 4vw;
-    border-bottom-right-radius: 4vw;
-  }
-  .navbar-brand{
-    display: none;
-  }
-  .header-contact.header-contact2{
-  font-size: 48px;
-  letter-spacing: 10px;
-  }
-  .header-contact.header-contact4{
+
+/* Iconos de la pagina contactanos */
+.phoneicon{
+  color:#48dd99;
   font-size: 20px;
-  }
-  .form-label{
-    font-size: 15px;
-    margin-top:10px;
-  }
-  
+}
+.msjicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.nameicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+.emailicon{
+  color:#48dd99;
+  font-size: 20px;
+}
+/* fin de los iconos de contactanos */
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.woff') format('woff');
+}
+/* Redes sociales*/
+.social {
+	position: fixed; /* Hacemos que la posición en pantalla sea fija para que siempre se muestre en pantalla*/
+	left: 1px; /* Establecemos la barra en la izquierda */
+	top: 200px; /* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
 }
 
-@media (max-width: 480px) {
-  .navbar {
-    border-bottom-left-radius: 6vw;
-    border-bottom-right-radius: 6vw;
+	.social ul {
+		list-style: none;
+    padding-left: 0;
+	}
+
+	.social ul li a {
+		display: inline-block;
+		color:#fff;
+		background: #000;
+		padding: 10px 15px;
+		text-decoration: none;
+		-webkit-transition:all 500ms ease;
+		-o-transition:all 500ms ease;
+		transition:all 500ms ease; /* Establecemos una transición a todas las propiedades */
+	}
+
+	.social ul li .icon-facebook2 {background:var(--verde-oscuro);} /* Establecemos los colores de cada red social, aprovechando su class */
+	.social ul li .icon-bubble {background:var(--verde-medio);}
+	.social ul li .icon-github {background:var(--verde-grisaceo);}
+	.social ul li .icon-instagram {background:var(--verde-claro);}
+
+	.social ul li a:hover {
+		background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
+		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
+	}
+
+  @media (max-width: 768px) {
+    .navbar {
+      border-bottom-left-radius: 4vw;
+      border-bottom-right-radius: 4vw;
     }
-  .header-contact.header-contact2{
-    font-size: 40px;
-    letter-spacing: 8px;
+    .navbar-brand{
+      display: none;
+    }
+    .header-contact.header-contact2{
+    font-size: 48px;
+    letter-spacing: 10px;
     }
     .header-contact.header-contact4{
-    font-size: 14px;
+    font-size: 20px;
     }
-
-}
+    .form-label{
+      font-size: 15px;
+      margin-top:10px;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      border-bottom-left-radius: 6vw;
+      border-bottom-right-radius: 6vw;
+      }
+    .header-contact.header-contact2{
+      font-size: 40px;
+      letter-spacing: 8px;
+      }
+      .header-contact.header-contact4{
+      font-size: 14px;
+      }
+  
+  }
