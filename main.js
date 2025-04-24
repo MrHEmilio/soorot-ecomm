@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModalButton = modal.querySelector(".close"); // Botón para cerrar el modal
     const prevButton = modal.querySelector(".prev"); // Botón para ir a la imagen anterior
     const nextButton = modal.querySelector(".next"); // Botón para ir a la imagen siguiente
-  
+
     let currentIndex = 0; // Índice de la tarjeta actualmente seleccionada
-  
+
     // Obtener los datos de todas las tarjetas a partir de los botones "Learn More"
     const cardsData = Array.from(learnMoreButtons).map(button => ({
         image: button.getAttribute("data-image"), // Imagen asociada a la tarjeta
         title: button.getAttribute("data-title"), // Título de la tarjeta
         description: button.getAttribute("data-description"), // Descripción de la tarjeta
     }));
-  
+
     // Función para actualizar el contenido del modal
     const updateModalContent = (index) => {
         const { image, title, description } = cardsData[index]; // Obtiene los datos de la tarjeta correspondiente
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalTitle.textContent = title; // Actualiza el título del modal
         modalDescription.textContent = description; // Actualiza la descripción del modal
     };
-  
+
     // Función para abrir el modal
     const openModal = (index) => {
         currentIndex = index; // Establece el índice actual
