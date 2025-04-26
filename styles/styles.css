@@ -361,6 +361,7 @@ ul li.nav-item a{
   color:#48dd99;
   font-size: 20px;
 }
+
 /* fin de los iconos de contactanos */
 /* Finalizamos con la página de Contáctanos */
 
@@ -460,3 +461,11 @@ ul li.nav-item a{
       }
   
   }
+
+/* editorProductos.html INICIO */
+
+.custom-dropdown {
+  width: 50%; 
+  min-width: 250px;
+  max-width: 600px;
+}
