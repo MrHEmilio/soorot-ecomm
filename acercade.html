@@ -15,45 +15,6 @@
 </head>
 
 <body>
-    <!-- Nav Bar inicio-->
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <span class="navbar-logo-img">
-                <a class="navbar-logo" href="index.html"><img src="/assets/logo-soorot.svg" alt="Logo Soorot" id="logoSoorot"></a>    
-            </span>
-            <span class="navbar-logo-str">
-            
-                <a class="navbar-brand" id="logoString" href="index.html"><text id="soorot-text-logo">Soorot</text></a>
-            </span>
-            <!-- <a class="navbar-brand" href="index.html">Soorot</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="acercade.html">Acerca de nosotros</a>
-                    
-                </ul>
-                <span class="navbar-text">
-
-
-            </div>
-            <!-- <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form> -->
-            <div class="buttons-navbar">
-                <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
-                <button type="button" class="btn btn-success">Ingresa</button>
-              </div>  
-    </nav>
-    <!-- Nav Bar Final -->
 
     <!-- Div descrip. PROYECTO inicio-->
     <div class="container-sm">
@@ -89,7 +50,7 @@
                     <img src="/assets/Image (3).jpg" alt="El equipo"> <!-- Imagen representativa -->
                     <h2 class="color-texto">El equipo</h2> <!-- Título de la tarjeta -->
                     <p class="color-texto">Somos un equipo compacto de ocho personas comprometidas con la innovación en proyectos relacionados con la naturaleza...</p> <!-- Descripción breve -->
-                    <button class="learn-more" data-index="0" data-image="images/Image (3).jpg" data-title="El equipo" data-description="Somos un equipo compacto de ocho personas comprometidas con...">
+                    <button class="learn-more" data-index="0" data-image="assets/Image (3).jpg" data-title="El equipo" data-description="Somos un equipo compacto de ocho personas comprometidas con la innovación de proyectos relacionados con la naturaleza, brindando herramientas de calidad para conectar con el entorno natural.">
                         Ver más
                     </button> <!-- Botón para ver más detalles -->
                 </div>
@@ -98,7 +59,7 @@
                     <img src="assets/Image (4).jpg" alt="Tu plan, nuestra misión"> <!-- Imagen representativa -->
                     <h2 class="color-texto">Tu plan, nuestra misión</h2> <!-- Título de la tarjeta -->
                     <p class="color-texto">En nuestra plataforma, facilitamos el acceso a equipo de alta calidad para todo tipo de actividades al aire libre...</p> <!-- Descripción breve -->
-                    <button class="learn-more" data-index="1" data-image="images/Image (4).jpg" data-title="Tu plan, nuestra misión" data-description="En nuestra plataforma, facilitamos el acceso a equipo de alta calidad...">
+                    <button class="learn-more" data-index="1" data-image="assets/Image (4).jpg" data-title="Tu plan, nuestra misión" data-description="En nuestra plataforma, facilitamos el acceso a equipo de alta calidad para todo tipo de actividades al aire libre. Ya sea en tierra, agua o aire, ofrecemos soluciones eficientes y confiables.">
                         Ver más
                     </button> <!-- Botón para ver más detalles -->
                 </div>
@@ -107,7 +68,7 @@
                     <img src="assets/Image (5).jpg" alt="Hazlo posible"> <!-- Imagen representativa -->
                     <h2 class="color-texto">Hazlo posible</h2> <!-- Título de la tarjeta -->
                     <p class="color-texto">Encontrar el equipo ideal nunca ha sido tan fácil...</p> <!-- Descripción breve -->
-                    <button class="learn-more" data-index="2" data-image="images/Image (5).jpg" data-title="Hazlo posible" data-description="Encontrar el equipo ideal nunca ha sido tan fácil...">
+                    <button class="learn-more" data-index="2" data-image="assets/Image (5).jpg" data-title="Hazlo posible" data-description="Encontrar el equipo ideal nunca ha sido tan fácil. Explora lo que te interesa y haz clic para acceder directamente a los productos. Cada artículo cuenta con garantía de calidad.">
                         Ver más
                     </button> <!-- Botón para ver más detalles -->
                 </div>
@@ -221,7 +182,7 @@
                             <h5 class="card-title">Dulce Carmona San Juan</h5>
                             <p class="card-text">¡Hola! Soy Dulce. Desarrolladora Fullstack Jr. de 29 años, con pasado en
                                 diseño gráfico. Me relaja estar en la naturaleza, sobre todo si hace frío… y hay café.</p>
-                            <a href="www.linkedin.com/in/dulce-carmona-ti" target="_blank"
+                            <a href="https://www.linkedin.com/in/dulce-carmona-ti/" target="_blank"
                             class="btn btn-primary">Perfil LinkedIn</a>
                         </div>
                     </div>
@@ -272,6 +233,12 @@
         <!-- carrusel final -->
     
         <!-- Div para Tarjeta de Integrantes Final -->
+         <!-- script para el navbar, hay que procurar que se conserve como el primer script -->
+    <script type="module">
+        import { insertarNavbar } from "./js/navbar.js";
+        insertarNavbar();
+    </script>
+    <!-- script para el navbarfinal -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>

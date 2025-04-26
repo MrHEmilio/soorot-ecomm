@@ -65,15 +65,25 @@ document.addEventListener("DOMContentLoaded", function () {
         Swal.fire("Nombre inválido", "Inserta tu nombre completo.");
         return;
     }
+
     // Validar correo electrónico
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
         Swal.fire("Correo inválido", "Ingresa un correo electrónico válido.");
         return;
     }
-    // Validar teléfono minimo 10 dígitos
-    if (!/^\d{10}$/.test(phone)) {
+
+    // Limpiar número telefónico de espacios, guiones y paréntesis
+    const cleanPhone = phone.replace(/[\s-()]/g, "");
+        
+    // Validar teléfono: 10 dígitos y no comenzar con 0
+    if (!/^[1-9]\d{9}$/.test(cleanPhone)) {
         Swal.fire("Teléfono inválido", "Debe tener exactamente 10 dígitos.");
+        return;
+    }
+    // Validar teléfono: no permitir repeticiones o secuencias comunes
+    if (/^(\d)\1{9}$|0123456789|1234567890|9876543210|0987654321/.test(cleanPhone)) {
+        Swal.fire("Teléfono inválido", "Vuelve a intentarlo con un número diferente.");
         return;
     }
     // Validar mensaje mínimo 15 caracteres

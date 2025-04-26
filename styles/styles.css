@@ -93,10 +93,11 @@ ul li.nav-item a{
   display: flex; /* Diseño flexible */
   justify-content: center; /* Centra las tarjetas horizontalmente */
   gap: 2rem; /* Espaciado entre las tarjetas */
+  margin-bottom: 10px;
 }
 
 .card {
-  width: 18rem;margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
+  width: 18rem; margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
   background-color: #677D6A;
   border: none;
   text-align: center;
@@ -298,27 +299,29 @@ ul li.nav-item a{
 /* Iniciamos con la página de Contáctanos */
 
 .headerContact {
-  margin-top: 50px;
+  margin-top: -20px;
   height: 400px;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(255, 255, 255, 0.6)),
-              url('/assets/bosque.jpg');
+  background: linear-gradient(rgba(0,0,0,0.3), var(--verde-medio)),
+              /*url('/assets/bosque.jpg');*/
+              url('/assets/bosque-verde.png');
   background-position: center;
   background-size: cover;
 
 }
 
 .header-contact{
+  padding-top: 30px;
   margin: auto;
   text-align: center;
-  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);
+ /* text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.9);*/
   font-weight: bold;
-  color: var(--verde-medio);
+  color: var(--verde-claro);
 }
 
 .header-contact.header-contact2 {
   font-size: 80px;
   font-family: 'Quicksand', sans-serif;
-  letter-spacing: 15px;
+  letter-spacing: 0px;
 }
 .header-contact.header-contact4 {
   font-size: 25px;
@@ -342,61 +345,46 @@ ul li.nav-item a{
 .btn.btn-secondary{
   margin-bottom: 40px;
 }
+
+/* Iconos de la pagina contactanos */
+.phoneicon{
+  color:var(--beige-arena);
+  font-size: 20px;
+}
+.msjicon{
+  color:var(--beige-arena);
+  font-size: 20px;
+}
+.nameicon{
+  color:var(--beige-arena);
+  font-size: 20px;
+}
+.emailicon{
+  color:var(--beige-arena);
+  font-size: 20px;
+}
+
+/* fin de los iconos de contactanos */
 /* Finalizamos con la página de Contáctanos */
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
 /* se agrega un display none para ocultar el logo string de soorot al alcanzar cierto tamaño */
-@media (max-width: 768px) {
-  .navbar {
-    border-bottom-left-radius: 4vw;
-    border-bottom-right-radius: 4vw;
-  }
-  .navbar-brand{
-    display: none;
-  }
-  .header-contact.header-contact2{
-  font-size: 48px;
-  letter-spacing: 10px;
-  }
-  .header-contact.header-contact4{
-  font-size: 20px;
-  }
-  .form-label{
-    font-size: 15px;
-    margin-top:10px;
-  }
-  
-}
 
-@media (max-width: 480px) {
-  .navbar {
-    border-bottom-left-radius: 6vw;
-    border-bottom-right-radius: 6vw;
-    }
-  .header-contact.header-contact2{
-    font-size: 40px;
-    letter-spacing: 8px;
-    }
-    .header-contact.header-contact4{
-    font-size: 14px;
-    }
-
-}
 /* Iconos de la pagina contactanos */
 .phoneicon{
-  color:#48dd99;
+  color:var(--beige-arena);
   font-size: 20px;
 }
 .msjicon{
-  color:#48dd99;
+  color:var(--beige-arena);
   font-size: 20px;
 }
 .nameicon{
-  color:#48dd99;
+  color:var(--beige-arena);
   font-size: 20px;
 }
 .emailicon{
-  color:#48dd99;
+  color:var(--beige-arena);
   font-size: 20px;
 }
 /* fin de los iconos de contactanos */
@@ -438,6 +426,51 @@ ul li.nav-item a{
 		background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
 		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
 	}
+
+  @media (max-width: 768px) {
+    .navbar {
+      border-bottom-left-radius: 4vw;
+      border-bottom-right-radius: 4vw;
+    }
+    .navbar-brand{
+      display: none;
+    }
+    .header-contact.header-contact2{
+    font-size: 48px;
+    letter-spacing: 10px;
+    }
+    .header-contact.header-contact4{
+    font-size: 20px;
+    }
+    .form-label{
+      font-size: 15px;
+      margin-top:10px;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      border-bottom-left-radius: 6vw;
+      border-bottom-right-radius: 6vw;
+      }
+    .header-contact.header-contact2{
+      font-size: 40px;
+      letter-spacing: 8px;
+      }
+      .header-contact.header-contact4{
+      font-size: 14px;
+      }
+  
+  }
+
+/* editorProductos.html INICIO */
+
+.custom-dropdown {
+  width: 50%; 
+  min-width: 250px;
+  max-width: 600px;
+}
 
 /*Fin Redes sociales*/
 /*Footer*/
