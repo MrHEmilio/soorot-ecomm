@@ -1,25 +1,27 @@
+// FALTA DOCUMENTAR DE FORMA MAS PRECISA QUE HACE ESTE CÓDIGO DE ABAJO Y CATEGORIZARLO CON "... INICIO"
 document.addEventListener("DOMContentLoaded", () => {
     // Selecciona todos los botones con la clase "learn-more"
     const learnMoreButtons = document.querySelectorAll(".learn-more");
   
     // Obtiene el elemento del modal y sus elementos internos
     const modal = document.getElementById("modal"); // Modal principal
+    console.log("Modal element:", modal); 
     const modalImage = modal.querySelector(".modal-image"); // Imagen dentro del modal
     const modalTitle = modal.querySelector(".modal-title"); // Título dentro del modal
     const modalDescription = modal.querySelector(".modal-description"); // Descripción dentro del modal
     const closeModalButton = modal.querySelector(".close"); // Botón para cerrar el modal
     const prevButton = modal.querySelector(".prev"); // Botón para ir a la imagen anterior
     const nextButton = modal.querySelector(".next"); // Botón para ir a la imagen siguiente
-  
+
     let currentIndex = 0; // Índice de la tarjeta actualmente seleccionada
-  
+
     // Obtener los datos de todas las tarjetas a partir de los botones "Learn More"
     const cardsData = Array.from(learnMoreButtons).map(button => ({
         image: button.getAttribute("data-image"), // Imagen asociada a la tarjeta
         title: button.getAttribute("data-title"), // Título de la tarjeta
         description: button.getAttribute("data-description"), // Descripción de la tarjeta
     }));
-  
+
     // Función para actualizar el contenido del modal
     const updateModalContent = (index) => {
         const { image, title, description } = cardsData[index]; // Obtiene los datos de la tarjeta correspondiente
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalTitle.textContent = title; // Actualiza el título del modal
         modalDescription.textContent = description; // Actualiza la descripción del modal
     };
-  
+
     // Función para abrir el modal
     const openModal = (index) => {
         currentIndex = index; // Establece el índice actual
@@ -72,4 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (event.key === "Escape") closeModal(); // Escape para cerrar el modal
         }
     });
-  });
+  }); //DOMContentLoaded EventListener
+
+// FALTA DOCUMENTAR DE FORMA MAS PRECISA QUE HACE ESTE CÓDIGO DE ARRIBA Y CERRARLO CON "... FINAL"
