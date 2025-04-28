@@ -49,11 +49,11 @@ export function insertarfooter() {
         <div class="footer-column">
           <h3>Soorot</h3>
           <ul>
-            <li><a href="#">Cerca</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contactanos</a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#">Historia</a></li>
+            <li><a href="./acercade.html" target="_blank">Acerca de nosotros</a></li>
+            <li><a href="./productos.html" target="_blank">Productos</a></li>
+            <li><a href="./contactanos.html" target="_blank">Contáctanos</a></li>
+            <!--<li><a href="#"></a></li> --> 
+            <!--<li><a href="#">Historia</a></li> -->
           </ul>
         </div>
         <div class="footer-column">
@@ -71,11 +71,11 @@ export function insertarfooter() {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Soorot. All rights reserved.</p>
+        <p>© 2025 Soorot. Todos los derechos reservados.</p>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookies Settings</a></li>
+          <li><a href="#">Aviso de privacidad</a></li>
+          <li><a href="#">Terminos y condiciones</a></li>
+          <li><a href="#">Condiciones de uso</a></li>
         </ul>
         <div class="social-media">
           <a href="http://www.github.com/"
@@ -87,7 +87,7 @@ export function insertarfooter() {
           <a href="http://www.facebook.com/"
             target="_blank"
             class="icon-facebook2"></a>
-          <a href="./contactanos.html" target="_blank" class="icon-bubble"></a>
+          <!--<a href="./contactanos.html" target="_blank" class="icon-bubble"></a> -->
         </div>
       </div>
     `;
