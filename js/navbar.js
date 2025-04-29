@@ -49,11 +49,11 @@ export function insertarfooter() {
         <div class="footer-column">
           <h3>Soorot</h3>
           <ul>
-            <li><a href="./acercade.html" target="_blank">Acerca de nosotros</a></li>
-            <li><a href="./productos.html" target="_blank">Productos</a></li>
-            <li><a href="./contactanos.html" target="_blank">Contáctanos</a></li>
-            <!--<li><a href="#"></a></li> --> 
-            <!--<li><a href="#">Historia</a></li> -->
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./acercade.html">Acerca de nosotros</a></li>
+            <li><a href="./productos.html">Productos</a></li>
+            <li><a href="./contactanos.html">Contáctanos</a></li>
+            <li><a href="./ingresa.html">Ingresa</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -74,8 +74,7 @@ export function insertarfooter() {
         <p>© 2025 Soorot. Todos los derechos reservados.</p>
         <ul>
           <li><a href="#">Aviso de privacidad</a></li>
-          <li><a href="#">Terminos y condiciones</a></li>
-          <li><a href="#">Condiciones de uso</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
         </ul>
         <div class="social-media">
           <a href="http://www.github.com/"
