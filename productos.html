@@ -1,72 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inventario Visual - Soorot</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Estilos personalizados -->
-  <style>
-    body {
-      background-color: #1e2a23;
-      font-family: 'Lato', sans-serif;
-    }
-
-    .sidebar {
-      background-color: #cde9d3;
-      border-radius: 15px;
-      padding: 10px;
-    }
-
-    .sidebar button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    background-color: #cde9d3;
-    border: none;
-    color: #000;
-    font-weight: bold;
-    text-align: left;
-    padding: 10px;
-    border-radius: 10px;
-    }
-
-    .sidebar .active {
-    background-color: #88a595;
-    }
-
-    .product-card {
-    background-color: #d7f3e0;
-    border-radius: 20px;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 20px;
-    }
-
-    .product-img {
-    width: 100%;
-    height: 180px;
-    background-color: #ccc;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    }
-
-    .product-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    }
-
-    .product-price {
-    font-weight: bold;
-    margin-top: 10px;
-    }
-</style>
-=======
 <!DOCTYPE html> <!-- Define que este es un documento HTML5 -->
 <html lang="es"> <!-- Establece el idioma principal como Español -->
 
@@ -199,115 +130,10 @@
     }
   </style>
   <!-- ==================== FIN DEL CSS ==================== -->
->>>>>>> EES
 </head>
 
 <body>
 
-<<<<<<< HEAD
-<!-- Contenedor principal -->
-<div class="container-fluid mt-4">
-    <div class="row">
-
-    <!-- Columna izquierda: Menú de categorías -->
-    <div class="col-md-2">
-        <div class="sidebar">
-        <!-- Cada botón activa una categoría diferente -->
-        <button class="category-btn active" onclick="filtrarCategoria('Cañonismo', this)">Cañonismo</button>
-        <button class="category-btn" onclick="filtrarCategoria('Escalada', this)">Escalada</button>
-        <button class="category-btn" onclick="filtrarCategoria('Alpinismo', this)">Alpinismo</button>
-        <button class="category-btn" onclick="filtrarCategoria('Exploración', this)">Exploración</button>
-        <button class="category-btn" onclick="filtrarCategoria('Campismo', this)">Campismo</button>
-        </div>
-    </div>
-
-    <!-- Columna derecha: Tarjetas de productos -->
-    <div class="col-md-10">
-        <div class="row" id="contenedorProductos">
-
-        <!-- Producto 1 -->
-        <div class="col-md-4 product-card-container" data-categoria="Cañonismo">
-            <div class="product-card">
-            <div class="product-img"></div>
-            <div class="product-title">Descensores</div>
-            <p>Dispositivo usado para controlar el descenso por cuerda.</p>
-            <div class="product-price">$ 1.099,00</div>
-            </div>
-        </div>
-
-        <!-- Producto 2 -->
-        <div class="col-md-4 product-card-container" data-categoria="Cañonismo">
-            <div class="product-card">
-            <div class="product-img"></div>
-            <div class="product-title">Ascensores</div>
-            <p>Ideal para subir por cuerda en cañonismo o espeleología.</p>
-            <div class="product-price">$ 1.099,00</div>
-            </div>
-        </div>
-
-        <!-- Producto 3 -->
-        <div class="col-md-4 product-card-container" data-categoria="Escalada">
-            <div class="product-card">
-            <div class="product-img"></div>
-            <div class="product-title">Arsenal especial</div>
-            <p>Arnés reforzado para escalada y seguridad en altura.</p>
-            <div class="product-price">$ 1.099,00</div>
-            </div>
-        </div>
-
-        <!-- Producto 4 -->
-        <div class="col-md-4 product-card-container" data-categoria="Exploración">
-            <div class="product-card">
-            <div class="product-img"></div>
-            <div class="product-title">Cuerdas Estáticas</div>
-            <p>Alta resistencia y mínimo estiramiento. Perfectas para anclajes.</p>
-            <div class="product-price">$ 1.099,00</div>
-            </div>
-        </div>
-
-        <!-- Producto 5 -->
-        <div class="col-md-4 product-card-container" data-categoria="Campismo">
-            <div class="product-card">
-            <div class="product-img"></div>
-            <div class="product-title">Mochilas</div>
-            <p>Mochila ergonómica para senderismo o acampadas largas.</p>
-            <div class="product-price">$ 1.099,00</div>
-            </div>
-        </div>
-
-        </div>
-    </div>
-
-    </div>
-</div>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Script para filtrar por categoría -->
-<script>
-    function filtrarCategoria(categoriaSeleccionada, boton) {
-      // Elimina clase 'active' de todos los botones
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    boton.classList.add('active');
-
-      // Muestra solo las tarjetas que coinciden con la categoría seleccionada
-    document.querySelectorAll('.product-card-container').forEach(card => {
-        const categoria = card.getAttribute('data-categoria');
-        if (categoria === categoriaSeleccionada) {
-        card.style.display = 'block';
-        } else {
-        card.style.display = 'none';
-        }
-    });
-    }
-
-    // Ejecutar filtro por defecto (Cañonismo)
-    window.onload = function () {
-    filtrarCategoria('Cañonismo', document.querySelector('.category-btn.active'));
-    };
-</script>
-=======
   <!-- ==================== INICIO DEL HTML ==================== -->
 
   <!-- Barra lateral con categorías -->
@@ -429,7 +255,6 @@
     }
   </script>
   <!-- ==================== FIN DEL JAVASCRIPT ==================== -->
->>>>>>> EES
 
 </body>
 </html>
