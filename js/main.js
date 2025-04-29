@@ -77,3 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }); //DOMContentLoaded EventListener
 
 // FALTA DOCUMENTAR DE FORMA MAS PRECISA QUE HACE ESTE CÓDIGO DE ARRIBA Y CERRARLO CON "... FINAL"
+
+// ... INICIO INTERACTIVIDAD IMÁGENES DE TARJETAS DE "ACERCA DE NOSOTROS"
+const imageThumbnails = document.querySelectorAll(".clickable-img"); // Selecciona imágenes que pueden abrir el modal
+
+imageThumbnails.forEach(img => {
+    const index = parseInt(img.getAttribute("data-index")); // Obtiene el índice desde el atributo
+    img.style.cursor = "pointer"; // Cambia cursor para indicar que es clickeable
+    img.addEventListener("click", () => openModal(index)); // Al hacer clic, abre el modal con ese índice
+});
+// ... FIN INTERACTIVIDAD IMÁGENES DE TARJETAS DE "ACERCA DE NOSOTROS"

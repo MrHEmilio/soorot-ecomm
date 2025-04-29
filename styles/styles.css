@@ -460,3 +460,40 @@ ul li.nav-item a{
       }
   
   }
+
+  /* ... INICIO: Estilo visual mejorado para la cruz y flechas del modal */
+.modal-content .close,
+.modal-content .prev,
+.modal-content .next {
+  border-radius: 50%;
+  background-color: var(--verde-medio); /* Color de fondo */
+  color: var(--verde-blanco);
+  font-size: 1.2rem;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content .close:hover,
+.modal-content .prev:hover,
+.modal-content .next:hover {
+  background-color: var(--verde-oscuro); /* Al pasar el mouse */
+  transform: scale(1.1);
+}
+/* ... FIN: Estilo visual mejorado */
+
+/* ... INICIO: Estilo visual para imágenes clickeables en 'Acerca de nosotros' */
+.clickable-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickable-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* ... FIN: Estilo visual para imágenes clickeables */
