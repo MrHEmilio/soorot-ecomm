@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productos</title>
 
-  <!-- Fuentes y Bootstrap -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/productos.css" />
-</head>
+  <!-- Fuentes e íconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="styles/productos.css">
+</head>
 <body>
   <div class="layout-wrapper">
+    <!-- Barra lateral con filtros -->
     <aside class="sidebar">
       <button class="menu-item active" data-categoria="general">General</button>
       <button class="menu-item" data-categoria="escalada">Escalada</button>
@@ -24,20 +26,21 @@
       <button class="menu-item" data-categoria="campismo">Campismo</button>
     </aside>
 
+    <!-- Contenido principal -->
     <main class="main-content">
-      <div class="container">
+      <div class="container my-4">
         <h1 class="titulos mb-4">Lista de Productos</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4" id="list-items">
-          <!-- Tarjetas cargadas con JS -->
+        <div id="list-items" class="row row-cols-1 row-cols-md-3 g-4 product-grid">
+          <!-- Aquí se renderizan las tarjetas dinámicamente -->
         </div>
       </div>
     </main>
   </div>
 
-  <!-- Modal opcional -->
+  <!-- Modal de detalles del producto -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <img id="modal-img" src="" alt="Imagen del producto" />
+      <img id="modal-img" src="" alt="Imagen del producto">
       <h2 id="modal-title">Título del Producto</h2>
       <p id="modal-desc">Descripción del producto.</p>
       <button class="close-btn" id="cerrar-modal">Cerrar</button>
@@ -45,7 +48,9 @@
   </div>
 
   <!-- Scripts Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+  <!-- Script de productos -->
   <script src="js/Productos.js"></script>
 </body>
 </html>
