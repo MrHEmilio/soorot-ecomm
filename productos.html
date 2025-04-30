@@ -1,0 +1,260 @@
+<!DOCTYPE html> <!-- Define que este es un documento HTML5 -->
+<html lang="es"> <!-- Establece el idioma principal como Español -->
+
+<head>
+  <meta charset="UTF-8" /> <!-- Establece la codificación de caracteres como UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Hace que el sitio sea responsive -->
+  <title>Inventario de Equipos</title> <!-- Título que aparecerá en la pestaña del navegador -->
+
+  <!-- ==================== INICIO DEL CSS ==================== -->
+  <style>
+    body { /* Estilos generales del cuerpo de la página */
+      margin: 0; /* Elimina los márgenes predeterminados */
+      font-family: 'Segoe UI', sans-serif; /* Establece la fuente de texto */
+      background-color: #1f2b23; /* Color de fondo oscuro */
+      display: flex; /* Usa Flexbox para dividir sidebar y contenido */
+      color: #000; /* Texto en color negro */
+    }
+
+    .sidebar { /* Estilos de la barra lateral */
+      display: flex; /* Usa flex para acomodar elementos */
+      flex-direction: column; /* Ordena verticalmente los botones */
+      padding: 1rem; /* Espaciado interno */
+      background-color: #1f2b23; /* Color de fondo igual al body */
+    }
+
+    .menu-item { /* Botones del sidebar */
+      background-color: #c7e8d2; /* Color verde claro */
+      color: #1f2b23; /* Texto oscuro */
+      border: none; /* Sin borde */
+      padding: 1rem; /* Relleno interno */
+      margin: 0.3rem 0; /* Margen superior e inferior */
+      font-size: 1rem; /* Tamaño de texto normal */
+      border-radius: 1rem; /* Bordes redondeados */
+      cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+      text-align: left; /* Alinea el texto a la izquierda */
+      transition: background 0.3s; /* Suaviza el cambio de color */
+    }
+
+    .menu-item.active { /* Estilos cuando un botón está activo */
+      background-color: #6e8e7d; /* Color más oscuro */
+      color: white; /* Texto blanco */
+    }
+
+    .product-grid { /* Contenedor de las tarjetas de productos */
+      display: grid; /* Usa grid layout */
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas adaptativas */
+      gap: 1.5rem; /* Espacio entre tarjetas */
+      padding: 2rem; /* Espaciado interno */
+      flex-grow: 1; /* Que el grid llene todo el espacio disponible */
+    }
+
+    .product-card { /* Estilo de cada tarjeta de producto */
+      background-color: #d9f3e2; /* Fondo claro */
+      border-radius: 1rem; /* Bordes redondeados */
+      padding: 1rem; /* Relleno interno */
+      text-align: center; /* Centra el contenido */
+      cursor: pointer; /* Cursor de mano */
+      transition: transform 0.2s; /* Suaviza efecto hover */
+    }
+
+    .product-card:hover { /* Cuando pasas el mouse sobre una tarjeta */
+      transform: scale(1.03); /* Aumenta ligeramente el tamaño */
+    }
+
+    .product-card img { /* Imagen dentro de la tarjeta */
+      max-width: 100%; /* No excede el ancho */
+      height: 160px; /* Altura fija */
+      object-fit: contain; /* Escala la imagen sin deformarla */
+      border-radius: 0.5rem; /* Bordes de imagen redondeados */
+    }
+
+    .product-card h3 { /* Título del producto */
+      margin: 0.5rem 0 0.2rem; /* Margen superior e inferior */
+    }
+
+    .product-card p { /* Descripción del producto */
+      font-size: 0.9rem; /* Tamaño de texto más pequeño */
+      margin-bottom: 0.5rem; /* Espacio debajo */
+    }
+
+    .product-card span { /* Precio del producto */
+      font-weight: bold; /* Texto en negritas */
+    }
+
+    .modal { /* Estilos del modal (ventana emergente) */
+      display: none; /* Inicialmente oculto */
+      position: fixed; /* Se fija en pantalla */
+      z-index: 1000; /* Sobre todos los elementos */
+      left: 0; top: 0; /* Posición en la esquina superior izquierda */
+      width: 100%; height: 100%; /* Ocupa toda la pantalla */
+      background-color: rgba(0,0,0,0.6); /* Fondo negro transparente */
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      animation: fadeIn 0.5s ease; /* Animación de aparición */
+    }
+
+    .modal-content { /* Caja interna del modal */
+      background-color: white; /* Fondo blanco */
+      padding: 2rem; /* Relleno interno */
+      border-radius: 1rem; /* Bordes redondeados */
+      text-align: center; /* Centrar contenido */
+      max-width: 400px; /* Ancho máximo */
+      width: 90%; /* Ancho adaptativo */
+      position: relative; /* Para posicionar el botón cerrar */
+    }
+
+    .modal-content img { /* Imagen dentro del modal */
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .close-btn { /* Botón de cerrar modal */
+      background-color: #6e8e7d;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Animación para el modal */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+  <!-- ==================== FIN DEL CSS ==================== -->
+</head>
+
+<body>
+
+  <!-- ==================== INICIO DEL HTML ==================== -->
+
+  <!-- Barra lateral con categorías -->
+  <aside class="sidebar">
+    <button class="menu-item active" onclick="filtrarProductos('general', this)">General</button>
+    <button class="menu-item" onclick="filtrarProductos('escalada', this)">Escalada</button>
+    <button class="menu-item" onclick="filtrarProductos('cañonismo', this)">Cañonismo</button>
+    <button class="menu-item" onclick="filtrarProductos('alpinismo', this)">Alpinismo</button>
+    <button class="menu-item" onclick="filtrarProductos('exploracion', this)">Exploración</button>
+    <button class="menu-item" onclick="filtrarProductos('campismo', this)">Campismo</button>
+  </aside>
+
+  <!-- Grid de productos -->
+  <main class="product-grid">
+    <!-- Producto 1 -->
+    <div class="product-card cañonismo" onclick="mostrarInfo('Descensores')">
+      <img src="https://m.media-amazon.com/images/I/61+NKVrcJHL._AC_SL1500_.jpg" alt="Descensores" />
+      <h3>Descensores</h3>
+      <p>Equipo esencial para descensos técnicos.</p>
+      <span>$1,099.00</span>
+    </div>
+
+    <!-- Producto 2 -->
+    <div class="product-card cañonismo" onclick="mostrarInfo('Ascensores')">
+      <img src="https://m.media-amazon.com/images/I/61lVy-BVuDL._AC_SL1500_.jpg" alt="Ascensores" />
+      <h3>Ascensores</h3>
+      <p>Sube en cuerdas de forma segura.</p>
+      <span>$1,099.00</span>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="product-card cañonismo" onclick="mostrarInfo('Arsenal especial')">
+      <img src="https://m.media-amazon.com/images/I/61I7E7GQ0IL._AC_SL1500_.jpg" alt="Arsenal Especial" />
+      <h3>Arsenal Especial</h3>
+      <p>Kit de herramientas para cañonismo extremo.</p>
+      <span>$1,099.00</span>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="product-card escalada" onclick="mostrarInfo('Cuerdas Estáticas')">
+      <img src="https://m.media-amazon.com/images/I/81LJ-vkeqIL._AC_SL1500_.jpg" alt="Cuerdas Estáticas" />
+      <h3>Cuerdas Estáticas</h3>
+      <p>Cuerdas resistentes para escalada técnica.</p>
+      <span>$1,099.00</span>
+    </div>
+
+    <!-- Producto 5 -->
+    <div class="product-card campismo" onclick="mostrarInfo('Mochilas')">
+      <img src="https://m.media-amazon.com/images/I/71SydQAiWwL._AC_SL1500_.jpg" alt="Mochilas" />
+      <h3>Mochilas</h3>
+      <p>Diseñadas para aventuras extremas.</p>
+      <span>$1,099.00</span>
+    </div>
+  </main>
+
+  <!-- Modal de producto -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <img id="modal-img" src="" alt="Imagen del producto" />
+      <h2 id="modal-title">Título del Producto</h2>
+      <p id="modal-desc">Descripción del producto.</p>
+      <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- ==================== INICIO DEL JAVASCRIPT ==================== -->
+  <script>
+    // Base de datos de productos
+    const productos = {
+      "Descensores": {
+        img: "https://m.media-amazon.com/images/I/61+NKVrcJHL._AC_SL1500_.jpg",
+        desc: "Equipo esencial para descensos técnicos."
+      },
+      "Ascensores": {
+        img: "https://m.media-amazon.com/images/I/61lVy-BVuDL._AC_SL1500_.jpg",
+        desc: "Sube en cuerdas de forma segura."
+      },
+      "Arsenal especial": {
+        img: "https://m.media-amazon.com/images/I/61I7E7GQ0IL._AC_SL1500_.jpg",
+        desc: "Kit completo para aventuras de cañonismo."
+      },
+      "Cuerdas Estáticas": {
+        img: "https://m.media-amazon.com/images/I/81LJ-vkeqIL._AC_SL1500_.jpg",
+        desc: "Cuerdas resistentes para escalada técnica."
+      },
+      "Mochilas": {
+        img: "https://m.media-amazon.com/images/I/71SydQAiWwL._AC_SL1500_.jpg",
+        desc: "Perfectas para llevar todo en la montaña."
+      }
+    };
+
+    // Función para mostrar el modal
+    function mostrarInfo(nombre) {
+      document.getElementById('modal-title').innerText = nombre;
+      document.getElementById('modal-img').src = productos[nombre].img;
+      document.getElementById('modal-desc').innerText = productos[nombre].desc;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    // Función para cerrar el modal
+    function cerrarModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Función para filtrar productos por categoría
+    function filtrarProductos(categoria, botonSeleccionado) {
+      const todas = document.querySelectorAll(".product-card");
+      todas.forEach(card => {
+        if (categoria === "general") {
+          card.style.display = "block";
+        } else {
+          card.style.display = card.classList.contains(categoria) ? "block" : "none";
+        }
+      });
+
+      const botones = document.querySelectorAll(".menu-item");
+      botones.forEach(b => b.classList.remove("active"));
+      botonSeleccionado.classList.add("active");
+    }
+  </script>
+  <!-- ==================== FIN DEL JAVASCRIPT ==================== -->
+
+</body>
+</html>
