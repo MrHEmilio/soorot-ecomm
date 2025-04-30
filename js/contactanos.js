@@ -1,6 +1,6 @@
 /**
  *  ========== Validación de Datos con Botón "Enviar" ==========
- */
+ */ // FALTA NOMBRAR LOS PROBLEMAS DE CADA VALIDACIÓN DE CAMPOS
 
 document.addEventListener("DOMContentLoaded", function () {  
     // Obtiene los elementos del formulario
@@ -62,30 +62,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Validar nombre (mínimo 3 caracteres)
     if (name.length < 3) {
-        Swal.fire("Nombre inválido", "Inserta tu nombre completo.");
+        Swal.fire("Nombre inválido", "Introduce mínimo 3 caracteres.");
         return;
     }
 
     // Validar correo electrónico
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
-        Swal.fire("Correo inválido", "Ingresa un correo electrónico válido.");
+        Swal.fire("Correo inválido", "Ingresa un correo electrónico válido: ejemplo@dominio.com ");
         return;
     }
 
     // Limpiar número telefónico de espacios, guiones y paréntesis
     const cleanPhone = phone.replace(/[\s-()]/g, "");
-        
-    // Validar teléfono: 10 dígitos y no comenzar con 0
-    if (!/^[1-9]\d{9}$/.test(cleanPhone)) {
-        Swal.fire("Teléfono inválido", "Debe tener exactamente 10 dígitos.");
-        return;
+
+    // Validación compuesta, mas de 10 digitos, no empieza con 0, sin números iguales, sin secuencias 
+    if (
+    !/^[1-9]\d{9}$/.test(cleanPhone) || // No tiene 10 dígitos o empieza con 0
+    /^(\d)\1{9}$/.test(cleanPhone) ||   // Todos los dígitos son iguales
+    /0123456789|1234567890|9876543210|0987654321/.test(cleanPhone) // Secuencias conocidas
+    ) {
+    Swal.fire(
+        "Teléfono inválido",
+        "Debe tener 10 dígitos, no comenzar con 0, y no ser repetitivo o secuencial."
+    );
+    return;
     }
-    // Validar teléfono: no permitir repeticiones o secuencias comunes
-    if (/^(\d)\1{9}$|0123456789|1234567890|9876543210|0987654321/.test(cleanPhone)) {
-        Swal.fire("Teléfono inválido", "Vuelve a intentarlo con un número diferente.");
-        return;
-    }
+
+
     // Validar mensaje mínimo 15 caracteres
     if (message.length < 15) {
         Swal.fire("Mensaje muy corto", "El mensaje debe tener al menos 15 caracteres.");
