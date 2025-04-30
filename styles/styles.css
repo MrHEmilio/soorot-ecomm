@@ -577,3 +577,8 @@ button:hover {
   width: 24px;
   margin: 0 10px;
 }
+
+/* Color del texto en terminos y condiciones */
+.texto-claro-tyc {
+  color: #48dc98;
+}
