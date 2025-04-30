@@ -1,170 +1,171 @@
-/* Fuente principal, fondo dinámico y animación */
+/* ===== Fuente principal, fondo dinámico y animación ===== */
 body {
-    font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(to bottom, #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
-    background-size: 100% 300%;
-    animation: scrollColor 30s linear infinite;
-    color: #ffffff;
-    margin: 0;
+    font-family: 'Quicksand', sans-serif;                /* Fuente principal de todo el sitio */
+    background: linear-gradient(                         /* Degradado vertical verde-oscuro */
+                to bottom,
+                #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
+    background-size: 100% 300%;                         /* Altura triple para animar el scroll */
+    animation: scrollColor 30s linear infinite;         /* Ciclo suave de colores cada 30 s */
+    color: #ffffff;                                     /* Texto blanco global */
+    margin: 0;                                          /* Elimina márgenes por defecto */
   }
   
-  /* Estructura general */
+  /* ===== Estructura general ===== */
   .layout-wrapper {
-    display: flex;
+    display: flex;                                      /* Sidebar a la izquierda + contenido */
   }
   
   .main-content {
-    flex-grow: 1;
-    padding: 1rem;
-    min-height: 100vh;
-    background-color: transparent;
+    flex-grow: 1;                                       /* Rellena ancho sobrante */
+    padding: 1rem;                                      /* Espaciado interior */
+    min-height: 100vh;                                  /* Al menos toda la altura de la pantalla */
+    background-color: transparent;                      /* Mantiene el degradado del <body> */
   }
   
   .titulos {
-    font-weight: 600;
-    color: #dcd7ba;
+    font-weight: 600;                                   /* Negrita */
+    color: #dcd7ba;                                     /* Beige arena */
   }
   
-  /* Estilo de la barra lateral */
+  /* ===== Barra lateral (filtros) ===== */
   .sidebar {
-    background-color: #1f2b23;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    background-color: #1f2b23;                          /* Verde oscuro igual al fondo */
+    display: flex;                                      /* Coloca botones en columna */
+    flex-direction: column;                             /* Alineación vertical */
+    padding: 1rem;                                      /* Relleno interno */
   }
   
   .menu-item {
-    background-color: #cde0c2;
-    color: #1f2b23;
-    border: none;
-    border-radius: 12px;
-    padding: 1rem;
-    margin: 0.3rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    background-color: #cde0c2;                          /* Verde pastel de botón */
+    color: #1f2b23;                                     /* Texto oscuro */
+    border: none;                                       /* Sin bordes estándar */
+    border-radius: 12px;                                /* Bordes redondeados */
+    padding: 1rem;                                      /* Área clickeable cómoda */
+    margin: 0.3rem 0;                                   /* Separación entre botones */
+    font-size: 1rem;                                    /* Tamaño de texto */
+    font-weight: 600;                                   /* Seminegrita */
+    cursor: pointer;                                    /* Icono de mano al pasar */
+    transition: background-color 0.3s ease;             /* Suaviza cambio de color */
   }
   
-  .menu-item:hover {
-    background-color: #b3d3a3;
-  }
+  .menu-item:hover  { background-color: #b3d3a3; }      /* Color al pasar el ratón */
+  .menu-item.active { background-color: #6b8e6d; color:#fff; } /* Botón seleccionado */
   
-  .menu-item.active {
-    background-color: #6b8e6d;
-    color: white;
-  }
-  
-  /* Grid adaptable para productos */
+  /* ===== Contenedor grid de tarjetas ===== */
   #list-items {
-    display: grid;
-    gap: 2rem;
-    padding: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    justify-items: center;
+    display: grid;                                      /* Sección en grid responsivo */
+    gap: 2rem;                                          /* Espacio entre tarjetas */
+    padding: 2rem;                                      /* Margen interno */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Col auto */
+    justify-items: center;                              /* Centra cada tarjeta en su celda */
   }
   
-  /* Tarjetas de productos */
+  /* ===== Tarjeta de producto ===== */
   .product-card {
-    background-color: rgba(205, 224, 194, 0.15);
-    border: 1px solid #a6b89a;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    width: 100%;
-    max-width: 330px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease;
+    background-color: rgba(205, 224, 194, 0.15);        /* Fondo translúcido */
+    border: 1px solid #a6b89a;                          /* Borde verde claro */
+    border-radius: 20px;                                /* Esquinas redondeadas */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);             /* Sombra ligera */
+    padding: 1rem;                                      /* Espaciado interno */
+    width: 100%;                                        /* Ocupa la columna completa */
+    max-width: 330px;                                   /* Límite máximo de ancho */
+    text-align: center;                                 /* Centra texto e imagen */
+    display: flex;                                      /* Layout vertical interno */
+    flex-direction: column;                             /* Coloca elementos en columna */
+    transition: transform 0.2s ease;                    /* Animación al hacer hover */
   }
   
   .product-card:hover {
-    transform: scale(1.02);
-    background-color: rgba(205, 224, 194, 0.25);
-    border-color: #b5d1ad;
+    transform: scale(1.02);                             /* Efecto zoom sutil */
+    background-color: rgba(205,224,194,0.25);           /* Fondo un poco más claro */
+    border-color: #b5d1ad;                              /* Borde más vivo */
   }
   
+  /* Imagen del producto */
   .product-card img {
-    max-width: 100%;
-    height: 160px;
-    object-fit: contain;
-    border-radius: 16px;
-    margin-bottom: 0.7rem;
+    max-width: 100%;                                    /* No sobresale del contenedor */
+    height: 160px;                                      /* Altura fija */
+    object-fit: contain;                                /* Ajusta sin deformar */
+    border-radius: 16px;                                /* Bordes suavizados */
+    margin-bottom: 0.7rem;                              /* Separación del texto */
   }
   
+  /* Nombre del producto */
   .product-card h3 {
-    font-size: 1.3rem;
-    color: #dcd7ba;
-    white-space: normal;
-    word-wrap: break-word;
+    font-size: 1.3rem;                                  /* Tamaño de título */
+    color: #dcd7ba;                                     /* Beige arena */
+    white-space: normal;                                /* Permite saltos de línea */
+    word-wrap: break-word;                              /* Rompe palabras largas */
   }
   
+  /* Descripción */
   .product-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    white-space: normal;
-    word-wrap: break-word;
+    font-size: 0.9rem;                                  /* Texto descriptivo pequeño */
+    margin-bottom: 0.5rem;                              /* Separación inferior */
+    word-wrap: break-word;                              /* Evita desbordes */
   }
   
+  /* Precio */
   .product-card span {
-    font-weight: bold;
-    color: #a9db9c;
-    font-size: 1.1rem;
+    font-weight: bold;                                  /* Negrita para destacar precio */
+    color: #a9db9c;                                     /* Verde más vivo */
+    font-size: 1.1rem;                                  /* Tamaño ligeramente mayor */
+  }
+  
+  /* Cabecera con botón Edit y precio */
+  .card-header {
+    display: flex;                                      /* Fila *Edit | $* */
+    justify-content: space-between;                     /* Separa extremos */
+    align-items: center;                                /* Centra verticalmente */
+    margin-bottom: 0.5rem;                              /* Espacio tras cabecera */
   }
   
   /* Botón Edit */
   .btn-edit {
-    background-color: #6b8e6d;
-    color: white;
-    padding: 0.3rem 0.7rem;
-    border-radius: 10px;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #6b8e6d;                          /* Verde oliva */
+    color: #fff;                                        /* Texto blanco */
+    padding: 0.3rem 0.7rem;                             /* Tamaño compacto */
+    border-radius: 10px;                                /* Bordes redondeados */
+    font-weight: bold;                                  /* Destaca texto */
+    border: none;                                       /* Sin borde adicional */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);             /* Sombra leve */
   }
   
-  /* Cabecera de la tarjeta con botón y precio */
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Modal */
+  /* ===== Modal detalle de producto ===== */
   .modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
+    display: none;                                      /* Se muestra por JS */
+    position: fixed;                                    /* Overlay fullscreen */
+    z-index: 999;                                       /* Encima de todo */
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0,0,0,0.6);                  /* Fondo semitransparente */
+    justify-content: center;                            /* Centra modal */
+    align-items: center;                                /* Centra vertical */
   }
   
   .modal-content {
-    background-color: #ede8d1;
-    color: #1f2b23;
-    padding: 2rem;
-    border-radius: 1rem;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
+    background-color: #ede8d1;                          /* Fondo crema */
+    color: #1f2b23;                                     /* Texto oscuro */
+    padding: 2rem;                                      /* Espacio interno */
+    border-radius: 1rem;                                /* Bordes redondeados */
+    max-width: 400px;                                   /* Ancho máximo */
+    width: 90%;                                         /* Adaptable */
+    text-align: center;                                 /* Centra el contenido */
   }
   
+  /* Imagen del modal */
   .modal-content img {
     width: 100%;
     height: 200px;
-    object-fit: contain;
+    object-fit: contain;                                /* Encaja sin recortar */
     border-radius: 1rem;
     margin-bottom: 1rem;
   }
   
+  /* Botón cerrar modal */
   .close-btn {
-    background-color: #6b8e6d;
-    color: white;
+    background-color: #6b8e6d;                          /* Verde oliva */
+    color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 12px;
@@ -173,9 +174,10 @@ body {
     font-size: 0.9rem;
   }
   
-  /* Animación de fondo */
+  /* ===== Animación del degradado de fondo ===== */
   @keyframes scrollColor {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 0% 100%; }
-    100% { background-position: 0% 0%; }
-  }  
+    0%   { background-position: 0% 0%; }                /* Inicio del degradado */
+    50%  { background-position: 0% 100%; }              /* Desplaza hacia abajo */
+    100% { background-position: 0% 0%; }                /* Regresa al inicio */
+  }
+  
