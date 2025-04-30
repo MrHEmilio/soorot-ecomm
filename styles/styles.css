@@ -672,3 +672,7 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 /* ... FIN: Estilo visual para imágenes clickeables */
+/* Color del texto en términos y condiciones y aviso de privacidad */
+.texto-claro-tyc {
+  color: #48dc98;
+}
