@@ -6,41 +6,108 @@ body {
     animation: scrollColor 30s linear infinite; /* Animación de scroll */
     color: #ffffff;
     margin: 0;
-  }
-  
-  /* Contenedor principal */
-  .main-content {
+}
+
+/* Contenedor principal */
+.main-content {
     flex-grow: 1;
     padding: 1rem;
     background-color: transparent;
     min-height: 100vh;
-  }
-  
-  /* Título principal */
-  .titulos {
+}
+
+/* Título principal */
+.titulos {
     font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     color: #dcd7ba;
-  }
-  
-  /* Grid de productos */
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
+}
+
+/* Grid de productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-  }
-  
-  /* Barra lateral */
-  .sidebar {
+}
+
+.row.row-cols-md-3 > .col {
+    display: flex;
+}
+
+/* Tarjeta individual */
+.product-card {
+    background-color: rgba(205, 224, 194, 0.15); /* Fondo verde claro con opacidad */
+    border: 1px solid #a6b89a; /* Borde suave */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: scale(1.02);
+    border-color: #b5d1ad;
+    background-color: rgba(205, 224, 194, 0.25);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 0.7rem;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0 0.2rem;
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: 1.3rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #dcd7ba;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.product-card span {
+    font-weight: bold;
+    color: #a9db9c;
+    font-size: 1.1rem;
+}
+
+/* Estilo del botón Edit */
+.btn-edit {
+    background-color: #6b8e6d;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Barra lateral */
+.sidebar {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     background-color: #1f2b23;
-  }
-  
-  /* Botones del menú lateral */
-  .menu-item {
+}
+
+/* Botones del menú lateral */
+.menu-item {
     background-color: #cde0c2;
     color: #1f2b23;
     border: none;
@@ -52,64 +119,19 @@ body {
     cursor: pointer;
     text-align: left;
     transition: background-color 0.3s ease;
-  }
-  
-  .menu-item:hover {
+}
+
+.menu-item:hover {
     background-color: #b3d3a3;
-  }
-  
-  .menu-item.active {
+}
+
+.menu-item.active {
     background-color: #6b8e6d;
     color: white;
-  }
-  
-  /* Tarjetas de producto */
-  .product-card {
-    background-color: #dff1dc;
-    border-radius: 16px;
-    padding: 1rem;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.03);
-  }
-  
-  .product-card img {
-    max-width: 100%;
-    height: 160px;
-    object-fit: contain;
-    border-radius: 12px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .product-card h3 {
-    margin: 0.5rem 0 0.2rem;
-    white-space: normal;
-    word-wrap: break-word;
-  }
-  
-  .product-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    white-space: normal;
-    word-wrap: break-word;
-  }
-  
-  .product-card span {
-    font-weight: bold;
-  }
-  
-  /* Modal */
-  .modal {
+}
+
+/* Modal */
+.modal {
     display: none;
     position: fixed;
     z-index: 999;
@@ -120,9 +142,9 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #ede8d1;
     color: #1f2b23;
     padding: 2rem;
@@ -130,17 +152,17 @@ body {
     text-align: center;
     max-width: 400px;
     width: 90%;
-  }
-  
-  .modal-content img {
+}
+
+.modal-content img {
     width: 100%;
     height: 200px;
     object-fit: contain;
     border-radius: 1rem;
     margin-bottom: 1rem;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     background-color: #6b8e6d;
     color: white;
     border: none;
@@ -149,16 +171,16 @@ body {
     cursor: pointer;
     margin-top: 1rem;
     font-size: 0.9rem;
-  }
-  
-  /* Layout flexible entre sidebar y contenido */
-  .layout-wrapper {
+}
+
+/* Layout flexible entre sidebar y contenido */
+.layout-wrapper {
     display: flex;
-  }
-  
-  /* Animación que cicla el color de fondo */
-  @keyframes scrollColor {
+}
+
+/* Animación que cicla el color de fondo */
+@keyframes scrollColor {
     0% { background-position: 0% 0%; }
     50% { background-position: 0% 100%; }
     100% { background-position: 0% 0%; }
-  }
+}

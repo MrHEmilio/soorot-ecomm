@@ -32,19 +32,19 @@ const productos = [
     { "Nombre": "Bajosleeping inflable", "img": "https://klymit.com/cdn/shop/products/Klymit_StaticV_06SVGR01C_Front_Deep_NoValve_2000x2000_1606fbeb-ea1b-4b5a-a643-e29f48b9d1e2.jpg?v=1741634066", "desc": "Colchón compacto y funcional.", "categoria": "campismo" },
     { "Nombre": "Utensilios", "img": "https://m.media-amazon.com/images/I/813WahUDNaL._AC_SL1500_.jpg", "desc": "Todo lo que necesitas para cocinar al aire libre.", "categoria": "campismo" }
   ];
-  
-  // Función para renderizar una tarjeta de producto
-  function addItem(item) {
+// Función para renderizar una tarjeta de producto
+function addItem(item) {
     const itemHTML = `
-      <div class="col">
-        <div class="card product-card ${item.categoria}">
+      <div class="col-md-4 col-sm-6 mb-4 d-flex">
+        <div class="card product-card ${item.categoria} w-100">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <button class="btn btn-outline-success btn-sm fw-bold">Edit</button>
+            <span class="text-success fw-bold">$ --</span>
+          </div>
           <img class="bd-placeholder-img" src="${item.img}" alt="${item.Nombre}">
           <div class="card-body">
             <h3 class="card-title">${item.Nombre}</h3>
             <p class="card-text">${item.desc}</p>
-            <div class="d-flex justify-content-end">
-              <button class="btn btn-outline-secondary btn-sm">Edit</button>
-            </div>
           </div>
         </div>
       </div>
@@ -70,13 +70,14 @@ const productos = [
     });
   });
   
-  // Funcón para filtrar por categoría
+  // Función para filtrar por categoría
   function filtrarProductos(categoria, botonSeleccionado) {
     const tarjetas = document.querySelectorAll(".product-card");
     tarjetas.forEach(card => {
-      card.parentElement.style.display = (categoria === "general" || card.classList.contains(categoria)) ? "block" : "none";
+      card.parentElement.style.display = (categoria === "general" || card.classList.contains(categoria)) ? "flex" : "none";
     });
   
     document.querySelectorAll(".menu-item").forEach(btn => btn.classList.remove("active"));
     botonSeleccionado.classList.add("active");
   }
+  
