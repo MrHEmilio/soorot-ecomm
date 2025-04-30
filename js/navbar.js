@@ -73,9 +73,9 @@ export function insertarfooter() {
       <div class="footer-bottom">
         <p>© 2025 Soorot. Todos los derechos reservados.</p>
         <ul>
-          <li><a href="avisoprivacidad">Aviso de privacidad</a></li>
+          <li><a href="avisoprivacidad.html">Aviso de privacidad</a></li> 
           <li><a href="terminoscondiciones.html">Terminos y condiciones</a></li>
-          <li><a href="#">Condiciones de uso</a></li>
+          <!-- <li><a href="#">Condiciones de uso</a></li> -->
         </ul>
         <div class="social-media">
           <a href="http://www.github.com/"
@@ -87,7 +87,7 @@ export function insertarfooter() {
           <a href="http://www.facebook.com/"
             target="_blank"
             class="icon-facebook2"></a>
-          <!--<a href="./contactanos.html" target="_blank" class="icon-bubble"></a> -->
+          <!-- <a href="./contactanos.html" target="_blank" class="icon-bubble"></a> -->
         </div>
       </div>
     `;
