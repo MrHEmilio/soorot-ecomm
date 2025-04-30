@@ -78,6 +78,33 @@ ul li.nav-item a{
   font-weight: 600;
   color: #D6BD98;
 }
+/* Header "Acerca de" */
+.headerAcercade {
+  margin-top: -20px;
+  height: 400px;
+  background: linear-gradient(rgba(0,0,0,0.3), var(--verde-medio)),
+              /*url('/assets/bosque.jpg');*/
+              url('/assets/bosque-verde.png');
+  background-position: center;
+  background-size: cover;
+
+}
+.header-acercade.header-acercade2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #D6BD98;
+  padding-top: 30px;
+  padding-left: 50px;
+  text-align: center;
+}
+.header-acercade.header-acercade4 {
+  font-size: 22px;
+  font-family: 'Quicksand', sans-serif;
+  margin: 30px;
+  text-align:center;
+  color: var(--verde-claro);
+}
 
 /* **Estilo para tarjeta**  */
 
