@@ -1,150 +1,146 @@
-/* Estilo general inspirado en naturaleza */
+/* Estilo general del cuerpo */
 body {
-    font-family: 'Quicksand', sans-serif;
-    background-color: var(--verde-medio);
-    color: var(--verde-blanco);
-    margin: 0;
-  }
-
-.main-content {
-flex-grow: 1;
-padding: 1rem;
-background-color: var(--verde-medio);
-min-height: 100vh;
-}
-
-.titulos {
-font-family: 'Quicksand', sans-serif;
-font-weight: 600;
-color: var(--beige-arena);
-}
-
-.product-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 1.5rem;
-padding: 2rem;
-}
-
-  /* Estilo barra lateral */
-  .sidebar { /* Contenedor lateral con botones */
-    display: flex; /* Flex vertical */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    padding: 1rem; /* Relleno interno */
-    background-color: #1f2b23; /* Mismo verde del fondo */
-}
-
-  /* Botones del menú lateral */
-.menu-item {
-    background-color: #cde0c2; /* Verde suave */
-    color: #1f2b23; /* Texto oscuro */
-    border: none; /* Sin borde */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 1rem; /* Espaciado interno */
-    margin: 0.3rem 0; /* Separación vertical entre botones */
-    font-size: 1rem; /* Tamaño de texto */
-    font-weight: 600; /* Negrita */
-    cursor: pointer; /* Cambia cursor a mano */
-    text-align: left; /* Alineación de texto */
-    transition: background-color 0.3s ease; /* Transición suave */
-}
-
-.menu-item:hover {
-    background-color: #b3d3a3; /* Cambia color al pasar el mouse */
-}
-
-.menu-item.active {
-    background-color: #6b8e6d; /* Color verde oliva oscuro */
-    color: white; /* Texto en blanco cuando está activo */
-}
-
-  /* Contenedor de productos */
-.product-grid {
-    display: grid; /* Activa diseño tipo grilla */
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Columnas adaptables */
-    gap: 1.5rem; /* Espaciado entre tarjetas */
-    padding: 2rem; /* Relleno interno */
-    flex-grow: 1; /* Que ocupe el espacio restante */
-}
-
-  /* Estilo de tarjetas */
-.product-card {
-    background-color: #dff1dc; /* Verde más claro para destacar */
-    border-radius: 16px; /* Bordes redondeados */
-    padding: 1rem; /* Espaciado interno */
-    text-align: center; /* Centra el contenido */
-    cursor: pointer; /* Cursor tipo mano */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    transition: transform 0.2s ease; /* Efecto suave al escalar */
-}
-
-.product-card:hover {
-    transform: scale(1.03); /* Efecto de agrandar al pasar el mouse */
-}
-
-.product-card img {
-    max-width: 100%; /* Imagen no se desborda */
-    height: 160px; /* Altura fija */
-    object-fit: contain; /* Que se vea completa dentro del marco */
-    border-radius: 12px; /* Bordes redondeados */
-    margin-bottom: 0.5rem; /* Espacio inferior */
-}
-
-.product-card h3 {
-    margin: 0.5rem 0 0.2rem; /* Margen superior e inferior */
-}
-
-.product-card p {
-    font-size: 0.9rem; /* Tamaño de texto más pequeño */
-    margin-bottom: 0.5rem; /* Espacio inferior */
-}
-
-.product-card span {
-    font-weight: bold; /* Precio en negrita */
-}
-
-  /* Modal */
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Posición absoluta respecto al viewport */
-    z-index: 999; /* Por encima de todo */
-    top: 0; left: 0; /* Ocupa toda la pantalla */
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-}
-
-.modal-content {
-    background-color: #ede8d1; /* Color tipo arena claro */
-    color: #1f2b23; /* Texto oscuro */
-    padding: 2rem; /* Espaciado interno */
-    border-radius: 1rem; /* Bordes redondeados */
-    text-align: center; /* Centrado del texto */
-    max-width: 400px; /* Ancho máximo */
-    width: 90%; /* Responsivo */
-}
-
-.modal-content img {
-    width: 100%;
-    height: 200px;
-    object-fit: contain; /* Escala sin recortar */
-    border-radius: 1rem; /* Bordes redondeados */
-    margin-bottom: 1rem; /* Espaciado inferior */
-}
-
-.close-btn {
-    background-color: #6b8e6d; /* Verde oliva */
-    color: white; /* Texto blanco */
-    border: none; /* Sin bordes */
-    padding: 0.5rem 1rem; /* Relleno */
-    border-radius: 12px; /* Bordes redondeados */
-    cursor: pointer; /* Mano al pasar */
-    margin-top: 1rem; /* Separación del contenido */
-    font-size: 0.9rem; /* Texto un poco más pequeño */
-}
-
-.layout-wrapper {
-    display: flex;
+    font-family: 'Quicksand', sans-serif; /* Fuente amigable y moderna */
+    background-color: #1f2b23; /* Fondo verde oscuro */
+    color: #ffffff; /* Texto blanco general */
+    margin: 0; /* Elimina márgenes por defecto */
   }
   
+  /* Contenedor principal */
+  .main-content {
+    flex-grow: 1; /* Toma el espacio restante */
+    padding: 1rem; /* Espaciado interno */
+    background-color: #1f2b23; /* Mismo fondo que body */
+    min-height: 100vh; /* Asegura altura mínima de toda la pantalla */
+  }
+  
+  /* Título principal */
+  .titulos {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600; /* Negrita */
+    color: #dcd7ba; /* Color beige arena */
+  }
+  
+  /* Grid de productos */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adaptable */
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  /* Barra lateral */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #1f2b23;
+  }
+  
+  /* Botones del menú lateral */
+  .menu-item {
+    background-color: #cde0c2;
+    color: #1f2b23;
+    border: none;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    background-color: #b3d3a3;
+  }
+  
+  .menu-item.active {
+    background-color: #6b8e6d;
+    color: white;
+  }
+  
+  /* Tarjetas de producto */
+  .product-card {
+    background-color: #dff1dc;
+    border-radius: 16px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-card h3 {
+    margin: 0.5rem 0 0.2rem;
+  }
+  
+  .product-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-card span {
+    font-weight: bold;
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #ede8d1;
+    color: #1f2b23;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .close-btn {
+    background-color: #6b8e6d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Layout flexible entre sidebar y contenido */
+  .layout-wrapper {
+    display: flex;
+  }
