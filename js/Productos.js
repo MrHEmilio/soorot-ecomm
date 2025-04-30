@@ -1,4 +1,3 @@
-
 // Base de datos local de productos categorizados y listos para renderizar
 const productos = [
     // Escalada
@@ -38,19 +37,22 @@ const productos = [
   function addItem(item) {
     const itemHTML = `
       <div class="col">
-        <div class="product-card">
-          <img src="${item.img}" alt="${item.Nombre}">
-          <h3>${item.Nombre}</h3>
-          <p>${item.desc}</p>
-          <span>$ --</span>
+        <div class="card product-card ${item.categoria}">
+          <img class="bd-placeholder-img" src="${item.img}" alt="${item.Nombre}">
+          <div class="card-body">
+            <h3 class="card-title">${item.Nombre}</h3>
+            <p class="card-text">${item.desc}</p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-outline-secondary btn-sm">Edit</button>
+            </div>
+          </div>
         </div>
       </div>
     `;
-    
+  
     const itemsContainer = document.getElementById("list-items");
     if (itemsContainer) {
-      itemsContainer.innerHTML += itemHTML;
-      console.log(`Producto agregado: ${item.Nombre}`);
+      itemsContainer.insertAdjacentHTML("beforeend", itemHTML);
     } else {
       console.warn("Contenedor 'list-items' no encontrado");
     }
@@ -58,35 +60,21 @@ const productos = [
   
   // Lógica al cargar el DOM
   document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM completamente cargado");
-  
-    // Renderizar productos locales
     productos.forEach(item => addItem(item));
   
-    // Activar filtrado por categoría
     document.querySelectorAll(".menu-item").forEach(boton => {
       boton.addEventListener("click", () => {
         const categoria = boton.dataset.categoria;
         filtrarProductos(categoria, boton);
       });
     });
-  
-    // Cierre de modal
-    const cerrar = document.getElementById("cerrar-modal");
-    const modal = document.getElementById("modal");
-    if (cerrar && modal) {
-      cerrar.addEventListener("click", () => modal.style.display = "none");
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) modal.style.display = "none";
-      });
-    }
   });
   
-  // Función para filtrar por categoría
+  // Funcón para filtrar por categoría
   function filtrarProductos(categoria, botonSeleccionado) {
     const tarjetas = document.querySelectorAll(".product-card");
     tarjetas.forEach(card => {
-      card.style.display = categoria === "general" || card.classList.contains(categoria) ? "block" : "none";
+      card.parentElement.style.display = (categoria === "general" || card.classList.contains(categoria)) ? "block" : "none";
     });
   
     document.querySelectorAll(".menu-item").forEach(btn => btn.classList.remove("active"));
