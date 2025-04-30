@@ -35,7 +35,7 @@ const productos = [
 // Función para renderizar una tarjeta de producto
 function addItem(item) {
     const itemHTML = `
-      <div class="col-md-4 col-sm-6 mb-4 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex">
         <div class="card product-card ${item.categoria} w-100">
           <div class="card-header d-flex justify-content-between align-items-center">
             <button class="btn btn-outline-success btn-sm fw-bold">Edit</button>
