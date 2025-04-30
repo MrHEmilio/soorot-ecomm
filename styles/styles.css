@@ -354,6 +354,7 @@ ul li.nav-item a{
   font-size: 80px;
   font-family: 'Quicksand', sans-serif;
   letter-spacing: 0px;
+  color: var(--beige-arena);
 }
 .header-contact.header-contact4 {
   font-size: 25px;
