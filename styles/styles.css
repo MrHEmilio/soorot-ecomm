@@ -83,6 +83,33 @@ ul li.nav-item a{
   font-weight: 600;
   color: #D6BD98;
 }
+/* Header "Acerca de" */
+.headerAcercade {
+  margin-top: -20px;
+  height: 400px;
+  background: linear-gradient(rgba(0,0,0,0.3), var(--verde-medio)),
+              /*url('/assets/bosque.jpg');*/
+              url('/assets/bosque-verde.png');
+  background-position: center;
+  background-size: cover;
+
+}
+.header-acercade.header-acercade2 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  color: #D6BD98;
+  padding-top: 30px;
+  padding-left: 50px;
+  text-align: center;
+}
+.header-acercade.header-acercade4 {
+  font-size: 22px;
+  font-family: 'Quicksand', sans-serif;
+  margin: 30px;
+  text-align:center;
+  color: var(--verde-claro);
+}
 
 /* **Estilo para tarjeta**  */
 
@@ -500,12 +527,15 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
 }
 
 /*Fin Redes sociales*/
+
 /*Footer*/
 footer {
-  background-color: #1a4a36;
+  border-top: 1px solid #48dc98;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), var(--verde-medio));
   color: #ffffff;
-  padding: 40px 20px;
+  padding: 20px 20px;
   font-family: Arial, sans-serif;
+  margin-top: 70px;
 }
 
 .footer-container {
@@ -571,9 +601,9 @@ button:hover {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid white;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #48dc98;
 }
 
 .footer-bottom ul {
@@ -592,7 +622,7 @@ button:hover {
 }
 
 .footer-bottom a:hover {
-  color: #48dc98;
+  color: #48dc98; 
 }
 
 .social-media {
@@ -603,3 +633,41 @@ button:hover {
   width: 24px;
   margin: 0 10px;
 }
+
+
+  /* ... INICIO: Estilo visual mejorado para la cruz y flechas del modal */
+.modal-content .close,
+.modal-content .prev,
+.modal-content .next {
+  border-radius: 50%;
+  background-color: var(--verde-medio); /* Color de fondo */
+  color: var(--verde-blanco);
+  font-size: 1.2rem;
+  border: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content .close:hover,
+.modal-content .prev:hover,
+.modal-content .next:hover {
+  background-color: var(--verde-oscuro); /* Al pasar el mouse */
+  transform: scale(1.1);
+}
+/* ... FIN: Estilo visual mejorado */
+
+/* ... INICIO: Estilo visual para imágenes clickeables en 'Acerca de nosotros' */
+.clickable-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickable-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* ... FIN: Estilo visual para imágenes clickeables */
