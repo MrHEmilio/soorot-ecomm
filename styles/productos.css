@@ -1,30 +1,34 @@
-/* Estilo general del cuerpo */
+/* Estilo general del cuerpo con fondo animado */
 body {
     font-family: 'Quicksand', sans-serif; /* Fuente amigable y moderna */
-    background-color: #1f2b23; /* Fondo verde oscuro */
     color: #ffffff; /* Texto blanco general */
     margin: 0; /* Elimina márgenes por defecto */
+  
+    /* Fondo con gradiente animado */
+    background: linear-gradient(to bottom, #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
+    background-size: 100% 300%;
+    animation: scrollColor 30s linear infinite; /* Cambia el fondo suavemente con scroll */
   }
   
   /* Contenedor principal */
   .main-content {
-    flex-grow: 1; /* Toma el espacio restante */
-    padding: 1rem; /* Espaciado interno */
-    background-color: #1f2b23; /* Mismo fondo que body */
-    min-height: 100vh; /* Asegura altura mínima de toda la pantalla */
+    flex-grow: 1;
+    padding: 1rem;
+    background-color: transparent; /* Ya está definido en body */
+    min-height: 100vh;
   }
   
   /* Título principal */
   .titulos {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 600; /* Negrita */
-    color: #dcd7ba; /* Color beige arena */
+    font-weight: 600;
+    color: #dcd7ba;
   }
   
   /* Grid de productos */
   .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adaptable */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
   }
@@ -70,6 +74,10 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
+    display: flex; /* Asegura estructura vertical */
+    flex-direction: column; /* Ordena elementos de arriba a abajo */
+    justify-content: space-between; /* Espacio entre título, imagen y descripción */
+    height: 100%; /* Hace que todas las tarjetas tengan igual altura */
   }
   
   .product-card:hover {
@@ -84,13 +92,16 @@ body {
     margin-bottom: 0.5rem;
   }
   
-  .product-card h3 {
-    margin: 0.5rem 0 0.2rem;
-  }
-  
+  .product-card h3,
   .product-card p {
+    white-space: normal; /* Evita que el texto se vea en una línea vertical */
+    word-wrap: break-word;
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+  }
+  
+  .product-card h3 {
+    margin: 0.5rem 0 0.2rem;
   }
   
   .product-card span {
@@ -143,4 +154,11 @@ body {
   /* Layout flexible entre sidebar y contenido */
   .layout-wrapper {
     display: flex;
+  }
+  
+  /* Animación del fondo al hacer scroll */
+  @keyframes scrollColor {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
   }
