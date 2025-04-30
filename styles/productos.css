@@ -1,10 +1,29 @@
 /* Estilo general inspirado en naturaleza */
-body { /* Cuerpo principal: estilo base de fuente, fondo y flex */
-    margin: 0; /* Elimina márgenes por defecto */
-    font-family: 'Nunito', sans-serif; /* Fuente redondeada, amigable */
-    background-color: #1f2b23; /* Verde oscuro de fondo */
-    color: #2f2f1f; /* Color del texto principal */
-    display: flex; /* Activa flexbox para alinear sidebar y contenido */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--verde-medio);
+    color: var(--verde-blanco);
+    margin: 0;
+  }
+
+.main-content {
+flex-grow: 1;
+padding: 1rem;
+background-color: var(--verde-medio);
+min-height: 100vh;
+}
+
+.titulos {
+font-family: 'Quicksand', sans-serif;
+font-weight: 600;
+color: var(--beige-arena);
+}
+
+.product-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 1.5rem;
+padding: 2rem;
 }
 
   /* Estilo barra lateral */
@@ -124,3 +143,8 @@ body { /* Cuerpo principal: estilo base de fuente, fondo y flex */
     margin-top: 1rem; /* Separación del contenido */
     font-size: 0.9rem; /* Texto un poco más pequeño */
 }
+
+.layout-wrapper {
+    display: flex;
+  }
+  

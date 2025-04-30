@@ -3,59 +3,57 @@
 <head>
   <meta charset="UTF-8" /> <!-- Codificación del documento -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Vista adaptable -->
-  <title>Soorot - Catálogo Natural</title> <!-- Título de la pestaña -->
-  <link rel="stylesheet" href="styles/productos_naturaleza.css" /> <!-- Enlace a estilos -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" /> <!-- Fuente externa -->
+  <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+  <title>Productos</title> <!-- Título de la pestaña -->
+  <link rel="stylesheet" href="styles/productos.css" /> 
+  <link rel="stylesheet" href="styles/styles.css" /> 
+  <link rel="stylesheet" href="styles/fonts.css" /> 
+  <link class="favicon-class" rel="icon" href="assets/favicon-soorot.svg" type="image/svg+xml" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- Iconos de bootstrap -->
+    <link rel="stylesheet" href="./styles/fonts.css" />
 </head>
 <body>
-  <!-- Barra lateral con categorías de productos -->
-  <aside class="sidebar">
-    <button class="menu-item active" data-categoria="general">General</button> <!-- Filtro General -->
-    <button class="menu-item" data-categoria="escalada">Escalada</button> <!-- Filtro Escalada -->
-    <button class="menu-item" data-categoria="cañonismo">Cañonismo</button> <!-- Filtro Cañonismo -->
-    <button class="menu-item" data-categoria="alpinismo">Alpinismo</button> <!-- Filtro Alpinismo -->
-    <button class="menu-item" data-categoria="exploracion">Exploración</button> <!-- Filtro Exploración -->
-    <button class="menu-item" data-categoria="campismo">Campismo</button> <!-- Filtro Campismo -->
-  </aside>
 
-  <!-- Contenedor principal de productos -->
-  <main class="product-grid">
-    <!-- Tarjeta: Descensores -->
-    <div class="product-card cañonismo" data-nombre="Descensores">
-      <img src="https://m.media-amazon.com/images/I/71t1j8oPNsL._AC_SL1500_.jpg" alt="Descensores"> <!-- Imagen -->
-      <h3>Descensores</h3>
-      <p>Breve descripción del item para la página del inventario</p>
-      <span>$ 1.099,00</span>
-    </div>
-    <!-- Tarjeta: Ascensores -->
-    <div class="product-card cañonismo" data-nombre="Ascensores">
-      <img src="https://m.media-amazon.com/images/I/61lVy-BVuDL._AC_SL1500_.jpg" alt="Ascensores">
-      <h3>Ascensores</h3>
-      <p>Breve descripción del item para la página del inventario</p>
-      <span>$ 1.099,00</span>
-    </div>
-    <!-- Tarjeta: Arsenal especial -->
-    <div class="product-card cañonismo" data-nombre="Arsenal especial">
-      <img src="https://m.media-amazon.com/images/I/61I7E7GQ0IL._AC_SL1500_.jpg" alt="Arsenal especial">
-      <h3>Arsenal especial</h3>
-      <p>Breve descripción del item para la página del inventario</p>
-      <span>$ 1.099,00</span>
-    </div>
-    <!-- Tarjeta: Cuerdas Estáticas -->
-    <div class="product-card escalada" data-nombre="Cuerdas Estáticas">
-      <img src="https://m.media-amazon.com/images/I/71RSyXBES0L._AC_SL1500_.jpg" alt="Cuerdas Estáticas">
-      <h3>Cuerdas Estáticas</h3>
-      <p>Breve descripción del item para la página del inventario</p>
-      <span>$ 1.099,00</span>
-    </div>
-    <!-- Tarjeta: Mochilas -->
-    <div class="product-card campismo" data-nombre="Mochilas">
-      <img src="https://m.media-amazon.com/images/I/71QxZ2DArBL._AC_SL1500_.jpg" alt="Mochilas">
-      <h3>Mochilas</h3>
-      <p>Breve descripción del item para la página del inventario</p>
-      <span>$ 1.099,00</span>
-    </div>
-  </main>
+  <div class="layout-wrapper"> 
+    <aside class="sidebar">
+      <button class="menu-item active" data-categoria="general">General</button> <!-- Filtro General -->
+      <button class="menu-item" data-categoria="escalada">Escalada</button> <!-- Filtro Escalada -->
+      <button class="menu-item" data-categoria="cañonismo">Cañonismo</button> <!-- Filtro Cañonismo -->
+      <button class="menu-item" data-categoria="alpinismo">Alpinismo</button> <!-- Filtro Alpinismo -->
+      <button class="menu-item" data-categoria="exploracion">Exploración</button> <!-- Filtro Exploración -->
+      <button class="menu-item" data-categoria="campismo">Campismo</button> <!-- Filtro Campismo -->
+    </aside>
+
+    <main class="main-content">
+      <div class="container my-4">
+        <h1 class="titulos mb-4">Lista de Productos</h1>
+        <div id="list-items" class="product-grid">
+          <!-- Tarjetas con función -->
+        </div>
+      </div>
+    </main>
+  </div>
+    
 
   <!-- Modal de información detallada del producto -->
   <div id="modal" class="modal">
@@ -67,7 +65,27 @@
     </div>
   </div>
 
-  <!-- Enlace al archivo de funcionalidad JS -->
+  <!-- BOOTSTRAP: HAY QUE DEJAR ESTE SCRIPT HASTA EL FINAL -->
+  <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+  ></script>
+  
+  <!-- script para el navbar, hay que procurar que se conserve como el primer script INICIO-->
+  <script type="module">
+    import { insertarNavbar } from "./js/navbar.js";
+    insertarNavbar();
+  </script>
+  <!-- script para el navbar FINAL -->
+
+  <!-- script para el footer INICIO -->
+  <script type="module">
+    import { insertarfooter } from "./js/navbar.js";
+    insertarfooter();
+  </script>
+  <!-- script para el footer FINAL -->
+
   <script src="js/productos.js"></script>
 </body>
 </html>
