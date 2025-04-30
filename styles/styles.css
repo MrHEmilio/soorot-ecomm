@@ -635,6 +635,7 @@ button:hover {
   margin: 0 10px;
 }
 
+<<<<<<< HEAD
 
   /* ... INICIO: Estilo visual mejorado para la cruz y flechas del modal */
 .modal-content .close,
@@ -672,3 +673,9 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 /* ... FIN: Estilo visual para imágenes clickeables */
+=======
+/* Color del texto en terminos y condiciones */
+.texto-claro-tyc {
+  color: #48dc98;
+}
+>>>>>>> UYMR
