@@ -1,20 +1,18 @@
-/* Estilo general del cuerpo con fondo animado */
+/* Estilo general del cuerpo */
 body {
-    font-family: 'Quicksand', sans-serif; /* Fuente amigable y moderna */
-    color: #ffffff; /* Texto blanco general */
-    margin: 0; /* Elimina márgenes por defecto */
-  
-    /* Fondo con gradiente animado */
-    background: linear-gradient(to bottom, #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #1f2b23, #2e3c2f, #3b4e39, #4a5f45); /* Fondo dinámico */
     background-size: 100% 300%;
-    animation: scrollColor 30s linear infinite; /* Cambia el fondo suavemente con scroll */
+    animation: scrollColor 30s linear infinite; /* Animación de scroll */
+    color: #ffffff;
+    margin: 0;
   }
   
   /* Contenedor principal */
   .main-content {
     flex-grow: 1;
     padding: 1rem;
-    background-color: transparent; /* Ya está definido en body */
+    background-color: transparent;
     min-height: 100vh;
   }
   
@@ -27,8 +25,8 @@ body {
   
   /* Grid de productos */
   .product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     padding: 2rem;
   }
@@ -74,10 +72,11 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
-    display: flex; /* Asegura estructura vertical */
-    flex-direction: column; /* Ordena elementos de arriba a abajo */
-    justify-content: space-between; /* Espacio entre título, imagen y descripción */
-    height: 100%; /* Hace que todas las tarjetas tengan igual altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
   }
   
   .product-card:hover {
@@ -92,16 +91,17 @@ body {
     margin-bottom: 0.5rem;
   }
   
-  .product-card h3,
-  .product-card p {
-    white-space: normal; /* Evita que el texto se vea en una línea vertical */
-    word-wrap: break-word;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  
   .product-card h3 {
     margin: 0.5rem 0 0.2rem;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  .product-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+    word-wrap: break-word;
   }
   
   .product-card span {
@@ -156,7 +156,7 @@ body {
     display: flex;
   }
   
-  /* Animación del fondo al hacer scroll */
+  /* Animación que cicla el color de fondo */
   @keyframes scrollColor {
     0% { background-position: 0% 0%; }
     50% { background-position: 0% 100%; }
