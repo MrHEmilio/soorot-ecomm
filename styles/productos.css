@@ -8,34 +8,34 @@ body {
     animation: scrollColor 30s linear infinite;         /* Ciclo suave de colores cada 30 s */
     color: #ffffff;                                     /* Texto blanco global */
     margin: 0;                                          /* Elimina márgenes por defecto */
-  }
-  
+}
+
   /* ===== Estructura general ===== */
-  .layout-wrapper {
+.layout-wrapper {
     display: flex;                                      /* Sidebar a la izquierda + contenido */
-  }
-  
-  .main-content {
+}
+
+.main-content {
     flex-grow: 1;                                       /* Rellena ancho sobrante */
     padding: 1rem;                                      /* Espaciado interior */
     min-height: 100vh;                                  /* Al menos toda la altura de la pantalla */
     background-color: transparent;                      /* Mantiene el degradado del <body> */
-  }
-  
-  .titulos {
+}
+
+.titulos {
     font-weight: 600;                                   /* Negrita */
     color: #dcd7ba;                                     /* Beige arena */
-  }
-  
+}
+
   /* ===== Barra lateral (filtros) ===== */
-  .sidebar {
+.sidebar {
     background-color: #1f2b23;                          /* Verde oscuro igual al fondo */
     display: flex;                                      /* Coloca botones en columna */
     flex-direction: column;                             /* Alineación vertical */
     padding: 1rem;                                      /* Relleno interno */
-  }
-  
-  .menu-item {
+}
+
+.menu-item {
     background-color: #cde0c2;                          /* Verde pastel de botón */
     color: #1f2b23;                                     /* Texto oscuro */
     border: none;                                       /* Sin bordes estándar */
@@ -46,22 +46,22 @@ body {
     font-weight: 600;                                   /* Seminegrita */
     cursor: pointer;                                    /* Icono de mano al pasar */
     transition: background-color 0.3s ease;             /* Suaviza cambio de color */
-  }
-  
+}
+
   .menu-item:hover  { background-color: #b3d3a3; }      /* Color al pasar el ratón */
   .menu-item.active { background-color: #6b8e6d; color:#fff; } /* Botón seleccionado */
-  
+
   /* ===== Contenedor grid de tarjetas ===== */
-  #list-items {
+#list-items {
     display: grid;                                      /* Sección en grid responsivo */
     gap: 2rem;                                          /* Espacio entre tarjetas */
     padding: 2rem;                                      /* Margen interno */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Col auto */
     justify-items: center;                              /* Centra cada tarjeta en su celda */
-  }
-  
+}
+
   /* ===== Tarjeta de producto ===== */
-  .product-card {
+.product-card {
     background-color: rgba(205, 224, 194, 0.15);        /* Fondo translúcido */
     border: 1px solid #a6b89a;                          /* Borde verde claro */
     border-radius: 20px;                                /* Esquinas redondeadas */
@@ -73,55 +73,55 @@ body {
     display: flex;                                      /* Layout vertical interno */
     flex-direction: column;                             /* Coloca elementos en columna */
     transition: transform 0.2s ease;                    /* Animación al hacer hover */
-  }
-  
-  .product-card:hover {
+}
+
+.product-card:hover {
     transform: scale(1.02);                             /* Efecto zoom sutil */
     background-color: rgba(205,224,194,0.25);           /* Fondo un poco más claro */
     border-color: #b5d1ad;                              /* Borde más vivo */
-  }
-  
+}
+
   /* Imagen del producto */
-  .product-card img {
+.product-card img {
     max-width: 100%;                                    /* No sobresale del contenedor */
     height: 160px;                                      /* Altura fija */
     object-fit: contain;                                /* Ajusta sin deformar */
     border-radius: 16px;                                /* Bordes suavizados */
     margin-bottom: 0.7rem;                              /* Separación del texto */
-  }
-  
+}
+
   /* Nombre del producto */
-  .product-card h3 {
+.product-card h3 {
     font-size: 1.3rem;                                  /* Tamaño de título */
     color: #dcd7ba;                                     /* Beige arena */
     white-space: normal;                                /* Permite saltos de línea */
     word-wrap: break-word;                              /* Rompe palabras largas */
-  }
-  
+}
+
   /* Descripción */
-  .product-card p {
+.product-card p {
     font-size: 0.9rem;                                  /* Texto descriptivo pequeño */
     margin-bottom: 0.5rem;                              /* Separación inferior */
     word-wrap: break-word;                              /* Evita desbordes */
-  }
-  
+}
+
   /* Precio */
-  .product-card span {
+.product-card span {
     font-weight: bold;                                  /* Negrita para destacar precio */
     color: #a9db9c;                                     /* Verde más vivo */
     font-size: 1.1rem;                                  /* Tamaño ligeramente mayor */
-  }
-  
+}
+
   /* Cabecera con botón Edit y precio */
-  .card-header {
+.card-header {
     display: flex;                                      /* Fila *Edit | $* */
     justify-content: space-between;                     /* Separa extremos */
     align-items: center;                                /* Centra verticalmente */
     margin-bottom: 0.5rem;                              /* Espacio tras cabecera */
-  }
-  
+}
+
   /* Botón Edit */
-  .btn-edit {
+.btn-edit {
     background-color: #6b8e6d;                          /* Verde oliva */
     color: #fff;                                        /* Texto blanco */
     padding: 0.3rem 0.7rem;                             /* Tamaño compacto */
@@ -129,10 +129,10 @@ body {
     font-weight: bold;                                  /* Destaca texto */
     border: none;                                       /* Sin borde adicional */
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);             /* Sombra leve */
-  }
-  
+}
+
   /* ===== Modal detalle de producto ===== */
-  .modal {
+.modal {
     display: none;                                      /* Se muestra por JS */
     position: fixed;                                    /* Overlay fullscreen */
     z-index: 999;                                       /* Encima de todo */
@@ -141,9 +141,9 @@ body {
     background-color: rgba(0,0,0,0.6);                  /* Fondo semitransparente */
     justify-content: center;                            /* Centra modal */
     align-items: center;                                /* Centra vertical */
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #ede8d1;                          /* Fondo crema */
     color: #1f2b23;                                     /* Texto oscuro */
     padding: 2rem;                                      /* Espacio interno */
@@ -151,19 +151,19 @@ body {
     max-width: 400px;                                   /* Ancho máximo */
     width: 90%;                                         /* Adaptable */
     text-align: center;                                 /* Centra el contenido */
-  }
-  
+}
+
   /* Imagen del modal */
-  .modal-content img {
+.modal-content img {
     width: 100%;
     height: 200px;
     object-fit: contain;                                /* Encaja sin recortar */
     border-radius: 1rem;
     margin-bottom: 1rem;
-  }
-  
+}
+
   /* Botón cerrar modal */
-  .close-btn {
+.close-btn {
     background-color: #6b8e6d;                          /* Verde oliva */
     color: #fff;
     border: none;
@@ -172,12 +172,11 @@ body {
     cursor: pointer;
     margin-top: 1rem;
     font-size: 0.9rem;
-  }
-  
+}
+
   /* ===== Animación del degradado de fondo ===== */
-  @keyframes scrollColor {
+@keyframes scrollColor {
     0%   { background-position: 0% 0%; }                /* Inicio del degradado */
     50%  { background-position: 0% 100%; }              /* Desplaza hacia abajo */
     100% { background-position: 0% 0%; }                /* Regresa al inicio */
-  }
-  
+}
