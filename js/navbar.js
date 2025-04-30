@@ -1,7 +1,7 @@
-export function insertarNavbar(){
-    const nav = document.createElement("nav");
-    nav.className = "navbar navbar-expand-lg bg-body-tertiary";
-    nav.innerHTML = `
+export function insertarNavbar() {
+  const nav = document.createElement("nav");
+  nav.className = "navbar navbar-expand-lg bg-body-tertiary";
+  nav.innerHTML = `
         <div class="container-fluid">
             <span class="navbar-logo-img">
                 <a class="navbar-logo" href="index.html">
@@ -35,13 +35,13 @@ export function insertarNavbar(){
             </div>
         </div>
     `;
-    document.body.prepend(nav);
+  document.body.prepend(nav);
 }
 
 export function insertarfooter() {
-    const footer = document.createElement("footer");
-    footer.className = "contenedor-footer";
-    footer.innerHTML = `
+  const footer = document.createElement("footer");
+  footer.className = "contenedor-footer";
+  footer.innerHTML = `
         <div class="footer-container">
         <div class="footer-column">
           <img src="./assets/logo-soorot.svg" alt="" />
@@ -90,5 +90,5 @@ export function insertarfooter() {
         </div>
       </div>
     `;
-    document.body.appendChild(footer);
+  document.body.appendChild(footer);
 }
