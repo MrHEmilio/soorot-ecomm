@@ -29,13 +29,18 @@ body {
   padding-left: 1rem;
   height: 45px;
 }
-
+.collapse navbar-collapse{
+  color: var(--verde-claro);
+}
 .nav-link.color-texto {
   color: var(--verde-medio) !important;
 }
 
 .nav-link.color-texto:hover {
   color: var(--verde-oscuro) !important;
+}
+.navbar-toggler{
+  padding: 0px;
 }
 
 /* Div logo */
@@ -63,7 +68,7 @@ body {
 }
 
 ul li.nav-item a{
-  margin: 30px;
+  margin: 5px;
 }
 
 /* .btn.btn-outline-success {
@@ -464,6 +469,27 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
       }
   
   }
+/* navbar collapse */
+  @media (max-width: 990px){
+    .navbar-collapse{
+      background-color: var(--verde-oscuro);
+      border: 10px solid --verde-oscuro;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0 0 -15px;
+    }
+    .nav-link{
+      color: var(--beige-arena);
+      margin: 10px; /* Cambia el margen a un valor más pequeño */
+      padding: 5px 10px; /* Ajusta el espacio interno */
+      display: inline-block; /* Permite que el cuadro se adapte al texto */
+
+    }
+    .nav-item{
+      margin: 5px;
+    }
+  }
+  
 
 /* editorProductos.html INICIO */
 
