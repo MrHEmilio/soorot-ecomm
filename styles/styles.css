@@ -474,12 +474,15 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
 }
 
 /*Fin Redes sociales*/
+
 /*Footer*/
 footer {
-  background-color: #1a4a36;
+  border-top: 1px solid #48dc98;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), var(--verde-medio));
   color: #ffffff;
-  padding: 40px 20px;
+  padding: 20px 20px;
   font-family: Arial, sans-serif;
+  margin-top: 70px;
 }
 
 .footer-container {
@@ -545,9 +548,9 @@ button:hover {
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid white;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #48dc98;
 }
 
 .footer-bottom ul {
@@ -566,7 +569,7 @@ button:hover {
 }
 
 .footer-bottom a:hover {
-  color: #48dc98;
+  color: #48dc98; 
 }
 
 .social-media {
