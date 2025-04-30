@@ -33,51 +33,58 @@ const productos = [
     { "Nombre": "Utensilios", "img": "https://m.media-amazon.com/images/I/813WahUDNaL._AC_SL1500_.jpg", "desc": "Todo lo que necesitas para cocinar al aire libre.", "categoria": "campismo" }
   ];
 // Función para renderizar una tarjeta de producto
-function addItem(item) {
+// Función para crear una tarjeta de producto
+function addItem(producto) {
     const itemHTML = `
-      <div class="col-12 col-sm-6 col-md-4 col-lg-4 d-flex">
-        <div class="card product-card ${item.categoria} w-100">
-          <div class="card-header d-flex justify-content-between align-items-center">
-            <button class="btn btn-outline-success btn-sm fw-bold">Edit</button>
-            <span class="text-success fw-bold">$ --</span>
-          </div>
-          <img class="bd-placeholder-img" src="${item.img}" alt="${item.Nombre}">
-          <div class="card-body">
-            <h3 class="card-title">${item.Nombre}</h3>
-            <p class="card-text">${item.desc}</p>
-          </div>
+      <div class="product-card ${producto.categoria}">
+        <div class="card-header">
+          <button class="btn-edit">Edit</button>
+          <span>$ --</span>
         </div>
+        <img src="${producto.img}" alt="${producto.Nombre}" class="clickable-img">
+        <h3>${producto.Nombre}</h3>
+        <p>${producto.desc}</p>
       </div>
     `;
   
-    const itemsContainer = document.getElementById("list-items");
-    if (itemsContainer) {
-      itemsContainer.insertAdjacentHTML("beforeend", itemHTML);
-    } else {
-      console.warn("Contenedor 'list-items' no encontrado");
-    }
+    const contenedor = document.getElementById("list-items");
+    if (contenedor) contenedor.insertAdjacentHTML("beforeend", itemHTML);
   }
   
-  // Lógica al cargar el DOM
+  // Cargar productos y eventos
   document.addEventListener("DOMContentLoaded", () => {
-    productos.forEach(item => addItem(item));
+    productos.forEach(p => addItem(p));
   
     document.querySelectorAll(".menu-item").forEach(boton => {
       boton.addEventListener("click", () => {
         const categoria = boton.dataset.categoria;
-        filtrarProductos(categoria, boton);
+        filtrarProductos(categoria);
+        document.querySelectorAll(".menu-item").forEach(b => b.classList.remove("active"));
+        boton.classList.add("active");
       });
+    });
+  
+    document.getElementById("list-items").addEventListener("click", (e) => {
+      const img = e.target.closest(".clickable-img");
+      if (img) {
+        const card = img.closest(".product-card");
+        document.getElementById("modal-img").src = img.src;
+        document.getElementById("modal-title").textContent = card.querySelector("h3").textContent;
+        document.getElementById("modal-desc").textContent = card.querySelector("p").textContent;
+        document.getElementById("modal").style.display = "flex";
+      }
+    });
+  
+    document.getElementById("cerrar-modal").addEventListener("click", () => {
+      document.getElementById("modal").style.display = "none";
     });
   });
   
-  // Función para filtrar por categoría
-  function filtrarProductos(categoria, botonSeleccionado) {
+  // Mostrar solo productos de la categoría elegida
+  function filtrarProductos(categoria) {
     const tarjetas = document.querySelectorAll(".product-card");
     tarjetas.forEach(card => {
-      card.parentElement.style.display = (categoria === "general" || card.classList.contains(categoria)) ? "flex" : "none";
+      const coincide = categoria === "general" || card.classList.contains(categoria);
+      card.style.display = coincide ? "flex" : "none";
     });
-  
-    document.querySelectorAll(".menu-item").forEach(btn => btn.classList.remove("active"));
-    botonSeleccionado.classList.add("active");
   }
-  

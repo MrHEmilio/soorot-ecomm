@@ -1,4 +1,4 @@
-/* === Estilo general del cuerpo === */
+/* Fuente principal, fondo dinámico y animación */
 body {
     font-family: 'Quicksand', sans-serif;
     background: linear-gradient(to bottom, #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
@@ -8,116 +8,31 @@ body {
     margin: 0;
   }
   
-  /* === Contenedor principal === */
+  /* Estructura general */
+  .layout-wrapper {
+    display: flex;
+  }
+  
   .main-content {
     flex-grow: 1;
     padding: 1rem;
-    background-color: transparent;
     min-height: 100vh;
+    background-color: transparent;
   }
   
-  /* === Título principal === */
   .titulos {
-    font-family: 'Quicksand', sans-serif;
     font-weight: 600;
     color: #dcd7ba;
   }
   
-  /* === Grid de productos === */
-  #list-items {
-    display: grid; /* Display en grid por defecto */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-    padding: 2rem;
-  }
-  
-  /* === Tarjeta individual === */
-  .product-card {
-    background-color: rgba(205, 224, 194, 0.15);
-    border: 1px solid #a6b89a;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    transition: transform 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 360px;
-    text-align: center;
-  }
-  
-  .product-card:hover {
-    transform: scale(1.02);
-    border-color: #b5d1ad;
-    background-color: rgba(205, 224, 194, 0.25);
-  }
-  
-  /* Imagen del producto */
-  .product-card img {
-    max-width: 100%;
-    height: 160px;
-    object-fit: contain;
-    border-radius: 16px;
-    margin-bottom: 0.7rem;
-    cursor: pointer; /* Para que sea clickeable */
-  }
-  
-  /* Título y descripción */
-  .product-card h3 {
-    margin: 0.5rem 0 0.2rem;
-    white-space: normal;
-    word-wrap: break-word;
-    font-size: 1.3rem;
-    font-family: 'Quicksand', sans-serif;
-    color: #dcd7ba;
-  }
-  
-  .product-card p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    white-space: normal;
-    word-break: break-word;
-  }
-  
-  /* Precio */
-  .product-card span {
-    font-weight: bold;
-    color: #a9db9c;
-    font-size: 1.1rem;
-  }
-  
-  /* Encabezado con botón y precio */
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Botón de edición */
-  .btn-edit {
-    background-color: #6b8e6d;
-    border: none;
-    color: white;
-    padding: 0.3rem 0.7rem;
-    border-radius: 10px;
-    font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-  }
-  
-  /* === Barra lateral === */
+  /* Estilo de la barra lateral */
   .sidebar {
+    background-color: #1f2b23;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    background-color: #1f2b23;
   }
   
-  /* Botones del menú lateral */
   .menu-item {
     background-color: #cde0c2;
     color: #1f2b23;
@@ -128,7 +43,6 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    text-align: left;
     transition: background-color 0.3s ease;
   }
   
@@ -141,15 +55,90 @@ body {
     color: white;
   }
   
-  /* === Modal === */
+  /* Grid adaptable para productos */
+  #list-items {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-items: center;
+  }
+  
+  /* Tarjetas de productos */
+  .product-card {
+    background-color: rgba(205, 224, 194, 0.15);
+    border: 1px solid #a6b89a;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 100%;
+    max-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.02);
+    background-color: rgba(205, 224, 194, 0.25);
+    border-color: #b5d1ad;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 0.7rem;
+  }
+  
+  .product-card h3 {
+    font-size: 1.3rem;
+    color: #dcd7ba;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  .product-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  .product-card span {
+    font-weight: bold;
+    color: #a9db9c;
+    font-size: 1.1rem;
+  }
+  
+  /* Botón Edit */
+  .btn-edit {
+    background-color: #6b8e6d;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Cabecera de la tarjeta con botón y precio */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Modal */
   .modal {
     display: none;
     position: fixed;
     z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
@@ -160,9 +149,9 @@ body {
     color: #1f2b23;
     padding: 2rem;
     border-radius: 1rem;
-    text-align: center;
     max-width: 400px;
     width: 90%;
+    text-align: center;
   }
   
   .modal-content img {
@@ -184,38 +173,9 @@ body {
     font-size: 0.9rem;
   }
   
-  /* === Layout flexible === */
-  .layout-wrapper {
-    display: flex;
-  }
-  
-  /* === Animación fondo dinámico === */
+  /* Animación de fondo */
   @keyframes scrollColor {
     0% { background-position: 0% 0%; }
     50% { background-position: 0% 100%; }
     100% { background-position: 0% 0%; }
-  }
-  
-  /* === Responsividad === */
-  
-  /* Escritorio: 3 columnas */
-  @media (min-width: 992px) {
-    #list-items {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  /* Tablet: 2 columnas */
-  @media (min-width: 768px) and (max-width: 991px) {
-    #list-items {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  /* Móvil: 1 columna */
-  @media (max-width: 767px) {
-    #list-items {
-      grid-template-columns: 1fr;
-    }
-  }
-  
+  }  
