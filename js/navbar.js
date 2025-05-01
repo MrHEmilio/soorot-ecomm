@@ -1,5 +1,5 @@
 export function insertarNavbar() {
-  const nav = document.createElement("nav");
+  const nav = document.createElement("nav"); 
   nav.className = "navbar navbar-expand-lg bg-body-tertiary";
   nav.innerHTML = `
         <div class="container-fluid">
