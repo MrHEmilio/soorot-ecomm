@@ -22,10 +22,10 @@ export function insertarNavbar() {
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="productos.html">Productos</a>
+                        <a class="nav-link active nav-link-collapsed" aria-current="page" href="productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="acercade.html">Acerca de nosotros</a>
+                        <a class="nav-link nav-link-collapsed" aria-current="page" href="acercade.html">Acerca de nosotros</a>
                     </li>
                 </ul>
                 <div class="buttons-navbar">

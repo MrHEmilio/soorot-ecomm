@@ -459,65 +459,8 @@ ul li.nav-item a{
 		background: #000; /* Cambiamos el fondo cuando el usuario pase el mouse */
 		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
 	}
-/* LOS MEDIA QUERY LOS PUSE HASTA ABAJO PARA QUE PUEDA 
-CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
-  @media (max-width: 768px) {
-    .navbar {
-      border-bottom-left-radius: 4vw;
-      border-bottom-right-radius: 4vw;
-    }
-    .navbar-brand{
-      display: none;
-    }
-    .header-contact.header-contact2{
-    font-size: 48px;
-    letter-spacing: 10px;
-    }
-    .header-contact.header-contact4{
-    font-size: 20px;
-    }
-    .form-label{
-      font-size: 15px;
-      margin-top:10px;
-    }
-    
-  }
-  
-  @media (max-width: 480px) {
-    .navbar {
-      border-bottom-left-radius: 6vw;
-      border-bottom-right-radius: 6vw;
-      }
-    .header-contact.header-contact2{
-      font-size: 40px;
-      letter-spacing: 8px;
-      }
-      .header-contact.header-contact4{
-      font-size: 14px;
-      }
-  
-  }
-/* navbar collapse */
-  @media (max-width: 990px){
-    .navbar-collapse{
-      background-color: var(--verde-oscuro);
-      border: 10px solid --verde-oscuro;
-      border-radius: 10px;
-      padding: 10px;
-      margin: 10px 0 0 -15px;
-    }
-    .nav-link{
-      color: var(--beige-arena);
-      margin: 10px; /* Cambia el margen a un valor más pequeño */
-      padding: 5px 10px; /* Ajusta el espacio interno */
-      display: inline-block; /* Permite que el cuadro se adapte al texto */
 
-    }
-    .nav-item{
-      margin: 5px;
-    }
-  }
-  
+
 
 /* editorProductos.html INICIO */
 
@@ -675,4 +618,59 @@ button:hover {
 /* Color del texto en términos y condiciones y aviso de privacidad */
 .texto-claro-tyc {
   color: #48dc98;
+}
+
+
+/* TODOS LOS MEDIA QUERY HASTA ABAJO POR FAVOR */
+
+/* LOS MEDIA QUERY LOS PUSE HASTA ABAJO PARA QUE PUEDA 
+CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
+
+/* navbar collapse */
+@media (max-width: 992px){
+  .navbar-collapse{
+    background-color: var(--verde-oscuro);
+    border: 10px solid --verde-oscuro;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0 0 -15px;
+  }
+  .nav-item .nav-link.nav-link-collapsed{
+    color: var(--beige-arena);
+    margin: 10px; /* Cambia el margen a un valor más pequeño */
+    padding: 5px 10px; /* Ajusta el espacio interno */
+    display: inline-block; /* Permite que el cuadro se adapte al texto */
+
+  }
+  .nav-item{
+    margin: 5px;
+  }
+  .navbar-brand{
+    display: none;
+  }
+  .header-contact.header-contact2{
+    font-size: 54px;
+    letter-spacing: 10px;
+    }
+  .header-contact.header-contact4{
+    font-size: 20px;
+  }
+  .form-label{
+      font-size: 15px;
+      margin-top:10px;
+  }
+    
+}
+
+@media (max-width: 480px) {
+  .header-contact.header-contact2{
+    font-size: 40px;
+    letter-spacing: 8px;
+
+  }
+  .header-contact.header-contact4{
+      font-size: 18px;
+      margin-top: 00px;
+  }
+
 }
