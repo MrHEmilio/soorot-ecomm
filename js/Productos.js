@@ -1,7 +1,7 @@
 // Base de datos local de productos clasificados por categoría
 const productos = [
     // ---------- Escalada ----------
-    { Nombre: "Arnés", img: "https://m.media-amazon.com/images/I/61mtAYBUcCL._AC_SX679_.jpg", desc: "Arnés de seguridad ergonómico para escalada deportiva.", categoria: "escalada" },
+    { Nombre: "Arnés", img: "https://images.arcteryx.com/F24/1350x1710/Skaha-Harness-Lampyre-Boxcar.jpg", desc: "Arnés de seguridad ergonómico para escalada deportiva.", categoria: "escalada" },
     { Nombre: "Cuerda Dinámica", img: "https://www.teufelberger.com/media/catalog/product/cache/ad06d83191629f33f6df1b655e73fe3f/a/p/apex.jpg", desc: "Cuerda para absorber impactos y caídas en escalada.", categoria: "escalada" },
     { Nombre: "Mosquetón con seguro", img: "https://m.media-amazon.com/images/I/51JMBbFK-dL._AC_.jpg", desc: "Mosquetón con cierre automático para mayor seguridad.", categoria: "escalada" },
     { Nombre: "Casco", img: "https://m.media-amazon.com/images/I/61zWMe28UlL._AC_SL1500_.jpg", desc: "Casco resistente para proteger tu cabeza en todo momento.", categoria: "escalada" },
@@ -23,11 +23,11 @@ const productos = [
     // ---------- Exploración ----------
     { Nombre: "Botas Senderismo", img: "https://d1nymbkeomeoqg.cloudfront.net/photos/18/92/310773_29276_XXL.jpg", desc: "Cómodas, impermeables y resistentes.", categoria: "exploracion" },
     { Nombre: "Bastones Senderismo", img: "https://res.cloudinary.com/ekoweb/image/upload/s--6ADljju8--/f_auto,h_600,q_auto:eco,w_600/v1/products/9-125901/views/9-125901_ultra-carbon-foldable_l47043200_01", desc: "Ayuda a mantener el equilibrio en cualquier terreno.", categoria: "exploracion" },
-    { Nombre: "Lámpara Recargable", img: "https://media.pelican.com/img/products/flashlights/2760/pelican-best-high-lumen-led-camping-headlamp.jpg", desc: "Ilumina tus pasos, incluso en la noche más oscura.", categoria: "exploracion" },
+    { Nombre: "Lámpara Recargable", img: "https://images.snowleader.com/cdn-cgi/image/f=auto,fit=scale-down,q=85/https://images.snowleader.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/c/o/cosmo-350-octane-simple-blackdiamo-blad01951_01.jpg", desc: "Ilumina tus pasos, incluso en la noche más oscura.", categoria: "exploracion" },
     { Nombre: "Chamarra impermeable", img: "https://www.fjern.equipment/cdn/shop/products/mens-forsvar-eco-waterproof-jacket-indigo-7_2048x.jpg?v=1659431169", desc: "Mantente seco sin importar el clima.", categoria: "exploracion" },
 
     // ---------- Campismo ----------
-    { Nombre: "Casa de campaña", img: "https://www.rei.com/media/cb065d7d-9b9a-4277-a814-cb2e5922aef6.jpg?size=784x588", desc: "Tu hogar temporal bajo las estrellas.", categoria: "campismo" },
+    { Nombre: "Casa de campaña", img: "https://www.outdoorsports.com/cdn/shop/files/Camping-Tents-The_North_Face-Wawona_4-Light_Exuberance_Orange-Hero_Fly_1200x.png?v=1687528345", desc: "Tu hogar temporal bajo las estrellas.", categoria: "campismo" },
     { Nombre: "Bolsa de dormir", img: "https://teton.mx/cdn/shop/products/teton-sports-celsius-grand-xxl-0-f-sleeping-bag-39525311742190.jpg?v=1745598282", desc: "Duerme cómodo y cálido donde sea.", categoria: "campismo" },
     { Nombre: "Bajosleeping inflable", img: "https://klymit.com/cdn/shop/products/Klymit_StaticV_06SVGR01C_Front_Deep_NoValve_2000x2000_1606fbeb-ea1b-4b5a-a643-e29f48b9d1e2.jpg?v=1741634066", desc: "Colchón compacto y funcional.", categoria: "campismo" },
     { Nombre: "Utensilios", img: "https://m.media-amazon.com/images/I/813WahUDNaL._AC_SL1500_.jpg", desc: "Todo lo que necesitas para cocinar al aire libre.", categoria: "campismo" }

@@ -1,67 +1,47 @@
-const productos = []
-    // Ejemplo de un producto
-    // {
-    //   id: 1,
-    //   name: "Producto 1",
-    //   image: "assets/product-images/producto1.jpg",
-    //   description: "Descripción del producto 1",
-    //   quantity: 10,
-    //   price: "199.99",
-    //   link: "productos.html#producto1"
-    // },
-      
-  const dropdown = document.getElementById("productDropdown");
-  const card = document.getElementById("productCardContainer");
-  const img = document.getElementById("productImage");
-  const title = document.getElementById("productTitle");
-  const desc = document.getElementById("productDescription");
-  const qty = document.getElementById("productQty");
-  const price = document.getElementById("productPrice");
-  const link = document.getElementById("productLink");
-  const editBtn = document.getElementById("editBtn");
-  
-  let edicionDinamica = false;
-  let prodSeleccionado = null;
-  
-  // Agregar productos a dropdown
-  productos.forEach((productos, index) => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = "#";
-    a.className = "dropdown-item";
-    a.textContent = product.name;
-    a.addEventListener("click", () => loadProduct(index));
-    li.appendChild(a);
-    dropdown.appendChild(li);
-  });
-  
-  // Cargar producto en cada tarjeta
-  function loadProduct(index) {
-    prodSeleccionado = productos[index];
-    img.src = prodSeleccionado.image;
-    title.textContent = prodSeleccionado.name;
-    desc.value = prodSeleccionado.description;
-    qty.value = prodSeleccionado.quantity;
-    price.value = prodSeleccionado.price;
-    link.href = prodSeleccionado.link;
-  
-    desc.disabled = true;
-    qty.disabled = true;
-    price.disabled = true;
-    editBtn.textContent = "Editar";
-  
-    card.classList.remove("d-none");
-    edicionDinamica = false;
+//** INICIO DE BLOQUE DE CÓDIGO PARA CLOUDIFY */
+
+// Declaraciones para Cloudify dependen de quien haya hecho el signup en la plataforma
+
+const cloudName = "deb2blqxi"; // replace with your own cloud name
+const uploadPreset = "Soorot"; // replace with your own upload preset
+
+//Crea e inicializa el widget en memoria
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: cloudName,
+  uploadPreset: uploadPreset, 
+  //Asignación de estilos
+  styles: {
+    palette: {
+      window: "#1A4A36",
+      windowBorder: "#232E26",
+      tabIcon: "#D9EFDE",
+      menuIcons: "#232E26",
+      textDark: "#232E26",
+      textLight: "#D9EFDE",
+      link:  "#F8F4FF",
+      action:  "#677D6A",
+      inactiveTabIcon: "#D6BD98",
+      error: "#F44235",
+      inProgress: "#0078FF",
+      complete: "#20B832",
+      sourceBg: "#E4EBF1"
+    },
+    frame: {
+      background: "#677D6A"
+    },
+    fonts: {
+        "'Lato', regular": "https://fonts.googleapis.com/css2?family=Lato",
+    }
   }
-  
-  // Click en botón de guardar cambios 
-  // editBtn.addEventListener("click", () => {
+}, (error, result) => { 
+  if (!error && result && result.event === "success") { 
+    console.log('Hecho! Aqui esta la información del archivo subido: ', result.info); 
+  }
+});
 
-    //Enseñar una tarjeta de ejemplo 
+// Abre el widget al hacer clic
+document.getElementById("upload_widget").addEventListener("click", function () {
+  myWidget.open();
+}, false);
 
-    window.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-          const card = document.getElementById('productCardContainer');
-          card.classList.remove('d-none');
-        }, 3000); // 3 seconds
-      });
+//** FINAL DE BLOQUE DE CÓDIGO PARA CLOUDIFY */
