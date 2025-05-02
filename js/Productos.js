@@ -118,46 +118,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Espera a que todo el HTML esté cargado antes de ejecutar el script
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Obtener referencias a los elementos del formulario usando sus nuevos IDs
+
   const nameInput = document.getElementById('productName');
   const imageUrlInput = document.getElementById('productImageUrl');
   const categorySelect = document.getElementById('productCategory');
   const descriptionTextarea = document.getElementById('productDescription');
   const createButton = document.getElementById('createProductBtn');
 
-  // Añadir un 'escuchador' de eventos al botón. Se ejecutará cuando se haga clic.
+
   createButton.addEventListener('click', function() {
 
-      // 1. Leer los valores actuales de los campos del formulario
+   
       const productName = nameInput.value;
       const imageUrl = imageUrlInput.value;
-      const category = categorySelect.value; // El .value de un select da el value del option seleccionado
+      const category = categorySelect.value; 
       const description = descriptionTextarea.value;
 
-      // 2. Crear el objeto JavaScript con la estructura deseada
+      
       const productObject = {
           Nombre: productName,
           img: imageUrl,
-          desc: description, // Asegúrate que el orden de las claves no importa en JS/JSON
+          desc: description, 
           categoria: category
       };
 
-      // 3. Mostrar el objeto en la consola del navegador (para verificar)
       console.log("Objeto JavaScript creado:");
       console.log(productObject);
 
-      // 4. (Opcional) Convertir el objeto a una cadena JSON
-      // El 'null, 2' es para formatear la salida JSON de forma legible en la consola
+      
       const productJsonString = JSON.stringify(productObject, null, 2);
       console.log("\nCadena JSON generada:");
       console.log(productJsonString);
 
       nameInput.value = '';
       imageUrlInput.value = '';
-      categorySelect.value = ''; // Resetea al valor de la opción por defecto (<option value="">)
+      categorySelect.value = '';
       descriptionTextarea.value = '';
   });
 
