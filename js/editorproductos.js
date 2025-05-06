@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     createButton.addEventListener('click', function (event) {
       event.preventDefault();
   
-      // 🔁 Releer productos desde localStorage en cada clic
       productos = JSON.parse(localStorage.getItem('productos')) || [];
   
       const productName = nameInput.value.trim();
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
       addItem(productObject);  // Mostrar tarjeta
   
-      // ✅ Limpiar campos del formulario
+      //Limpiar campos del formulario (no sirve aún)
       nameInput.value = '';
       imageUrlInput.value = '';
       categorySelect.value = '';
