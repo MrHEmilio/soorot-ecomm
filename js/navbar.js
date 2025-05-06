@@ -75,7 +75,7 @@ export function insertarfooter() {
         <ul>
           <li><a href="avisoprivacidad.html">Aviso de privacidad</a></li> 
           <li><a href="terminoscondiciones.html">Terminos y condiciones</a></li>
-          <!-- <li><a href="#">Condiciones de uso</a></li> -->
+          <li><a href="editorProductos.html">Editor de productos</a></li>
         </ul>
         <div class="social-media">
           <a href="http://www.github.com/"

@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//eliminar
 document.addEventListener('DOMContentLoaded', function() {
 
 
