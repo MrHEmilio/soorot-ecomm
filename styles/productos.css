@@ -1,14 +1,4 @@
-/* ===== Fuente principal, fondo dinámico y animación ===== */
-body {
-    font-family: 'Quicksand', sans-serif;                /* Fuente principal de todo el sitio */
-    background: linear-gradient(                         /* Degradado vertical verde-oscuro */
-                to bottom,
-                #1f2b23, #2e3c2f, #3b4e39, #4a5f45);
-    background-size: 100% 300%;                         /* Altura triple para animar el scroll */
-    animation: scrollColor 30s linear infinite;         /* Ciclo suave de colores cada 30 s */
-    color: #ffffff;                                     /* Texto blanco global */
-    margin: 0;                                          /* Elimina márgenes por defecto */
-}
+
 
   /* ===== Estructura general ===== */
 .layout-wrapper {
