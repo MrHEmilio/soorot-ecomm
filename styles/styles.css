@@ -71,11 +71,6 @@ ul li.nav-item a{
   margin: 5px;
 }
 
-/* .btn.btn-outline-success {
-  margin-right: 40px;
-  height: auto;
-} */
-
 /* Estilos para Titulos en Body */
 
 .titulos {
@@ -83,6 +78,7 @@ ul li.nav-item a{
   font-weight: 600;
   color: #D6BD98;
 }
+/* AQUÍ EMPIEZAN LOS ESTILOS PARA LA PÁGINA DE NOSOTROS */
 /* Header "Acerca de" */
 .headerAcercade {
   margin-top: -20px;
@@ -111,45 +107,6 @@ ul li.nav-item a{
   color: var(--verde-claro);
 }
 
-/* **Estilo para tarjeta**  */
-
-.carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 500px; 
-}
-
-
-.cards {
-  display: flex; /* Diseño flexible */
-  justify-content: center; /* Centra las tarjetas horizontalmente */
-  gap: 2rem; /* Espaciado entre las tarjetas */
-  margin-bottom: 10px;
-}
-
-.card {
-  width: 18rem; margin-top: 150px;margin-left: auto;margin-right: auto;margin-bottom: 100px;
-  background-color: #677D6A;
-  border: none;
-  text-align: center;
-}
-
-.card-title {
-  color: #D6BD98;
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 300;
-}
-
-.card-text {
-  color: #232E26;
-  font-family: 'Lato', sans-serif;
-}
-
-.carousel-inner {
-  position: relative;
-  min-height: 300px; /* para que el fade no colapse el contenedor */
-}
 
 .btn.btn-primary {
   color: #232E26;
@@ -182,149 +139,6 @@ ul li.nav-item a{
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   color: #D6BD98;
-}
-
-/* Contenedor de tarjetas */
-.color-texto {
-  color: var(--verde-blanco) !important;
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-}
-
-.cards {
-  display: flex; /* Diseño flexible */
-  justify-content: center; /* Centra las tarjetas horizontalmente */
-  gap: 2rem; /* Espaciado entre las tarjetas */
-}
-
-.card {
-  display: flex; /* Diseño flexible */
-  flex-direction: column; /* Apila los elementos en columna */
-  justify-content: space-between; /* Espaciado uniforme entre los elementos */
-  background-color: var(--verde-grisaceo); /* Fondo de la tarjeta */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 1rem; /* Espaciado interno */
-  width: 300px; /* Ancho fijo */
-  height: 550px; /* Altura fija */
-  text-align: left; /* Alineación del texto */
-  position: relative; /* Para posicionar elementos internos */
-}
-
-/* Imagen dentro de la tarjeta */
-.card img {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  height: 220px; /* Altura fija */
-  object-fit: cover; /* Ajusta la imagen al contenedor */
-  border-radius: 10px; /* Bordes redondeados */
-  margin-bottom: 1rem; /* Espaciado inferior */
-}
-
-/* Título de la tarjeta */
-.card h2 {
-  font-size: 1.5rem; /* Tamaño del texto */
-  margin-bottom: 1rem; /* Espaciado inferior */
-  text-align: center; /* Centra el texto */
-}
-
-/* Descripción debajo del título */
-.card p {
-  font-size: 1.2rem; /* Tamaño del texto */
-  line-height: 1.8; /* Espaciado entre líneas */
-  margin-bottom: auto; /* Ajusta el espaciado inferior */
-  text-align: justify; /* Justifica el texto */
-  overflow-wrap: break-word; /* Ajusta palabras largas */
-  height: 200px; /* Altura fija */
-  overflow: hidden; /* Oculta el contenido excedente */
-  display: -webkit-box; /* Compatibilidad con textos largos */
-  /*-webkit-line-clamp: 6;  Limita a 6 líneas visibles */
-  -webkit-box-orient: vertical; /* Orientación vertical */
-}
-
-/* Botón "Learn More" */
-.card .learn-more {
-  position: absolute; /* Posicionamiento relativo a la tarjeta */
-  bottom: 10px; /* Ubicación desde la parte inferior */
-  right: 10px; /* Ubicación desde la derecha */
-  background-color: var(--verde-oscuro); /* Fondo oscuro */
-  color: var(--verde-blanco); /* Texto blanco */
-  border: none; /* Sin borde */
-  border-radius: 50px; /* Bordes redondeados */
-  padding: 1rem 2rem; /* Espaciado interno */
-  font-size: 1.2rem; /* Tamaño del texto */
-  cursor: pointer; /* Cambia el cursor al pasar */
-}
-
-/* Modal */
-.modal {
-  display: none; /* Oculta el modal por defecto */
-  position: fixed; /* Fijo en la pantalla */
-  top: 0; /* Posición en la parte superior */
-  left: 0; /* Posición en el lado izquierdo */
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Altura completa */
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-  z-index: 1000; /* Asegura que esté encima de otros elementos */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-}
-
-/* Contenido dentro del modal */
-.modal-content {
-  position: relative; /* Posicionamiento relativo */
-  background-color:var(--verde-oscuro); /* Fondo oscuro */
-  padding: 2rem; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  text-align: center; /* Alinea el texto al centro */
-  color: var(--verde-blanco); /* Texto blanco */
-  max-width: 500px; /* Ancho máximo */
-  width: 90%; /* Ocupa el 90% del ancho disponible */
-}
-
-/* Imagen dentro del modal */
-.modal-content img {
-  max-width: 100%; /* Ocupa todo el ancho disponible sin exceder */
-  height: auto; /* Altura automática */
-  border-radius: 10px; /* Bordes redondeados */
-  margin-bottom: 1rem; /* Espaciado inferior */
-}
-
-/* Botón para cerrar el modal */
-.modal-content .close {
-  position: absolute; /* Posicionamiento absoluto en el modal */
-  top: 10px; /* Posición desde la parte superior */
-  right: 15px; /* Posición desde la derecha */
-  font-size: 1.5rem; /* Tamaño de la fuente */
-  color: var(--verde-blanco); /* Texto blanco */
-  cursor: pointer; /* Cambia el cursor al pasar */
-  background: none; /* Sin fondo */
-  border: none; /* Sin borde */
-}
-
-/* Botones para mover entre imágenes */
-.modal-content .prev,
-.modal-content .next {
-  position: absolute; /* Posicionamiento absoluto */
-  top: 50%; /* Centrado verticalmente */
-  transform: translateY(-50%); /* Ajuste para centrar exactamente */
-  background-color: var(--verde-oscuro); /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
-  border-radius: 50%; /* Forma circular */
-  width: 40px; /* Ancho del botón */
-  height: 40px; /* Alto del botón */
-  cursor: pointer; /* Cambia el cursor al pasar */
-  display: flex; /* Diseño flexible */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del botón */
-}
-
-.modal-content .prev {
-  left: 10px; /* Botón anterior alineado a la izquierda */
-}
-
-.modal-content .next {
-  right: 10px; /* Botón siguiente alineado a la derecha */
 }
 
 
