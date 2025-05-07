@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnEnviar = document.getElementById("btnEnviar");
     const contactForm = document.getElementById("contactForm");
   
-    // Inicializar EMAIL JS para Enviar Datos de Inputs
+    // Inicializar EMAIL JS para Enviar Datos de Inputs 
     emailjs.init("tCk0Yz0O6OB4wkfGp");
 
     // Funcion para enviar Email con emailjs

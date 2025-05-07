@@ -56,7 +56,7 @@ return;
 //Validacion de contraseña
 const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 if(!regexPassword.test(password)){
-    Swal.fire("La contraseña no es válida, mínimo tiene que tener 8 caracteres, una mayúscula, un caracter especial, un número.")
+    Swal.fire("La contraseña no es válida", "Mínimo tiene que tener 8 caracteres, una mayúscula, un caracter especial, un número.")
     return;
 }
 
@@ -67,17 +67,26 @@ if(password != passwordC){
 }
 
 // Si todo está bien, retornamos los valores en un objeto
+Swal.fire("Registro exitoso.")
 return { name, email, phone, password, passwordC};
 }
 
+
 btnRegistrarse.addEventListener("click", function (event) {
-event.preventDefault();
+    event.preventDefault();
 
 const inputData = checkInput();
 
 // Si hubo errores de validación, no continuar
 if (!inputData) return;
 
+// Se reinician los campos
+inputName.value = ""
+inputEmail.value = ""
+inputPhone.value = ""
+inputPassword.value = ""
+inputPasswordC.value = ""
+//inputCheck.value = ""
 
 });
 

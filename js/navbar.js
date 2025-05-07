@@ -30,7 +30,7 @@ export function insertarNavbar() {
                 </ul>
                 <div class="buttons-navbar">
                     <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
-                    <button type="button" class="btn btn-success">Ingresa</button>
+                    <a href="registrouser.html"><button type="button" class="btn btn-success">Registro</button></a>
                 </div>  
             </div>
         </div>
@@ -61,7 +61,7 @@ export function insertarfooter() {
             <label for="email">Ingresa tu correo</label>
             <input
               type="email"
-              id="email"
+              id="email_footer"
               name="email"
               placeholder="Ingresa tu correo..."
             />
