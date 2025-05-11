@@ -71,23 +71,38 @@ Swal.fire("Registro exitoso.")
 return { name, email, phone, password, passwordC};
 }
 
-
 btnRegistrarse.addEventListener("click", function (event) {
     event.preventDefault();
 
-const inputData = checkInput();
+    const inputData = checkInput();
 
-// Si hubo errores de validación, no continuar
-if (!inputData) return;
+    // Si hubo errores de validación, no continuar
+    if (!inputData) return;
 
-// Se reinician los campos
-inputName.value = ""
-inputEmail.value = ""
-inputPhone.value = ""
-inputPassword.value = ""
-inputPasswordC.value = ""
-//inputCheck.value = ""
+    // Obtener el arreglo actual de usuarios del localStorage o inicializar uno nuevo
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+    // Agregar nuevo usuario al arreglo
+    usuarios.push({
+        nombre: inputData.name,
+        email: inputData.email,
+        telefono: inputData.phone,
+        password: inputData.password
+        // No es recomendable guardar contraseñas en texto plano, pero está bien para la práctica
+    });
+
+    // Guardar en localStorage como JSON
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    // Limpiar los campos del formulario
+    inputName.value = "";
+    inputEmail.value = "";
+    inputPhone.value = "";
+    inputPassword.value = "";
+    inputPasswordC.value = "";
+    //inputCheck.value = ""; // No necesario para checkbox
+
+    console.log("Usuarios registrados:", usuarios); // Solo para depuración
 });
 
 //}); // Event Listener DOM Content Loaded
