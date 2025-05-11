@@ -30,73 +30,79 @@
     <link rel="stylesheet" href="./styles/fonts.css" />
   </head>
   <body>
-    <form>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label" id="name_registry"
-          >Nombre</label
-        >
-        <input
-          type="email"
-          class="form-control"
-          id="name_registry"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label" id="phone_registry"
-          >Telefono</label
-        >
-        <input
-          type="email"
-          class="form-control"
-          id="phone_registry"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label" id="email_registry"
-          >Correo electronico</label
-        >
-        <input
-          type="email"
-          class="form-control"
-          id="email_registry"
-          aria-describedby="emailHelp"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="password_registry" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password_registry" />
-      </div>
-      <div class="mb-3">
-        <label for="password_registry" class="form-label"
-          >Confirmar contraseña</label
-        >
-        <input type="password" class="form-control" id="password_registry" />
-      </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1"
-          >Acepto los terminos y condiciones</label
-        >
-      </div>
-      <button type="submit" class="btn btn-primary">Registrarse</button>
-    </form>
+
+    <!--/// Header-->
+    <div class="headerAcercade">
+      <h2 class="header-acercade header-acercade2">Regístrate</h2>
+      <p class="header-acercade header-acercade4">
+        Llena los campos correctamente para poder tener una cuenta en nuestra tienda en línea.
+      </p>
+    </div>
+    <!--fin Header-->
+
+    <!-- Formulario Inicio -->
+    <div class="container">
+      <form>
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input 
+            type="text"
+            class="form-control"
+            id="nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label" 
+            >Telefono</label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label" 
+            >Correo electronico</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" autocomplete="off" />
+        </div>
+        <div class="mb-3">
+          <label for="passwordC" class="form-label"
+            >Confirmar contraseña</label
+          >
+          <input type="password" class="form-control" id="passwordC" autocomplete="off" />
+        </div>
+        <!-- Se deja comentado hasta tener listo el script que activa/desactiva el botón enviar -->
+        <!-- <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="check" />
+          <label class="form-check-label" for="check"
+            >Acepto los terminos y condiciones</label
+          >
+        </div> -->
+        <button type="submit" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
+      </form>
+    </div>
 
     <!-- script para el navbar, hay que procurar que se conserve como el primer script -->
     <script type="module">
-      import { insertarNavbar } from "./js/navbar.js";
+      import { insertarNavbar, insertarfooter } from "./js/navbar.js";
       insertarNavbar();
-    </script>
-    <!-- script para el navbarfinal -->
-    <script src="./js/main.js"></script>
-    <!-- BOOTSTRAP: HAY QUE DEJAR ESE SCRIPT AL FINAL -->
-    <!-- script para el footer INICIO -->
-    <script type="module">
-      import { insertarfooter } from "./js/navbar.js";
       insertarfooter();
     </script>
-    <!-- script para el footer FINAL -->
+    <!-- Sweet Alert Alerta que no es la clásica -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- script para el navbarfinal -->
+    <script src="./js/registro.js"></script>
+    <!-- BOOTSTRAP: HAY QUE DEJAR ESE SCRIPT AL FINAL -->
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
