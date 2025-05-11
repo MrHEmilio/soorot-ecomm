@@ -88,7 +88,6 @@ btnRegistrarse.addEventListener("click", function (event) {
         email: inputData.email,
         telefono: inputData.phone,
         password: inputData.password
-        // No es recomendable guardar contraseñas en texto plano, pero está bien para la práctica
     });
 
     // Guardar en localStorage como JSON
