@@ -11,7 +11,9 @@
 <body>
     <!-- Header -->
     <div class="headerAcercade">
+        <!-- Título principal del encabezado -->
         <h2 class="header-acercade header-acercade2">Login</h2>
+        <!-- Descripción o subtítulo del encabezado -->
         <p class="header-acercade header-acercade4">
             Ingresa tus credenciales para acceder a tu cuenta.
         </p>
@@ -19,17 +21,23 @@
     <!-- End Header -->
     <main>
         <div class="login-container">
+            <!-- Formulario de inicio de sesión -->
             <form id="login-form" class="login-form">
+                <!-- Título del formulario -->
                 <h1>Iniciar Sesión</h1>
+                <!-- Campo para ingresar el correo electrónico -->
                 <div class="form-group">
                     <label for="usernameLog">Correo Electrónico</label>
                     <input type="text" id="usernameLog" name="usernameLog" placeholder="Pon tu correo electronico" required>
                 </div>
+                <!-- Campo para ingresar la contraseña -->
                 <div class="form-group">
                     <label for="passwordLog">Contraseña</label>
                     <input type="passwordLog" id="passwordLog" name="passwordLog" placeholder="Pon tu contraseña" required>
                 </div>
+                <!-- Botón para enviar el formulario -->
                 <button type="submit">Ingresa</button>
+                <!-- Opciones adicionales: Olvidar contraseña y registrarse -->
                 <div class="login-options">
                     <a href="forgot-password.html" id="forgot-password">Olvidaste tu contraseña?</a>
                     <a href="registrouser.html" id="sign-up">Registrarse</a>
@@ -40,9 +48,10 @@
     <script src="js/login.js"></script>
     <script type="module">
         document.addEventListener('DOMContentLoaded', () => {
+            // Importa las funciones para insertar el navbar y el footer
             import('./js/navbar.js').then(({ insertarNavbar, insertarfooter }) => {
-                insertarNavbar();
-                insertarfooter();
+                insertarNavbar(); // Inserta el navbar dinámicamente
+                insertarfooter(); // Inserta el footer dinámicamente
             });
         });
     </script>
