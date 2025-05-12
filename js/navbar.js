@@ -1,4 +1,7 @@
+console.log('Navbar script loaded');
+
 export function insertarNavbar() {
+  console.log('Inserting navbar...');
   const nav = document.createElement("nav"); 
   nav.className = "navbar navbar-expand-lg bg-body-tertiary";
   nav.innerHTML = `
@@ -36,9 +39,11 @@ export function insertarNavbar() {
         </div>
     `;
   document.body.prepend(nav);
+  console.log('Navbar inserted successfully');
 }
 
 export function insertarfooter() {
+  console.log('Inserting footer...');
   const footer = document.createElement("footer");
   footer.className = "contenedor-footer";
   footer.innerHTML = `
@@ -92,4 +97,5 @@ export function insertarfooter() {
       </div>
     `;
   document.body.appendChild(footer);
+  console.log('Footer inserted successfully');
 }
