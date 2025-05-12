@@ -50,7 +50,7 @@ export function insertarfooter() {
           <h3>Soorot</h3>
           <ul>
             <li><a href="./index.html">Inicio</a></li>
-            <li><a href="./acercade.html">Acerca de nosotros</a></li>
+            <li><a href="./nosotros.html">Acerca de nosotros</a></li>
             <li><a href="./productos.html">Productos</a></li>
             <li><a href="./contactanos.html">Contáctanos</a></li>
             <li><a href="./ingresa.html">Ingresa</a></li>

@@ -79,6 +79,37 @@ ul li.nav-item a{
   color: #D6BD98;
 }
 /* AQUÍ EMPIEZAN LOS ESTILOS PARA LA PÁGINA DE NOSOTROS */
+/* carrusel */
+.carousel-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* espacio entre imagen y tarjeta */
+  flex-wrap: wrap; /* se apilan en pantallas pequeñas */
+  padding: 20px;
+}
+/* imágen de participanes */
+.carousel-img {
+  max-width: auto; /* o usa % si prefieres */
+  max-height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+/* tarjeta */
+.perfil-card {
+  max-width: 300px;
+  background-color: var(--verde-grisaceo);
+  color: var(--verde-claro);
+  font-family: Quicksand, sans-serif;
+}
+
+.perfil-card .card-body .card-title {
+  font-weight: bold;
+  color: var(--beige-arena);
+}
+/* AQUÍ TERMINAN LOS ESTILOS PARA LA PÁGINA DE NOSOTROS */
+
+
 /* Header "Acerca de" */
 .headerAcercade {
   margin-top: -20px;
