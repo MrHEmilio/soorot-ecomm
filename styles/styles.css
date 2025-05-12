@@ -107,6 +107,15 @@ ul li.nav-item a{
   font-weight: bold;
   color: var(--beige-arena);
 }
+
+/* CINTURON DE BOTONES */
+.aire {
+  display: flex;
+  justify-content: space-around; /* Distribuye los botones uniformemente */
+  align-items: center;
+  margin-bottom: 100px; /* Mantiene tu margen */
+}
+
 /* AQUÍ TERMINAN LOS ESTILOS PARA LA PÁGINA DE NOSOTROS */
 
 
@@ -509,6 +518,24 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
       font-size: 15px;
       margin-top:10px;
   }
+  .aire {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los botones se envuelvan si no caben */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 300px;
+  }
+  .aire {
+    flex-direction: column; /* Apilar los botones verticalmente */
+    align-items: stretch;   /* Que los botones ocupen todo el ancho disponible */
+  }
+  
+  .aire button {
+    width: 100%; /* Opcional: que los botones ocupen el 100% del contenedor */
+  }
+
+  
     
 }
 
