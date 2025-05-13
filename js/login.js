@@ -19,8 +19,13 @@ entrar.addEventListener("click", function checkInput(event) {
     const usuarioValid = usuarios.find(user=>user.email===usuarioCheck && user.password===passwordCheck);
 
     if (usuarioValid) {
-        Swal.fire("¡Te damos la bienvenida!")
-        window.location.href="index.html";
+        Swal.fire("¡Te damos la bienvenida!",
+            "Serás redirigido a la página principal en breve."
+        ).then(() => {
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        })
         localStorage.setItem("usuarioActivo", usuarioValid.email);
    
     } else {
@@ -31,4 +36,3 @@ entrar.addEventListener("click", function checkInput(event) {
 });
 
 // 
-
