@@ -40,7 +40,11 @@ main {
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
   padding-left: 1rem;
+<<<<<<< HEAD
   min-height: 70px;
+=======
+  min-height: 75px;
+>>>>>>> devdulce
 }
 .collapse.navbar-collapse{
   color: var(--verde-claro);
@@ -253,7 +257,6 @@ ul li.nav-item a{
 
 
 /*----------- LOGIN ---------*/
-
 .login-form{
   align-items: center;
   color: var(--beige-arena);
@@ -385,6 +388,18 @@ ul li.nav-item a{
 		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
 	}
 
+<<<<<<< HEAD
+=======
+
+
+/* editorProductos.html INICIO */
+
+.container-editProd {
+color: #198754;
+
+}
+
+>>>>>>> devdulce
 /*Fin Redes sociales*/
 
 /*Footer*/
