@@ -23,7 +23,11 @@
     <title>Acerca de nosotros</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" href="assets/favicon-soorot.svg" type="image/svg+xml" />
-
+    <!-- íconos de bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- este link sirve para los íconos de las RRSS en el footer -->
     <link rel="stylesheet" href="./styles/fonts.css" />
   </head>
@@ -42,42 +46,45 @@
     <div class="container">
       <form style="margin-bottom: 150px;">
         <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
+          <label for="nombre" class="form-label"><i class="bi bi-person-fill nameicon"> Nombre</i></label>
           <input 
             type="text"
             class="form-control"
             id="nombre"
+            placeholder="Nombre(s)"
           />
         </div>
         <div class="mb-3">
           <label for="telefono" class="form-label" 
-            >Teléfono</label
+            ><i class="bi bi-telephone-fill phoneicon"> Teléfono</i></label
           >
           <input
             type="tel"
             class="form-control"
             id="telefono"
+            placeholder="Ingresa tu número telefónico"
           />
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label" 
-            >Correo electrónico</label
+          <label for="email" class="form-label"  
+            ><i class="bi bi-envelope-fill emailicon"> Correo Electrónico</i></label
           >
           <input
             type="email"
             class="form-control"
             id="email"
+            placeholder="ejemplo@dominio.com"
           />
         </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="password" autocomplete="off" />
+          <label for="password" class="form-label"><i class="bi bi-lock-fill">Contaseña</i></label>
+          <input type="password" class="form-control" id="password" autocomplete="off" placeholder="Crea una contraseña"/>
         </div>
         <div class="mb-3">
           <label for="passwordC" class="form-label"
-            >Confirmar contraseña</label
+            ><i class="bi bi-lock-fill">Confirmar contaseña</i></label
           >
-          <input type="password" class="form-control" id="passwordC" autocomplete="off" />
+          <input type="password" class="form-control" id="passwordC" autocomplete="off" placeholder="Repite la contraseña"/>
         </div>
         <!-- Se deja comentado hasta tener listo el script que activa/desactiva el botón enviar -->
         <!-- <div class="mb-3 form-check">

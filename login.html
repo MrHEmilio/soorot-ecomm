@@ -28,15 +28,15 @@
 
             <form id="login-form" class="login-form">
                 <div class="form-group">
-                    <label for="usernameLog">Correo Electrónico</label>
+                    <label for="usuario">Correo Electrónico</label>
                     <br>
-                    <input type="text" id="usernameLog" name="usernameLog" placeholder="Pon tu correo electronico" required>
+                    <input type="text" id="usuario" name="usuario" placeholder="Pon tu correo electronico" required>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="passwordLog">Contraseña</label>
                     <br>
-                    <input type="passwordLog" id="passwordLog" name="passwordLog" placeholder="Pon tu contraseña" required>
+                    <input type="password" id="password" name="password" placeholder="Pon tu contraseña" required>
                 </div>
                 <button type="submit" id = "entrar">Ingresar</button>
                 <div class="login-options">
@@ -54,6 +54,7 @@
       insertarNavbar();
       insertarfooter();
     </script>
-        <script src="js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/login.js"></script>    
 </body>
 </html>
