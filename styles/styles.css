@@ -40,9 +40,9 @@ main {
   border-bottom-right-radius: 2vw;
   transition: border-radius 0.3s ease;
   padding-left: 1rem;
-  height: 90px;
+  min-height: 90px;
 }
-.collapse navbar-collapse{
+.collapse.navbar-collapse{
   color: var(--verde-claro);
 }
 .nav-link.color-texto {
@@ -74,11 +74,12 @@ main {
   height: 40px;
 }
 
-.d-flex{
+.logo-wrapper {
   margin-right: 60px;
   width: auto;
   height: 30px;
 }
+
 
 .btn.btn-outline-success {
   margin-right: 10px;
@@ -277,25 +278,6 @@ ul li.nav-item a{
   margin-bottom: 40px;
 }
 
-/* Iconos de la pagina contactanos */
-.phoneicon{
-  color:var(--beige-arena);
-  font-size: 20px;
-}
-.msjicon{
-  color:var(--beige-arena);
-  font-size: 20px;
-}
-.nameicon{
-  color:var(--beige-arena);
-  font-size: 20px;
-}
-.emailicon{
-  color:var(--beige-arena);
-  font-size: 20px;
-}
-
-/* fin de los iconos de contactanos */
 /* Finalizamos con la página de Contáctanos */
 
 /* Borde redondeado, radio responsivo dependiendo tamaño */
@@ -379,6 +361,7 @@ footer {
   text-align: center;
   font-family: Arial, sans-serif;
   margin-top: auto;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .footer-container {
@@ -595,6 +578,9 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   .aire button {
     width: 100%; /* Opcional: que los botones ocupen el 100% del contenedor */
   }
+  .navbar{
+    min-height: 60px;
+  }
 
   
     
@@ -610,5 +596,8 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
       font-size: 18px;
       margin-top: 00px;
   }
-
+  .navbar{
+    min-height: 45px;
+  }
+  
 }
