@@ -64,7 +64,7 @@ export function insertarfooter() {
            <ul>
             <li><a href="./contactanos.html">Contáctanos</a></li>
             <li><a href="./registrouser.html">Regístrate</a></li>
-            <li><a href="./ingresa.html">Iniciar sesión</a></li>
+            <li><a href="./login.html">Iniciar sesión</a></li>
           </ul>
           </div>
 
