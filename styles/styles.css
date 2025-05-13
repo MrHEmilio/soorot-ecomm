@@ -314,16 +314,6 @@ ul li.nav-item a{
 		padding: 10px 30px; /* Hacemos mas grande el espacio cuando el usuario pase el mouse */
 	}
 
-
-
-/* editorProductos.html INICIO */
-
-.custom-dropdown {
-  width: 50%; 
-  min-width: 250px;
-  max-width: 600px;
-}
-
 /*Fin Redes sociales*/
 
 /*Footer*/
@@ -551,3 +541,74 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   }
 
 }
+
+/* editorProductos.html INICIO */
+
+/* === Tarjeta de nuevo producto === */
+.card {
+    background-color: var(--verde-oscuro);  
+    border: 1px solid var(--verde-grisaceo);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto; 
+}
+
+.card h3.titulos {
+    font-size: 1.4rem;
+    color:var(--beige-arena);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Input y etiquetas */
+.card-body label {
+    font-weight: bold;
+    color:var(--verde-claro);
+}
+
+.card-body .form-control,
+.card-body .form-select,
+.card-body textarea {
+    border-radius: 10px;
+    border: 1px solid var(--verde-oscuro;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    background-color: var(--verde-blanco);
+    transition: border 0.2s ease;
+}
+
+.card-body .form-control:focus,
+.card-body .form-select:focus,
+.card-body textarea:focus {
+    border-color: var(--verde-claro);
+    outline: none;
+}
+
+/* botón */
+#createProductBtn {
+    background-color: var(--verde-grisaceo);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease;
+}
+
+#createProductBtn:hover {
+    background-color: var(--verde-grisaceo);
+}
+
+/* editorProductos.html FINAL */
