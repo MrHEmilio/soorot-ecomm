@@ -398,7 +398,7 @@ color: #198754;
 /*Footer*/
 footer {
   border-top: 2px solid var(--verde-grisaceo);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), var(--verde-medio));
+  background: linear-gradient(to top, rgba(26, 18, 11, 0.8), var(--verde-medio));
   color: #ffffff!important;
   padding: 20px;
   text-align: justify;
