@@ -13,8 +13,21 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   --verde-claro: #D9EFDE;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   background-color: #1A4A36;
+  padding-bottom: 50px; /* Ensures space for the footer */
+}
+
+main {
+  flex: 1;
 }
 
 /* **Estilos barra de navegación** */
@@ -55,6 +68,10 @@ body {
 #logoSoorot{
   width: 40px;
   height: auto;
+}
+
+.logo {
+  height: 40px;
 }
 
 .d-flex{
@@ -338,9 +355,10 @@ footer {
   border-top: 1px solid #48dc98;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), var(--verde-medio));
   color: #ffffff;
-  padding: 20px 20px;
+  padding: 20px;
+  text-align: center;
   font-family: Arial, sans-serif;
-  margin-top: 70px;
+  margin-top: auto;
 }
 
 .footer-container {
@@ -483,9 +501,18 @@ button:hover {
 
 /* editprods*/
 
+html, body {
+  height: 100%;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+}
 
-
+footer {
+  margin-top: auto;
+}
 
 /* TODOS LOS MEDIA QUERY HASTA ABAJO POR FAVOR */
 
