@@ -104,20 +104,40 @@ ul li.nav-item a{
   gap: 50px; /* espacio entre imagen y tarjeta */
   flex-wrap: wrap; /* se apilan en pantallas pequeñas */
   padding: 20px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Animación smooth */
 }
-/* imágen de participanes */
+
+.carousel-content:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* imágen de participantes */
 .carousel-img {
   max-width: auto; /* o usa % si prefieres */
   max-height: 500px;
   border-radius: 8px;
   object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación smooth */
 }
+
+.carousel-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 /* tarjeta */
 .perfil-card {
   max-width: 300px;
   background-color: var(--verde-grisaceo);
   color: var(--verde-claro);
   font-family: Quicksand, sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación smooth */
+}
+
+.perfil-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .perfil-card .card-body .card-title {
@@ -484,12 +504,56 @@ button:hover {
 }
 /* ... FIN: Estilo visual mejorado */
 
+/* Estilos para tarjetas mejoradas */
+.card-enhanced {
+  /* Configuración de tamaño mínimo y márgenes para las tarjetas */
+  min-width: 380px;
+  margin-top: 100px;
+  /* Bordes y sombras para un diseño moderno */
+  border: 2px solid var(--verde-grisaceo);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--verde-claro);
+  /* Transiciones suaves para efectos de hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-enhanced:hover {
+  /* Efecto de escala y sombra al pasar el cursor */
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-enhanced img {
+  /* Bordes redondeados para las imágenes dentro de las tarjetas */
+  border-radius: 15px 0 0 15px;
+}
+
+.card-enhanced .rounded-end {
+  /* Bordes redondeados para imágenes en el lado derecho */
+  border-radius: 0 15px 15px 0;
+}
+
+.card-title.text-success {
+  /* Estilo de los títulos de las tarjetas */
+  color: var(--beige-arena);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card-text {
+  /* Estilo del texto descriptivo en las tarjetas */
+  color: var(--verde-medio);
+  font-family: 'Lato', sans-serif;
+}
+
 /* ... INICIO: Estilo visual para imágenes clickeables en 'Acerca de nosotros' */
 .clickable-img {
+  /* Transiciones suaves para imágenes clickeables */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .clickable-img:hover {
+  /* Efecto de escala y sombra al pasar el cursor */
   transform: scale(1.03);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -585,3 +649,58 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   }
 
 }
+
+/* Estilos para tarjetas mejoradas */
+.card-enhanced {
+  /* Configuración de tamaño mínimo y márgenes para las tarjetas */
+  min-width: 380px;
+  margin-top: 100px;
+  /* Bordes y sombras para un diseño moderno */
+  border: 2px solid var(--verde-grisaceo);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--verde-claro);
+  /* Transiciones suaves para efectos de hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-enhanced:hover {
+  /* Efecto de escala y sombra al pasar el cursor */
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-enhanced img {
+  /* Bordes redondeados para las imágenes dentro de las tarjetas */
+  border-radius: 15px 0 0 15px;
+}
+
+.card-enhanced .rounded-end {
+  /* Bordes redondeados para imágenes en el lado derecho */
+  border-radius: 0 15px 15px 0;
+}
+
+.card-title.text-success {
+  /* Estilo de los títulos de las tarjetas */
+  color: var(--beige-arena);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card-text {
+  /* Estilo del texto descriptivo en las tarjetas */
+  color: var(--verde-medio);
+  font-family: 'Lato', sans-serif;
+}
+
+/* ... INICIO: Estilo visual para imágenes clickeables en 'Acerca de nosotros' */
+.clickable-img {
+  /* Transiciones suaves para imágenes clickeables */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickable-img:hover {
+  /* Efecto de escala y sombra al pasar el cursor */
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+/* ... FIN: Estilo visual para imágenes clickeables */
