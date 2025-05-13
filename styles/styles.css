@@ -132,6 +132,13 @@ ul li.nav-item a{
   align-items: center;
   margin-bottom: 100px; /* Mantiene tu margen */
 }
+.aire .btn-outline-success{
+  background-color: var(--verde-claro);
+}
+.aire .btn-outline-success:hover{
+  background-color: var(--verde-grisaceo);
+  color: var(--beige-arena);
+}
 
 /* AQUÍ TERMINAN LOS ESTILOS PARA LA PÁGINA DE NOSOTROS */
 
