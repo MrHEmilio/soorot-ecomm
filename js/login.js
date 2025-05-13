@@ -15,7 +15,7 @@ entrar.addEventListener("click", function checkInput(event) {
         return;
     }
 
-    const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     const usuarioValid = usuarios.find(user=>user.email===usuarioCheck && user.password===passwordCheck);
 
     if (usuarioValid) {
