@@ -101,7 +101,7 @@ ul li.nav-item a{
 
 /* 1. Elimina fondo y bordes de las tarjetas */
 .card.card-acerca {
-  background-color: var(--verde-oscuro);
+  background-color: var(--verde-grisaceo);
   border: none;
   box-shadow: 0 5px 7px rgba(0, 0, 0, 0.8);
 }
@@ -134,7 +134,7 @@ ul li.nav-item a{
   font-size: 24px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  color: var(--verde-grisaceo);
+  color: var(--verde-claro);
   text-align: justify;
 }
 
