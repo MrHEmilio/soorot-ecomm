@@ -574,11 +574,17 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
     color:var(--verde-claro);
 }
 
+/* Imagen previsualizada en tarjeta creada */
+.center {
+  margin: auto;
+}
+
+
 .card-body .form-control,
 .card-body .form-select,
 .card-body textarea {
     border-radius: 10px;
-    border: 1px solid var(--verde-oscuro;
+    border: 1px solid var(--verde-oscuro);
     padding: 0.5rem;
     font-size: 0.95rem;
     background-color: var(--verde-blanco);

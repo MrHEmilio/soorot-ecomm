@@ -1,4 +1,11 @@
-
+:root {
+  --verde-oscuro: #232E26;
+  --verde-medio: #1A4A36;
+  --verde-grisaceo: #677D6A;
+  --beige-arena: #D6BD98;
+  --verde-blanco: #F8F4FF;
+  --verde-claro: #D9EFDE;
+}
 
   /* ===== Estructura general ===== */
 .layout-wrapper {
@@ -83,7 +90,7 @@
   /* Nombre del producto */
 .product-card h3 {
     font-size: 1.3rem;                                  /* Tamaño de título */
-    color: #dcd7ba;                                     /* Beige arena */
+    color: black;                                     /* Beige arena */
     white-space: normal;                                /* Permite saltos de línea */
     word-wrap: break-word;                              /* Rompe palabras largas */
 }
@@ -93,12 +100,14 @@
     font-size: 0.9rem;                                  /* Texto descriptivo pequeño */
     margin-bottom: 0.5rem;                              /* Separación inferior */
     word-wrap: break-word;                              /* Evita desbordes */
+    color: var(--verde-claro)
 }
 
   /* Precio */
 .product-card span {
+    margin-left: 70%;
     font-weight: bold;                                  /* Negrita para destacar precio */
-    color: #a9db9c;                                     /* Verde más vivo */
+    color:var(--verde-blanco);                                     /* Verde más vivo */
     font-size: 1.1rem;                                  /* Tamaño ligeramente mayor */
 }
 
