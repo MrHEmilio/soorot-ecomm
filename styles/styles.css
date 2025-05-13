@@ -401,7 +401,7 @@ footer {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.3), var(--verde-medio));
   color: #ffffff!important;
   padding: 20px;
-  text-align: center;
+  text-align: justify;
   font-family: Arial, sans-serif;
   margin-top: auto;
   font-family: 'Quicksand', sans-serif;
