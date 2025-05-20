@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./styles/styles.css" /> 
 </head>
 <body>
-    <div class="headerAcercade">
+    <div class="headerAcercade" style="margin-bottom: 50px;">
         <h2 class="header-contact header-contact2"><img src="./assets/logo-soorot-beige.svg" alt="logo_soorot" style="max-width: 120px; margin-top: 20px;">
           <br>Acerca de nosotros</h2>
         <p class="header-contact header-contact4">
@@ -27,11 +27,11 @@
           herramientas eficientes, confiables y con garantía de calidad para que vivas cada experiencia al máximo,
           ¡explora, elige y prepárate para descubrir lo mejor del entorno natural con confianza y respaldo!
         </p>
+        <hr style="width: 80%; color: #D9EFDE; margin-left: auto; margin-right: auto;"/>
       </div>
       <main class="container">
         <!-- TARJETA 1 -->
-
-        <div class="card mb-3 card-acerca" style="min-width: 380px; margin-top: 200px;">
+        <div class="card mb-3 card-acerca card-acerca-1" style="min-width: 380px; margin-top: 200px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="./assets/imagen-mision.webp" class="img-fluid rounded-start" alt="imagen-mision">
@@ -51,6 +51,9 @@
 
         <div class="card mb-3 card-acerca" style="min-width: 380px; margin-top: 100px;">
           <div class="row g-0">
+            <div class="col-md-4 imagen-aparece" style="display: none;">
+              <img src="./assets/imagen-vision.webp" class="img-fluid rounded-end" alt="imagen-vision">
+            </div>
             <!-- Primero el texto -->
             <div class="col-md-8">
               <div class="card-body">
@@ -61,7 +64,7 @@
               </div>
             </div>
             <!-- Luego la imagen -->
-            <div class="col-md-4">
+            <div class="col-md-4 imagen-desaparece">
               <img src="./assets/imagen-vision.webp" class="img-fluid rounded-end" alt="imagen-vision">
             </div>
           </div>
@@ -76,7 +79,7 @@
              <div class="col-md-8">
                <div class="card-body">
                  <h5 class="card-title title-acerca">Valores y compromiso</h5>
-                 <p class="card-text text-acerca text-acerca-1">Pasión por la naturaleza: nos mueve el amor por el entorno natural y el deseo de compartirlo con los demás. <br>
+                 <p class="card-text text-acerca text-acerca-1">
                     Compromiso con la calidad: cada producto y servicio está cuidadosamente seleccionado para ofrecer la mejor experiencia. <br>
                     Sostenibilidad: creemos en un consumo consciente y con prácticas que cuiden el planeta. <br>
                     Confianza y cercanía: te acompañamos en cada paso de tu aventura. <br>
@@ -285,11 +288,11 @@
         
           <!-- Controles -->
           <div class="carousel-content">
-           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev" style="max-height: 80px; margin-top: 200px; max-width: 45px;">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next" style="max-height: 80px; margin-top: 200px; max-width: 45px;">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
