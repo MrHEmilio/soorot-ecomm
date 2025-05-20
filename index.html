@@ -21,7 +21,7 @@
     />
     <title>Inicio</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    
+    <link rel="stylesheet" href="./styles/index.css">
     <link rel="icon" href="assets/favicon-soorot.svg" type="image/svg+xml" /><!--Link del favicon-->
 
 
@@ -30,6 +30,104 @@
   </head>
 
   <body>
+    
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 50px;">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="5000">
+        <a href="./nosotros.html"><img src="./assets/fotos-landing/img-carrusel-1.webp" class="d-block w-100" alt="..."></a>
+        <div class="carousel-caption mi-estilo-texto">
+          <h5>¡Bienvenido a Soorot!</h5>
+          <p>Conoce un poco más de nosotros</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <a href="./registrouser.html"><img src="./assets/fotos-landing/img-carrusel-3.webp" class="d-block w-100" alt="..."></a>
+        <div class="carousel-caption mi-estilo-texto">
+          <h5>Regístrate</h5>
+          <p>y únete a la familia</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <a href="./contactanos.html"><img src="./assets/fotos-landing/img-carrusel-2.webp" class="d-block w-100" alt="..."></a>
+        <div class="carousel-caption mi-estilo-texto">
+          <h5>¿Tienes sugerencias?</h5>
+          <p>Ponte en contacto con nosotros</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <a href="./productos.html"><img src="./assets/fotos-landing/img-carrusel-4.webp" class="d-block w-100" alt="..."></a>
+        <div class="carousel-caption mi-estilo-texto">
+          <h5 style="color: #232E26;">Explora el catálogo</h5>
+          <p style="color: #232E26;">.</p>
+        </div>
+      </div>
+    
+    </div>
+  <!-- CONTROLES -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Aquí finaliza el carrusel -->
+ <main class="container">
+  <div class="cinturon-index" style="margin-top: 50px; margin-bottom: 30px;">
+    <h2>Estamos comprometidos con la calidad que te entregamos...</h2>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 mb-4">
+      <div class="cuadro-img">
+        <img src="./assets/fotos-landing/img-landing-1.webp" alt="Imagen 1">
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4">
+      <div class="cuadro-img">
+        <img src="./assets/fotos-landing/img-landing-4.webp" alt="Imagen 2">
+      </div>
+    </div>
+    <div class="col-12 col-md-4 mb-4">
+      <div class="cuadro-img">
+        <img src="./assets/fotos-landing/img-landing-5.webp" alt="Imagen 3">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Tarjeta -->
+  <div class="card-index" style="min-width: 400px; margin-top: 50px; margin-bottom: 50px;">
+          <div class="row g-0">
+            <div class="col-md-6">
+              <img src="./assets/fotos-landing/img-landing-3.webp" class="img-fluid rounded-start" alt="imagen-mision">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body" style="margin: 20px;">
+                <h5 class="card-title title-acerca">Soorot</h5>
+                <p class="card-text text-acerca text-acerca-1">
+                  ¿Qué te parecería que a través de un hábito  tan cotidiano como salir
+                  a tomar un poco de aire fresco pudiéramos promover la conservación
+                  de nuestros ecosistemas?
+                </p>
+                <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
     <!-- script para el navbar, hay que procurar que se conserve como el primer script INICIO-->
     <script type="module">
       import { insertarNavbar } from "./js/navbar.js";
