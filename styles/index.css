@@ -67,7 +67,7 @@
   width: 100%;
   padding-top: 100%;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .cuadro-img img {
@@ -100,6 +100,41 @@
     margin-bottom: 40px;
     background-color: var(--verde-oscuro);
 }
+
+
+/* Aquí van los efectos de las imágnes del cinturón del Index */
+.overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* oscuridad */
+      opacity: 0;
+      transition: 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+.landing-bell {
+    background-color: transparent;
+      color: var(--naranja)!important;
+      font-family: Quicksand, sans-serif;
+      font-size: 26px!important;
+      text-align: center!important;
+      padding: 10px!important;
+}
+
+
+.cuadro-img:hover {
+    filter: brightness(80%);
+
+}
+.cuadro-img:hover .overlay {
+    opacity: 1;
+}
+
 
 
 @media (max-width: 992px){
