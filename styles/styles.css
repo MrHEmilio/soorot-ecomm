@@ -44,6 +44,7 @@ main {
 }
 .collapse.navbar-collapse{
   color: var(--verde-claro);
+  z-index: 100;
 }
 .nav-link.color-texto {
   color: var(--verde-medio) !important;
