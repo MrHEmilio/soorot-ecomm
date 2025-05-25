@@ -61,6 +61,14 @@
         import { insertarfooter, insertarNavbar } from "./js/navbar.js";
         insertarfooter();
         insertarNavbar();
+        const divBotones = document.querySelector("#div-logs");
+        if (localStorage.getItem("usuarioActivo")){
+              divBotones.innerHTML = `
+              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">Hola, ${localStorage.getItem("usuarioActivo")}</button></a>
+              <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+              `;
+                
+        };
     </script>
     <!-- Footer y Navbar FINAL-->
      <!-- BOOTSRAP: HAY QUE DEJARLO COMO ÚLTIMO SCRIPT -->

@@ -1,8 +1,30 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
 const entrar = document.getElementById("entrar");
+const divBotones = document.querySelector("#div-logs");
 
- // Función para validación
+
+function botonesLogout(user){
+                    divBotones.innerHTML = `
+                    <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">Hola, ${localStorage.getItem("usuarioActivo")}</button></a>
+                    <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+                    `;
+                
+        };
+
+if (localStorage.getItem("usuarioActivo")){
+    botonesLogout();
+    entrar.innerText = `Cerrar Sesión`;
+    entrar.addEventListener("click", function(){
+         localStorage.removeItem("usuarioActivo");
+         location.reload();
+    
+        });
+}else {
+
+     // Función para validación
 entrar.addEventListener("click", function checkInput(event) {
     event.preventDefault();
 
@@ -27,7 +49,7 @@ entrar.addEventListener("click", function checkInput(event) {
             }, 2000);
         })
         localStorage.setItem("usuarioActivo", usuarioValid.email);
-   
+        botonesLogout();
     } else {
         Swal.fire("El usuario o la contraseña son incorrectos.");
         return;
@@ -35,4 +57,10 @@ entrar.addEventListener("click", function checkInput(event) {
      
 });
 
+}// if else el usuario está activo
+
+
+
+
 // 
+});// Este DOMCotnentLoaded es para darle tiempo a la navbar de cargar.

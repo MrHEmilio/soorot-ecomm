@@ -31,7 +31,7 @@ export function insertarNavbar() {
                         <a class="nav-link nav-link-collapsed" aria-current="page" href="nosotros.html">Acerca de nosotros</a>
                     </li>
                 </ul>
-                <div class="buttons-navbar">
+                <div class="buttons-navbar" id="div-logs">
                     <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
                     <a href="registrouser.html"><button type="button" class="btn btn-success">Registro</button></a>
                 </div>  
