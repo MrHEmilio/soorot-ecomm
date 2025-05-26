@@ -4,9 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const descriptionTextarea = document.getElementById('productDescription');
     const productPrice = document.getElementById('precio');
     const createButton = document.getElementById('createProductBtn');
-
+    const headerLoged = document.querySelector("#header-loged");
     let uploadedImageUrl = '';
 
+if (!localStorage.getItem("usuarioActivo")){
+        headerLoged.innerText = "Inicia sesión para crear un producto";
+        headerLoged.insertAdjacentHTML("afterend", 
+            `
+            <a href="login.html"><button class="btn btn-primary">Iniciar sesión</button></a>
+            `
+        );
+    } else {
     // CLOUDINARY 
     const cloudName = "deb2blqxi";
     const uploadPreset = "Soorot";
@@ -57,40 +65,42 @@ document.addEventListener('DOMContentLoaded', function () {
         myWidget.open();
     }, false);
 
+    
     createButton.addEventListener('click', function (event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        let productos = JSON.parse(localStorage.getItem('productos')) || [];
+    let productos = JSON.parse(localStorage.getItem('productos')) || [];
 
-        const productName = nameInput.value.trim();
-        const category = categorySelect.value;
-        const description = descriptionTextarea.value.trim();
-        const precio = productPrice.value.trim();
-        const imageUrl = uploadedImageUrl;
+    const productName = nameInput.value.trim();
+    const category = categorySelect.value;
+    const description = descriptionTextarea.value.trim();
+    const precio = productPrice.value.trim();
+    const imageUrl = uploadedImageUrl;
 
-        if (!productName || !imageUrl || !category || !description || !precio ) {
+    if (!productName || !imageUrl || !category || !description || !precio ) {
             Swal.fire("Todos los campos son obligatorios.")
             return;
-        }
+    }
 
-        const productObject = {
-            Nombre: productName,
-            img: imageUrl,
-            desc: description,
-            categoria: category,
-            precio: precio
-        };
+    const productObject = {
+        Nombre: productName,
+        img: imageUrl,
+        desc: description,
+        categoria: category,
+        precio: precio
+    };
 
-        productos.push(productObject);
-        localStorage.setItem('productos', JSON.stringify(productos));
+    productos.push(productObject);
+    localStorage.setItem('productos', JSON.stringify(productos));
 
-        nameInput.value = '';
-        categorySelect.value = '';
-        descriptionTextarea.value = '';
-        productPrice.value = '';
-        uploadedImageUrl = '';
+    nameInput.value = '';
+    categorySelect.value = '';
+    descriptionTextarea.value = '';
+    productPrice.value = '';
+    uploadedImageUrl = '';
         
-        Swal.fire("Producto creado exitosamente." , "Puedes verlo en la lista de productos.")
-        return;
+    Swal.fire("Producto creado exitosamente." , "Puedes verlo en la lista de productos.")
+    return;
     });
+}
 });

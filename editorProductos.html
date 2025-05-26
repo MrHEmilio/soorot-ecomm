@@ -27,7 +27,7 @@ Asegúrate de completar todos los campos con las características correspondient
 
   <div class="card" style="margin-bottom: 100px;">
 
-    <h3 class="titulos">Añadir producto nuevo</h3>
+    <h3 class="titulos" id="header-loged">Añadir producto nuevo</h3>
 
     <div class="card-body">
       <div class="mb-3">
@@ -62,8 +62,10 @@ Asegúrate de completar todos los campos con las características correspondient
         <img id="previewImage" src="" style="display:none; max-height:150px;" />
       </div>
     </div>
-    <button class="btn btn-primary" id="createProductBtn">Crear producto nuevo</button>
-    </div>
+      <div id="loged-button">
+        <button class="btn btn-primary" id="createProductBtn">Crear producto nuevo</button>
+      </div>
+  </div>
   </main>
   <script type="module">
     import { insertarNavbar } from "./js/navbar.js";
@@ -71,7 +73,7 @@ Asegúrate de completar todos los campos con las características correspondient
     const divBotones = document.querySelector("#div-logs");
     if (localStorage.getItem("usuarioActivo")){
               divBotones.innerHTML = `
-              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">Hola, ${localStorage.getItem("usuarioActivo")}</button></a>
+              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">¡Hola, ${localStorage.getItem("usuarioActivo")}!</button></a>
               <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
               `;
                 
