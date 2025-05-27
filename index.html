@@ -169,6 +169,15 @@
     <script type="module">
       import { insertarNavbar } from "./js/navbar.js";
       insertarNavbar();
+      const divBotones = document.querySelector("#div-logs");
+
+      if (localStorage.getItem("usuarioActivo")){
+              divBotones.innerHTML = `
+              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">¡Hola, ${localStorage.getItem("usuarioActivo")}!</button></a>
+              <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+              `;
+                
+        };
     </script>
     <!-- script para el navbar FINAL -->
      

@@ -1,8 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
 const entrar = document.getElementById("entrar");
 
- // Función para validación
+
+if (localStorage.getItem("usuarioActivo")){
+    entrar.innerText = `Cerrar Sesión`;
+    entrar.addEventListener("click", function(){
+         localStorage.removeItem("usuarioActivo");
+         location.reload();
+    
+        });
+}else {
+
+     // Función para validación
 entrar.addEventListener("click", function checkInput(event) {
     event.preventDefault();
 
@@ -27,7 +39,6 @@ entrar.addEventListener("click", function checkInput(event) {
             }, 2000);
         })
         localStorage.setItem("usuarioActivo", usuarioValid.email);
-   
     } else {
         Swal.fire("El usuario o la contraseña son incorrectos.");
         return;
@@ -35,4 +46,10 @@ entrar.addEventListener("click", function checkInput(event) {
      
 });
 
+}// if else el usuario está activo
+
+
+
+
 // 
+});// Este DOMCotnentLoaded es para darle tiempo a la navbar de cargar.
