@@ -94,6 +94,14 @@
     import { insertarNavbar, insertarfooter } from "./js/navbar.js";
     insertarNavbar();
     insertarfooter();
+    const divBotones = document.querySelector("#div-logs");
+    if (localStorage.getItem("usuarioActivo")){
+              divBotones.innerHTML = `
+              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">¡Hola, ${localStorage.getItem("usuarioActivo")}!</button></a>
+              <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+              `;
+                
+        };
   </script>
    <!-- BOOTSRAP: HAY QUE DEJARLO COMO ÚLTIMO SCRIPT -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>

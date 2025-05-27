@@ -44,8 +44,8 @@ function addItem(producto) {
         </div>
         <img src="${producto.img}" alt="${producto.Nombre}" class="clickable-img" data-action="view">
         <h3>${producto.Nombre}</h3>
-        <p>${producto.desc}</p>
-        <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
+        <p >${producto.desc}</p>
+        <button class="agregar-carrito">Empacar en la mochila</button>
     </div>
   `;
   document.getElementById("list-items").insertAdjacentHTML("beforeend", tarjeta);
