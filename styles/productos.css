@@ -69,6 +69,7 @@
     text-align: center;                                 /* Centra texto e imagen */
     display: flex;                                      /* Layout vertical interno */
     flex-direction: column;                             /* Coloca elementos en columna */
+    cursor: pointer
 }
 
 .product-card:hover {
@@ -116,6 +117,18 @@
     justify-content: space-between;                     /* Separa extremos */
     align-items: center;                                /* Centra verticalmente */
     margin-bottom: 0.5rem;                              /* Espacio tras cabecera */
+}
+
+.agregar-carrito {
+  background-color:   #e0eed8;                  /* Color boton */
+  color: var(--verde-medio);                             /* Texto boton */
+  padding: 0.6rem 1.2rem;                                /* Espacio interno */
+  border-radius: 10px;                                   /* Borde redondeado */
+}
+
+.agregar-carrito:hover {
+  background-color: #8fad86;                   /* Cambia de color al pasar el cursor*/
+  font-weight: bold;
 }
 
   /* ===== Modal detalle de producto ===== */
