@@ -1,3 +1,4 @@
+// navbar.js
 console.log('Navbar script loaded');
 
 export function insertarNavbar() {
@@ -61,7 +62,7 @@ export function insertarfooter() {
           </ul>
           </div>
           <div style="display: inline-block;">
-           <ul>
+          <ul>
             <li><a href="./contactanos.html">Contáctanos</a></li>
             <li><a href="./registrouser.html">Regístrate</a></li>
             <li><a href="./login.html">Iniciar sesión</a></li>
@@ -71,14 +72,6 @@ export function insertarfooter() {
         </div>
         <div class="footer-column">
           <form>
-           <!--  <label for="email">Ingresa tu correo</label> -->
-           <!--  <input
-              type="email"
-              id="email_footer"
-              name="email"
-              placeholder="Ingresa tu correo..."
-            /> -->
-           <!-- <button type="submit">Enviar</button> -->
             <p></p>
           </form>
         </div>
@@ -100,7 +93,6 @@ export function insertarfooter() {
           <a href="http://www.facebook.com/"
             target="_blank"
             class="icon-facebook2"></a>
-          <!-- <a href="./contactanos.html" target="_blank" class="icon-bubble"></a> -->
         </div>
       </div>    `;
   document.body.appendChild(footer);

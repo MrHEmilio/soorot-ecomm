@@ -649,3 +649,78 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
 }
 
 }
+
+/* Carrito mejorado */
+.cart-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#cart-icon {
+    cursor: pointer;
+    background: #1A4A36;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#cart-icon:hover {
+    background: #123729;
+}
+
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    width: 350px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 1rem;
+    margin-top: 10px;
+}
+
+.cart-items-container {
+    padding: 10px 0;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #dc3545;
+    padding: 5px;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 12px;
+    background: #1A4A36;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background: #123729;
+}

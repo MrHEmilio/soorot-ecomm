@@ -44,10 +44,110 @@ function addItem(producto) {
         </div>
         <img src="${producto.img}" alt="${producto.Nombre}" class="clickable-img" data-action="view">
         <h3>${producto.Nombre}</h3>
-        <p >${producto.desc}</p>
+        <p>${producto.desc}</p>
+        <button class="btn btn-primary add-to-cart">Añadir al carrito</button>
     </div>
   `;
   document.getElementById("list-items").insertAdjacentHTML("beforeend", tarjeta);
+}
+// ----------------------------------------------------------
+// Función: añadir producto al carrito
+// ----------------------------------------------------------
+function addToCart(producto) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const existingProduct = cart.find(item => item.Nombre === producto.Nombre);
+  
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+    cart.push({
+      Nombre: producto.Nombre,
+      precio: Number(producto.precio), // Convertir a número
+      img: producto.img,
+      quantity: 1
+    });
+  }
+  
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCounter();
+}
+
+function updateCartCounter() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalItems = cart.reduce((acc, item) => acc + (item.quantity || 0), 0);
+  const cartCountElement = document.getElementById('cart-count');
+  
+  if (cartCountElement) {
+    cartCountElement.textContent = totalItems;
+  } else {
+    console.error('Elemento cart-count no encontrado');
+  }
+}
+
+function showCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.querySelector('.cart-items-container');
+    const cartTotal = document.getElementById('cart-total-amount');
+    
+    let html = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const itemTotal = item.quantity * Number(item.precio);
+        total += itemTotal;
+        html += `
+            <div class="cart-item">
+                <img src="${item.img}" alt="${item.Nombre}" width="50">
+                <div>
+                    <h5>${item.Nombre}</h5>
+                    <div class="item-controls">
+                        <input type="number" 
+                              class="quantity-input" 
+                              value="${item.quantity}" 
+                              min="1" 
+                              data-name="${item.Nombre}">
+                        <button class="btn-remove" data-name="${item.Nombre}">🗑️</button>
+                    </div>
+                    <p>$${Number(item.precio).toFixed(2)} c/u</p>
+                </div>
+            </div>
+        `;
+    });
+
+    cartContainer.innerHTML = html || '<p class="empty-msg">Tu carrito está vacío</p>';
+    cartTotal.textContent = total.toFixed(2);
+    
+    // Mostrar dropdown
+    const dropdown = document.getElementById('cart-dropdown');
+    dropdown.style.display = 'block';
+    
+    // Actualizar eventos dinámicos
+    document.querySelectorAll('.quantity-input').forEach(input => {
+        input.addEventListener('change', (e) => {
+            updateQuantity(e.target.dataset.name, e.target.value);
+        });
+    });
+    
+    document.querySelectorAll('.btn-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            removeItem(e.target.dataset.name);
+        });
+    });
+}
+
+function updateQuantity(productName, newQuantity) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    const item = cart.find(item => item.Nombre === productName);
+    if(item) {
+        item.quantity = Math.max(1, parseInt(newQuantity));
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCounter();
+        showCart();
+    }
+}
+
+function hideCart() {
+    document.getElementById('cart-dropdown').style.display = 'none';
 }
 
 // ----------------------------------------------------------
@@ -74,16 +174,12 @@ function mostrarModal(producto) {
 // Cuando el DOM está listo, renderiza y conecta eventos
 // ----------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  // 1) Obtener productos desde localStorage
+  // Cargar productos
   const productosLocalStorage = JSON.parse(localStorage.getItem("productos")) || [];
-
-  // 2) Unir arrays de productos con los del localStorage 
   const productosTotales = productosLocalStorage.concat(productos);
-
-  // 3) Renderizar todas las tarjetas
   productosTotales.forEach(addItem);
 
-  // 3) Manejar clicks en los botones del menú
+  // Filtrado de productos
   document.querySelectorAll(".menu-item").forEach(btn => {
     btn.addEventListener("click", () => {
       filtrarProductos(btn.dataset.categoria);
@@ -92,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4) Delegar eventos de clicks dentro del contenedor de tarjetas
+  // Eventos principales
   document.getElementById("list-items").addEventListener("click", e => {
     const tarjeta = e.target.closest(".product-card");
     if (!tarjeta) return;
@@ -101,21 +197,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const producto = productosTotales.find(p => p.Nombre === nombre);
     if (!producto) return;
 
-    if (e.target.dataset.action === "view") {
+    if (e.target.classList.contains('add-to-cart')) {
+      addToCart(producto);
+    } else if (e.target.dataset.action === "view") {
       mostrarModal(producto);
     }
+  });
 
-    if (e.target.dataset.action === "edit") {
-      localStorage.setItem("productoEditar", JSON.stringify(producto));
-    }
-  });
-  // 5) Cerrar modal al hacer clic fuera o en el botón de cerrar
-  document.getElementById("cerrar-modal").addEventListener("click", () => {
-    document.getElementById("modal").style.display = "none";
-  });
+  // Carrito y modales
+  updateCartCounter();
+  
+  document.getElementById('cart-icon').addEventListener('click', showCart);
+
   document.getElementById("modal").addEventListener("click", e => {
-    if (e.target.id === "modal") {
+    // Cerrar modal
+    if (e.target.id === "modal" || e.target.classList.contains('cerrar-modal')) {
       document.getElementById("modal").style.display = "none";
+    }
+    
+    // Manejar acciones del carrito
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (e.target.classList.contains('remove-item')) {
+      const productName = e.target.dataset.name;
+      const newCart = cart.filter(item => item.Nombre !== productName);
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      showCart();
+      updateCartCounter();
+    }
+    
+    if (e.target.classList.contains('clear-cart')) {
+      localStorage.removeItem('cart');
+      showCart();
+      updateCartCounter();
     }
   });
 });
