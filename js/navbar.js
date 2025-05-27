@@ -2,7 +2,6 @@
 console.log('Navbar script loaded');
 
 export function insertarNavbar() {
-  console.log('Inserting navbar...');
   const nav = document.createElement("nav"); 
   nav.className = "navbar navbar-expand-lg bg-body-tertiary";
   nav.innerHTML = `
