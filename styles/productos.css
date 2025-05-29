@@ -144,8 +144,9 @@
 }
 
 .modal-content {
-    background-color: var(--verde-medio);                          /* Fondo crema */
-    color: var(--verde-claro);                                     /* Texto oscuro */
+    font-family: Quicksand, sans-serif;
+    background-color: var(--verde-grisaceo)!important;                          /* Fondo crema */
+    color: var(--verde-claro)!important;                                     /* Texto oscuro */
     padding: 2rem;                                      /* Espacio interno */
     border-radius: 1rem;                                /* Bordes redondeados */
     max-width: 400px;                                   /* Ancho máximo */

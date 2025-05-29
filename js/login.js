@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
 const entrar = document.getElementById("entrar");
+const formDis = document.querySelector(".formulario-desactivado");
 
 
 if (localStorage.getItem("usuarioActivo")){
@@ -12,6 +13,11 @@ if (localStorage.getItem("usuarioActivo")){
          location.reload();
     
         });
+    formDis.innerHTML = `
+        <p class="header-contact header-contact4">
+            Esperamos que vuelvas pronto
+        </p>
+        `;
 }else {
 
      // Función para validación

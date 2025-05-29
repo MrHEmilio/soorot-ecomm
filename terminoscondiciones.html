@@ -55,22 +55,30 @@
   <h4>Aceptación de Términos</h4>
   <p>El uso del Sitio implica la aceptación expresa de estos Términos y Condiciones por parte del usuario.</p>
 </div>
-  <!-- script para el navbar, hay que procurar que se conserve como el primer script -->
-  <!-- Footer y Navbar INICIO-->
+  <!-- script para el navbar, hay que procurar que se conserve como el primer script INICIO-->
     <script type="module">
-        import { insertarfooter, insertarNavbar } from "./js/navbar.js";
-        insertarfooter();
-        insertarNavbar();
-        const divBotones = document.querySelector("#div-logs");
-        if (localStorage.getItem("usuarioActivo")){
+      import { insertarNavbar, insertarfooter } from "./js/navbar.js";
+      insertarNavbar();
+      insertarfooter();
+      const divBotones = document.querySelector(".navbar-buttons");
+      if (localStorage.getItem("usuarioActivo")){
               divBotones.innerHTML = `
-              <a href="#"><button type="button" class="btn btn-outline-success" style="border: none;">¡Hola, ${localStorage.getItem("usuarioActivo")}!</button></a>
-              <a href="contactanos.html"><button type="button" class="btn btn-outline-success">Contáctanos</button></a>
+              <!-- Example single danger button -->
+              <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle btn-outline-success botones-del-navbar" data-bs-toggle="dropdown" aria-expanded="false"  style="border: none;">
+                  ¡Hola, ${localStorage.getItem("usuarioActivo")}!
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="./contactanos.html">Necesito ayuda</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="./login.html">Cerrar Sesión</a></li>
+                </ul>
+              </div>
+              <a href="contactanos.html" class="btn btn-outline-success botones-del-navbar">Contáctanos</a>
               `;
                 
-        };
+      };
     </script>
-    <!-- Footer y Navbar FINAL-->
      <!-- BOOTSRAP: HAY QUE DEJARLO COMO ÚLTIMO SCRIPT -->
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
 </body>

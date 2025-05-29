@@ -45,8 +45,8 @@ export function insertarNavbar() {
                     </div>
                 </div>
                 <div class="navbar-buttons">
-                    <a href="contactanos.html" class="btn btn-outline-success">Contáctanos</a>
-                    <a href="registrouser.html" class="btn btn-success">Registro</a>
+                    <a href="contactanos.html" class="btn btn-outline-success botones-del-navbar">Contáctanos</a>
+                    <a href="registrouser.html" class="btn btn-success botones-del-navbar">Registro</a>
                 </div>
             </div>  
         </div>
@@ -255,123 +255,62 @@ export function insertarfooter() {
   const footer = document.createElement("footer");
   footer.className = "contenedor-footer";
   footer.innerHTML = `
-    <div class="footer-container">
-      <div class="footer-column logo-column">
-        <img src="./assets/logo-soorot-white.svg" alt="logo-soorot" class="footer-logo">
-      </div>
-      
-      <div class="footer-column links-column">
-        <div class="footer-links">
-          <div class="link-group">
-            <h3>Soorot</h3>
-            <ul>
-              <li><a href="./index.html">Inicio</a></li>
-              <li><a href="./nosotros.html">Acerca de nosotros</a></li>
-              <li><a href="./productos.html">Productos</a></li>
-            </ul>
-          </div>
-          
-          <div class="link-group">
-            <h3>Cuenta</h3>
-            <ul>
-              <li><a href="./contactanos.html">Contáctanos</a></li>
-              <li><a href="./registrouser.html">Regístrate</a></li>
-              <li><a href="./login.html">Iniciar sesión</a></li>
-            </ul>
-          </div>
+      <div class="footer-container">
+        <div class="footer-column">
+          <img src="./assets/logo-soorot-white.svg" alt="logo-soorot" style="max-height: 150px;" />
         </div>
-      </div>
-      
-      <div class="footer-column legal-column">
-        <div class="legal-links">
+        <div class="footer-column">
+          <h3>Soorot</h3>
+          <div style="display: inline-block; margin-right: 60px">
           <ul>
-            <li><a href="avisoprivacidad.html">Aviso de privacidad</a></li> 
-            <li><a href="terminoscondiciones.html">Términos y condiciones</a></li>
-            <li><a href="editorProductos.html">Editor de productos</a></li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./nosotros.html">Acerca de nosotros</a></li>
+            <li><a href="./productos.html">Productos</a></li>
           </ul>
+          </div>
+          <div style="display: inline-block;">
+           <ul>
+            <li><a href="./contactanos.html">Contáctanos</a></li>
+            <li><a href="./registrouser.html">Regístrate</a></li>
+            <li><a href="./login.html">Iniciar sesión</a></li>
+          </ul>
+          </div>
+
         </div>
-        
-        <div class="social-media">
-          <a href="http://www.github.com/" target="_blank" class="social-icon icon-github"></a>
-          <a href="http://www.instagram.com/" target="_blank" class="social-icon icon-instagram"></a>
-          <a href="http://www.facebook.com/" target="_blank" class="social-icon icon-facebook"></a>
+        <div class="footer-column">
+          <form>
+           <!--  <label for="email">Ingresa tu correo</label> -->
+           <!--  <input
+              type="email"
+              id="email_footer"
+              name="email"
+              placeholder="Ingresa tu correo..."
+            /> -->
+           <!-- <button type="submit">Enviar</button> -->
+            <p></p>
+          </form>
         </div>
       </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>© 2025 Soorot. Todos los derechos reservados.</p>
-    </div>
-  `;
-
-  // Añadir estilos del footer
-  const footerStyle = document.createElement('style');
-  footerStyle.textContent = `
-    .contenedor-footer {
-      background: var(--verde-oscuro);
-      color: var(--beige-arena);
-      padding: 2rem 1rem;
-      margin-top: auto;
-    }
-    
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    
-    .footer-logo {
-      max-height: 150px;
-      width: auto;
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-    
-    .link-group h3 {
-      color: var(--verde-claro);
-      margin-bottom: 1rem;
-    }
-    
-    .footer-column ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .footer-column a {
-      color: var(--beige-arena);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .footer-column a:hover {
-      color: var(--verde-claro);
-    }
-    
-    .social-media {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .social-icon {
-      font-size: 1.5rem;
-      color: var(--beige-arena);
-    }
-    
-    .footer-bottom {
-      text-align: center;
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--verde-grisaceo);
-    }
-  `;
-
+      <div class="footer-bottom">
+        <p>© 2025 Soorot. Todos los derechos reservados.</p>
+        <ul>
+          <li><a href="avisoprivacidad.html">Aviso de privacidad</a></li> 
+          <li><a href="terminoscondiciones.html">Términos y condiciones</a></li>
+          <li><a href="editorProductos.html">Editor de productos</a></li>
+        </ul>
+        <div class="social-media">
+          <a href="http://www.github.com/"
+            target="_blank"
+            class="icon-github"></a>
+          <a  href="http://www.instagram.com/"
+            target="_blank"
+            class="icon-instagram"></a>
+          <a href="http://www.facebook.com/"
+            target="_blank"
+            class="icon-facebook2"></a>
+          <!-- <a href="./contactanos.html" target="_blank" class="icon-bubble"></a> -->
+        </div>
+      </div>    `;
   document.body.appendChild(footer);
-  document.head.appendChild(footerStyle);
   console.log('Footer inserted successfully');
 }

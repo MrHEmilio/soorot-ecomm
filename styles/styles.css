@@ -217,9 +217,8 @@ ul li.nav-item a{
   fill: white; /* texto blanco al hacer hover */
 }
 
-.buttons-navbar button{
-  border-radius: 20px;
-  margin-right: 30px;
+.botones-del-navbar {
+  border-radius: 19px;
 }
 
 .btn.btn-success{
@@ -486,6 +485,8 @@ button:hover {
   width: 24px;
   margin: 0 10px;
 }
+
+
 
 
   /* ... INICIO: Estilo visual mejorado para la cruz y flechas del modal */
@@ -807,4 +808,5 @@ CARGAR TODOS SUS PARÁMETROS DE MANERA CORRECTA */
   
   .modal-content {
     padding: 1rem;
+}
 }

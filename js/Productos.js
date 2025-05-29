@@ -1,5 +1,4 @@
-// Base de datos local de productos clasificados por categoría
-const productos = [
+let productos = [
     // ---------- Escalada ----------
     { Nombre: "Arnés", img: "https://images.arcteryx.com/F24/1350x1710/Skaha-Harness-Lampyre-Boxcar.jpg", desc: "Arnés de seguridad ergonómico para escalada deportiva.", categoria: "escalada", precio: "1799" },
     { Nombre: "Cuerda Dinámica", img: "https://www.teufelberger.com/media/catalog/product/cache/ad06d83191629f33f6df1b655e73fe3f/a/p/apex.jpg", desc: "Cuerda para absorber impactos y caídas en escalada.", categoria: "escalada", precio: "3499" },
@@ -94,7 +93,7 @@ function agregarAlCarrito(producto) {
             icon: 'success',
             title: '¡Producto agregado!',
             text: `${producto.Nombre} se añadió a tu mochila`,
-            timer: 2000,
+            timer: 800,
             showConfirmButton: false
         });
     } else {
@@ -161,7 +160,7 @@ function showCart() {
         `;
     });
 
-    cartContainer.innerHTML = html || '<p class="empty-msg">Tu carrito está vacío</p>';
+    cartContainer.innerHTML = html || '<p class="empty-msg" style="color: #677D6A;">Tu carrito está vacío</p>';
     cartTotal.textContent = total.toFixed(2);
     
     const dropdown = document.getElementById('cart-dropdown');
@@ -220,6 +219,7 @@ function filtrarProductos(categoria) {
 function setupModal() {
     const modal = document.getElementById('modal');
     const closeBtn = document.querySelector('.close-btn');
+    
 
     // Delegación de eventos para manejar productos dinámicos
     document.addEventListener('click', function(e) {
@@ -251,9 +251,9 @@ function setupModal() {
                         modal.style.display = 'flex';
                         
                         // Añadir evento al botón del modal
-                        const modalBtn = document.querySelector('.agregar-carrito-modal');
-                        if (modalBtn) {
-                            modalBtn.onclick = () => {
+                        const btnAgregar = tarjeta.querySelector('.agregar-carrito');
+                        if (btnAgregar) {
+                            btnAgregar.onclick = () => {
                                 agregarAlCarrito(producto);
                                 modal.style.display = 'none';
                             };
