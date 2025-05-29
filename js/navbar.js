@@ -42,6 +42,7 @@ export function insertarNavbar() {
                             Total: $<span id="cart-total-amount">0.00</span>
                         </div>
                         <button class="clear-cart">Vaciar carrito</button>
+                        <button class="clear-cart checkout-cart">Ir a pagar</button>
                     </div>
                 </div>
                 <div class="navbar-buttons">
