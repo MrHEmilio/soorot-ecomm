@@ -15,7 +15,7 @@ if (localStorage.getItem("usuarioActivo")){
         });
     formDis.innerHTML = `
         <p class="header-contact header-contact4">
-            Esperamos que vuelvas pronto
+            ¡Esperamos que vuelvas pronto!
         </p>
         `;
 }else {
