@@ -10,7 +10,7 @@
 Aunque fue desarrollado como un proyecto académico sin fines comerciales, representó un espacio seguro donde el equipo de desarrollo pudo aplicar y experimentar con los conocimientos adquiridos durante las lecciones de programación, diseño y estructura web.
 
 Aquí puedes ver una vista previa del sitio web:  
-📷 *[Agregar aquí el URL de la imagen]*
+📷 *[https://raw.githubusercontent.com/MrHEmilio/soorot-ecomm/refs/heads/main/assets/vistaPrevia.png]*
 
 Y si deseas explorarlo directamente:  
 🔗 [Ir al sitio desplegado en GitHub Pages](https://mrhemilio.github.io/soorot-ecomm/)
